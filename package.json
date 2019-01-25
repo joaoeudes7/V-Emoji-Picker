@@ -1,0 +1,32 @@
+{
+  "name": "vue-emoji-picker",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "João Eudes Lima <joaoeudes7@gmail.com>",
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build --target lib --name vue-emoji-picker ./src/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "main": "./dist/emoji-picker.common.js",
+  "style": "./dist/emoji-picker.css",
+  "keywords": [ "javascript", "vue", "emoji" ],
+  "files": [ "dist/*" ],
+  "dependencies": {
+    "popper.js": "^1.14.3",
+    "skin-tone": "^1.0.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
