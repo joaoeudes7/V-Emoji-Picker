@@ -45,16 +45,19 @@ export default {
 @import "../styles/variables";
 
 #Categories {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1px solid #e4e4e4;
   background: $secundary;
   color: white;
-  border-bottom: 1px solid #e4e4e4;
 }
 
 .category {
-  padding: 5px 10px;
+  flex: 1;
+  padding: 5px 0;
+  text-align: center;
   cursor: pointer;
 
   & > img {

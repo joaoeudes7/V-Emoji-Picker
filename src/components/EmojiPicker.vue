@@ -64,12 +64,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/variables";
+
 #EmojiPicker {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  background: $secundary;
   border-radius: 4px;
   border: 1px solid #e4e4e4;
   overflow: hidden;
+  width: 350px;
+  user-select: none;
 }
 </style>

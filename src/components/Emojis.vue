@@ -5,8 +5,9 @@
         v-for="(emoji, _index) in row"
         :key="_index"
         class="emoji"
+        :style="{ flexBasis: `${100/emojiByRow}%` }"
         @click="onSelect(emoji)"
-      >{{ emoji['emoji'] }}</span>
+        v-html="emoji['emoji']"/>
     </div>
   </div>
 </template>
@@ -18,7 +19,7 @@ export default {
   name: "Emojis",
   props: {
     data: { type: Array, required: true },
-    emojiByRow: { type: Number, default: 8 }
+    emojiByRow: { type: Number, default: 6 }
   },
   data: () => ({
     typing: ""
@@ -74,7 +75,6 @@ export default {
 
 .emoji {
   cursor: pointer;
-  flex-basis: 12.5%;
   text-align: center;
   font-size: 25px;
   margin: 0 4.5px;
