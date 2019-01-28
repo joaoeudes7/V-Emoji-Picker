@@ -10,8 +10,14 @@
   },
   "main": "./dist/emoji-picker.common.js",
   "style": "./dist/emoji-picker.css",
-  "keywords": [ "javascript", "vue", "emoji" ],
-  "files": [ "dist/*" ],
+  "keywords": [
+    "javascript",
+    "vue",
+    "emoji"
+  ],
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
     "popper.js": "^1.14.3",
     "skin-tone": "^1.0.0",

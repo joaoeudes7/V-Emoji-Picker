@@ -54,6 +54,9 @@ export default {
       });
     }
   },
+  beforeDestroy() {
+    delete this.mapEmojis
+  },
   computed: {
     emojis() {
       const emojis = this.mapEmojis[this.category];

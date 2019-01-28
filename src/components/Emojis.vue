@@ -1,13 +1,18 @@
 <template>
   <div id="Emojis" ref="Emojis">
-    <div v-for="(row, index) in dataEmojis" class="row" :key="index">
-      <span
-        v-for="(emoji, _index) in row"
-        :key="_index"
-        class="emoji"
-        :style="{ flexBasis: `${100/emojiByRow}%` }"
-        @click="onSelect(emoji)"
-        v-html="emoji['emoji']"/>
+    <div class="container-search">
+      <input type="text" :value="searchValue" @keyup="setValue($event)" placeholder="Pesquisar...">
+    </div>
+    <div class="container-emoji">
+      <div class="grid-emojis">
+        <span
+          v-for="(emoji, index) in dataFiltered"
+          :key="index"
+          class="emoji"
+          @click="onSelect(emoji)"
+          v-html="emoji['emoji']"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -22,30 +27,30 @@ export default {
     emojiByRow: { type: Number, default: 6 }
   },
   data: () => ({
-    typing: ""
+    searchValue: ""
   }),
   methods: {
     onSelect(emoji) {
       this.$emit("select", emoji);
     },
-    groupBySize(array, size) {
-      let group = [];
-
-      for (let index = 0; index < array.length / size; index++) {
-        const _startGroup = index * size;
-        const _endGroup = (index + 1) * size;
-
-        group[index] = array.slice(_startGroup, _endGroup);
-      }
-
-      return group;
+    setValue(event) {
+      console.log(event)
+      this.searchValue = event.target.value;
     }
   },
   computed: {
-    dataEmojis() {
-      const emojis = this.groupBySize(this.data, this.emojiByRow);
-      console.log(emojis);
-      return emojis;
+    dataFiltered() {
+      let data = this.data;
+
+      if (this.searchValue.trim()) {
+        data = data.filter(item => {
+          return item.aliases.some(alias =>
+            alias.includes(this.searchValue.toLowerCase())
+          );
+        });
+      }
+
+      return data;
     }
   },
   watch: {
@@ -60,17 +65,39 @@ export default {
 #Emojis {
   display: block;
   width: 100%;
-  height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  height: 40px;
+.container-search {
+  display: block;
+  justify-content: center;
+  margin: 5px 0;
+  padding: 0 5%;
+
+  input {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #f6f6f6;
+    border: 1px solid #e2e2e2;
+  }
+}
+
+.container-emoji {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 350px;
+}
+
+.grid-emojis {
+  display: grid;
+  margin: 10px 0;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: none;
+  grid-row-gap: 10px;
+  align-items: start;
+  justify-items: center;
 }
 
 .emoji {
@@ -78,5 +105,6 @@ export default {
   text-align: center;
   font-size: 25px;
   margin: 0 4.5px;
+  max-height: 30px;
 }
 </style>

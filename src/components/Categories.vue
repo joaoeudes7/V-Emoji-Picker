@@ -64,6 +64,10 @@ export default {
     width: 22px;
     height: 22px;
   }
+
+  &:hover {
+    filter: saturate(3);
+  }
 }
 
 .active {

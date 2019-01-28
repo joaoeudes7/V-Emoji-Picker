@@ -1751,31 +1751,6 @@
     "tags": []
   },
   {
-    "emoji": "🕵️‍♀️",
-    "description": "woman detective",
-    "category": "Peoples",
-    "aliases": [
-      "female_detective"
-    ],
-    "tags": [
-      "sleuth"
-    ]
-  },
-  {
-    "emoji": "🕵",
-    "description": "detective",
-    "category": "Peoples",
-    "aliases": [
-      "male_detective",
-      "detective"
-    ],
-    "tags": [
-      "sleuth"
-    ],
-    "unicode_version": "7.0",
-    "ios_version": "9.1"
-  },
-  {
     "emoji": "👩‍⚕",
     "description": "woman health worker",
     "category": "Peoples",
