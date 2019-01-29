@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import Emoji from "../models/Emoji.js";
-
 export default {
   name: "Emojis",
   props: {

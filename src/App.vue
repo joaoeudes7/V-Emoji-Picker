@@ -1,16 +1,21 @@
 <template>
   <div>
-    <EmojiPicker :pack="pack" />
+    <VEmojiPicker :pack="pack" />
   </div>
 </template>
 
 <script>
-import EmojiPicker from './index.js';
+import VEmojiPicker from './index.js';
 import packData from '../data/emojis.json';
 
 export default {
   name: 'Demo',
-  components: { EmojiPicker },
+  components: {
+    VEmojiPicker
+  },
+  moutend() {
+    console.log(VEmojiPicker)
+  },
   data: () => ({
     pack: packData
   })

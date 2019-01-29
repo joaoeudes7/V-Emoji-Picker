@@ -11,10 +11,12 @@
 </template>
 
 <script>
+import VSvg from './VSvg';
+
 export default {
   name: "Categories",
   components: {
-    VSvg: () => import("./VSvg.vue")
+    VSvg
   },
   data: () => ({
     categories: [
@@ -42,15 +44,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables";
-
 #Categories {
   display: flex;
   width: 100%;
   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid #e4e4e4;
-  background: $secundary;
+  background: #F0F0F0;
   color: white;
 }
 
@@ -71,7 +71,7 @@ export default {
 }
 
 .active {
-  border-bottom: 3px solid $primary;
+  border-bottom: 3px solid #009688;
   filter: saturate(3);
 }
 </style>

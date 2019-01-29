@@ -7,6 +7,10 @@
 </template>
 
 <script>
+import Categories from './Categories';
+import Emojis from './Emojis';
+import Helper from './Helper';
+
 export default {
   name: "VEmojiPicker",
   props: {
@@ -15,9 +19,9 @@ export default {
     showHelper: { type: Boolean, default: true }
   },
   components: {
-    Categories: () => import("./Categories"),
-    Emojis: () => import("./Emojis"),
-    Helper: () => import("./Helper")
+    Categories,
+    Emojis,
+    Helper
   },
   data: () => ({
     mapEmojis: {},
@@ -67,13 +71,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables";
-
 #EmojiPicker {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  background: $secundary;
+  background: #F0F0F0;
   border-radius: 4px;
   border: 1px solid #e4e4e4;
   overflow: hidden;
