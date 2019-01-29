@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "EmojiPicker",
+  name: "VEmojiPicker",
   props: {
     pack: { type: Array, required: true },
     showCategory: { type: Boolean, default: true },

@@ -1,7 +1,13 @@
-import EmojiPicker from './components/EmojiPicker.vue';
+import Vue from 'vue';
+
+import VEmojiPicker from './components/VEmojiPicker.vue';
 
 export const Components = {
-  EmojiPicker
+  VEmojiPicker,
 }
 
-export default EmojiPicker;
+Object.keys(Components).forEach(name => {
+  Vue.use(name, Components[name]);
+})
+
+export default VEmojiPicker;

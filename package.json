@@ -1,19 +1,19 @@
 {
-  "name": "vue-emoji-picker",
-  "version": "1.0.0",
+  "name": "v-emoji-picker",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "João Eudes Lima <joaoeudes7@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --target lib --name vue-emoji-picker ./src/index.js",
-    "build-wc": "vue-cli-service build --target wc --name vue-emoji-picker 'src/components/*.vue'",
-    "build-wc-async": "vue-cli-service build --target wc-async --name vue-emoji-picker 'src/components/*.vue'",
+    "build": "vue-cli-service build --target lib --name v-emoji-picker ./src/index.js",
+    "build-wc": "vue-cli-service build --target wc --name v-emoji-picker 'src/components/*.vue'",
+    "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker 'src/components/*.vue'",
     "lint": "vue-cli-service lint"
   },
-  "main": "dist/vue-emoji-picker.umd.js",
-  "module": "dist/vue-emoji-picker.esm.js",
-  "unpkg": "dist/vue-emoji-picker.min.js",
-  "style": "dist/vue-emoji-picker.css",
+  "main": "dist/v-emoji-picker.umd.js",
+  "module": "dist/v-emoji-picker.esm.js",
+  "unpkg": "dist/v-emoji-picker.min.js",
+  "style": "dist/v-emoji-picker.css",
   "keywords": [
     "javascript",
     "vue",
@@ -24,8 +24,6 @@
     "data/*"
   ],
   "dependencies": {
-    "popper.js": "^1.14.3",
-    "skin-tone": "^1.0.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {
