@@ -1,9 +1,9 @@
 <template>
-  <img id="VSvg" :src="pathSvg" :style="styleSVG">
+  <span id="VSvg" :src="pathSvg" :style="styleSVG" v-html="icon">
 </template>
 
 <script>
-const cache = {};
+import { categories } from './_Icons.js';
 
 export default {
   name: "VSvg",
@@ -12,15 +12,8 @@ export default {
     styles: { type: Object }
   },
   computed: {
-    pathSvg() {
-      if (!cache[this.name]) {
-        let file = this.name;
-        if (!file.includes(".svg")) {
-          file += ".svg";
-        }
-        cache[this.name] = require(`@/assets/icons/${file}`);
-      }
-      return cache[this.name];
+    icon() {
+      return categories[this.name];
     },
     styleSVG() {
       return {
