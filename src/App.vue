@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import EmojiPicker from './components/EmojiPicker';
+import EmojiPicker from './index.js';
 import packData from '../data/emojis.json';
 
 export default {

@@ -6,17 +6,22 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib --name vue-emoji-picker ./src/index.js",
+    "build-wc": "vue-cli-service build --target wc --name vue-emoji-picker 'src/components/*.vue'",
+    "build-wc-async": "vue-cli-service build --target wc-async --name vue-emoji-picker 'src/components/*.vue'",
     "lint": "vue-cli-service lint"
   },
-  "main": "./dist/emoji-picker.common.js",
-  "style": "./dist/emoji-picker.css",
+  "main": "dist/vue-emoji-picker.umd.js",
+  "module": "dist/vue-emoji-picker.esm.js",
+  "unpkg": "dist/vue-emoji-picker.min.js",
+  "style": "dist/vue-emoji-picker.css",
   "keywords": [
     "javascript",
     "vue",
     "emoji"
   ],
   "files": [
-    "dist/*"
+    "dist/*",
+    "data/*"
   ],
   "dependencies": {
     "popper.js": "^1.14.3",
