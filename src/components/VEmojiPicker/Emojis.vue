@@ -91,18 +91,16 @@ export default {
 .grid-emojis {
   display: grid;
   margin: 10px 0;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: none;
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
   align-items: start;
-  justify-items: center;
 }
 
 .emoji {
-  cursor: pointer;
+  display: inline-block;
   text-align: center;
   font-size: 25px;
   margin: 0 4.5px;
   max-height: 30px;
+  cursor: pointer;
 }
 </style>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import VEmojiPicker from '../dist/v-emoji-picker.umd.js';
+import VEmojiPicker from './components/VEmojiPicker/VEmojiPicker';
 import packData from '../data/emojis.json';
 
 export default {
