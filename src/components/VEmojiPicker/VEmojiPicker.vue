@@ -79,7 +79,7 @@ export default {
   border-radius: 4px;
   border: 1px solid #e4e4e4;
   overflow: hidden;
-  width: 350px;
+  width: 325px;
   user-select: none;
 }
 </style>

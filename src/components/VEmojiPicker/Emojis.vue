@@ -63,6 +63,7 @@ export default {
 #Emojis {
   display: block;
   width: 100%;
+  max-width: 100%;
 }
 
 .container-search {
@@ -91,7 +92,7 @@ export default {
 .grid-emojis {
   display: grid;
   margin: 10px 0;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 20%);
   align-items: start;
 }
 
@@ -99,7 +100,7 @@ export default {
   display: inline-block;
   text-align: center;
   font-size: 25px;
-  margin: 0 4.5px;
+  padding: 5px;
   max-height: 30px;
   cursor: pointer;
 }
