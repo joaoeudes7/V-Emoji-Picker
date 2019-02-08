@@ -29,7 +29,6 @@ export default {
   }),
   created() {
     this.mapperData(this.pack);
-    console.log(this.mapEmojis);
   },
   methods: {
     onChangeCategory(category) {
@@ -37,7 +36,7 @@ export default {
     },
     onSelectEmoji(emoji) {
       this.updateFrequenty(emoji);
-      console.log(emoji);
+      this.$emit('select', emoji);
     },
     updateFrequenty(emoji) {
       if (!this.mapEmojis['Frequenty']) {

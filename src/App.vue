@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <VEmojiPicker :pack="pack" />
+  <div id="app">
+    <VEmojiPicker :pack="pack" @select="selectEmoji" />
   </div>
 </template>
 
@@ -13,15 +13,13 @@ export default {
   components: {
     VEmojiPicker
   },
-  moutend() {
-    console.log(VEmojiPicker)
-  },
   data: () => ({
     pack: packData
-  })
+  }),
+  methods: {
+    selectEmoji(emoji) {
+      console.log(emoji)
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>

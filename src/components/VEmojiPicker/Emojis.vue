@@ -64,6 +64,26 @@ export default {
   display: block;
   width: 100%;
   max-width: 100%;
+
+  // Custom Scroll
+  ::-webkit-scrollbar {
+    border-radius: 4px;
+    width: 4px;
+    background: #7c7c7c5b;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #00000038;
+
+    &:hover {
+      background: #00000062;
+    }
+  }
 }
 
 .container-search {
@@ -85,7 +105,7 @@ export default {
 
 .container-emoji {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 350px;
 }
 

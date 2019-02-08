@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { categories } from './_Icons.js';
+import { categories } from './icons.js';
 
 export default {
   name: "VSvg",
