@@ -1,11 +1,12 @@
 # V-Emoji-Picker
+This simple package use Emojis Natives
 
 [![npm](https://img.shields.io/npm/v/v-emoji-picker.svg)
 ![bundlephobia](https://img.shields.io/bundlephobia/minzip/v-emoji-picker.svg?style=flat)
-![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker.svg)
+![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-![](.demo.png)
+![example: Android](.demo.png)
 
 ## Table of contents
 - [Installation](#installation)
