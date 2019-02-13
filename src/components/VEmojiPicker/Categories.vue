@@ -1,7 +1,7 @@
 <template>
   <div id="Categories">
     <div
-      :class="[{ 'active': index === active }, 'category']"
+      :class="['category', { 'active': index === active }]"
       v-for="(categorie, index) in categories"
       :key="index"
       @click="onSelect(index)" >
@@ -56,9 +56,16 @@ export default {
 
 .category {
   flex: 1;
-  padding: 5px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
   cursor: pointer;
+
+  &.active {
+    border-bottom: 3px solid #009688;
+    filter: saturate(3);
+    padding-bottom: 2px;
+  }
 
   & > img {
     width: 22px;
@@ -68,11 +75,6 @@ export default {
   &:hover {
     filter: saturate(3);
   }
-}
-
-.active {
-  border-bottom: 3px solid #009688;
-  filter: saturate(3);
 }
 </style>
 

@@ -47,6 +47,24 @@ export default {
 
 ```
 
+## Props
+```js
+{
+  pack: { type: Array, required: true },
+  labelSearch: { type: String, default: 'Pesquisar...' },
+  showCategory: { type: Boolean, default: true },
+  emojisByRow: { type: Number, default: 5}
+}
+```
+
+## Events
+```js
+{
+  select: 'Emit event on Selected Emoji',
+  changeCategory: 'Emit event on Change Category'
+}
+```
+
 # Estructure Emoji
 ![](.emoji.png)
 
