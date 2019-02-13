@@ -1,7 +1,7 @@
 <template>
   <div id="Emojis" ref="Emojis">
     <div class="container-search">
-      <input type="text" :value="searchValue" @keyup="setValue($event)" placeholder="Pesquisar...">
+      <input type="text" :value="searchValue" @keyup="setValue($event)" :placeholder="placeholder">
     </div>
     <div class="container-emoji">
       <div class="grid-emojis">
@@ -22,7 +22,8 @@ export default {
   name: "Emojis",
   props: {
     data: { type: Array, required: true },
-    emojiByRow: { type: Number, default: 6 }
+    emojiByRow: { type: Number, default: 6 },
+    placeholder: { type: String, default: 'Pesquisar' }
   },
   data: () => ({
     searchValue: ""
