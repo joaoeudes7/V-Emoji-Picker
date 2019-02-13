@@ -1,10 +1,7 @@
 <template>
   <div id="Emojis" ref="Emojis">
-    <div class="container-search">
-      <input type="text" :value="searchValue" @keyup="setValue($event)" :placeholder="placeholder">
-    </div>
     <div class="container-emoji">
-      <div class="grid-emojis">
+      <div class="grid-emojis" :style="gridDynamic">
         <span
           v-for="(emoji, index) in dataFiltered"
           :key="index"
@@ -22,29 +19,29 @@ export default {
   name: "Emojis",
   props: {
     data: { type: Array, required: true },
-    emojiByRow: { type: Number, default: 6 },
-    placeholder: { type: String, default: 'Pesquisar' }
+    emojisByRow: { type: Number, required: true },
+    filter: { type: String }
   },
-  data: () => ({
-    searchValue: ""
-  }),
   methods: {
     onSelect(emoji) {
       this.$emit("select", emoji);
-    },
-    setValue(event) {
-      console.log(event)
-      this.searchValue = event.target.value;
     }
   },
   computed: {
+    gridDynamic() {
+      const percent = 100/this.emojisByRow;
+      return {
+        gridTemplateColumns: `repeat(${this.emojisByRow}, ${percent}%)`
+      }
+    },
     dataFiltered() {
       let data = this.data;
+      const searchValue = this.filter.trim()
 
-      if (this.searchValue.trim()) {
+      if (searchValue) {
         data = data.filter(item => {
           return item.aliases.some(alias =>
-            alias.includes(this.searchValue.toLowerCase())
+            alias.includes(searchValue.toLowerCase())
           );
         });
       }
@@ -87,23 +84,6 @@ export default {
   }
 }
 
-.container-search {
-  display: block;
-  justify-content: center;
-  margin: 5px 0;
-  padding: 0 5%;
-
-  input {
-    width: 100%;
-    font-size: 14px;
-    padding: 8px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    background: #f6f6f6;
-    border: 1px solid #e2e2e2;
-  }
-}
-
 .container-emoji {
   overflow-x: hidden;
   overflow-y: scroll;
@@ -112,8 +92,7 @@ export default {
 
 .grid-emojis {
   display: grid;
-  margin: 10px 0;
-  grid-template-columns: repeat(5, 20%);
+  margin: 5px 0;
   align-items: start;
 }
 
