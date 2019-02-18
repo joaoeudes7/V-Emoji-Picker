@@ -69,4 +69,5 @@ export default {
 ![](.emoji.png)
 
 # Demo
-<!-- Click here to view in Browser: [Vue Component (Multi Select/Double Select)](link) -->
+Click here to view in Browser: 
+[Vue Component | Emojis | Simples Example](https://codesandbox.io/s/0m9x7ooo8v)
