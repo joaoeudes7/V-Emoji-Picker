@@ -1,7 +1,7 @@
 <template>
   <div id="EmojiPicker">
     <Categories v-if="showCategory" @select="onChangeCategory($event)" />
-    <InputSearch v-model="filterEmoji" :placeholder="labelSearch" />
+    <InputSearch v-show="showSearch" v-model="filterEmoji" :placeholder="labelSearch" />
     <Emojis
       :data="emojis"
       :filter="filterEmoji"
@@ -22,7 +22,8 @@ export default {
     pack: { type: Array, required: true },
     labelSearch: { type: String, default: 'Pesquisar...' },
     showCategory: { type: Boolean, default: true },
-    emojisByRow: { type: Number, default: 5}
+    emojisByRow: { type: Number, default: 5},
+    showSearch: { type: Boolean, default: () => true }
   },
   components: {
     Categories,

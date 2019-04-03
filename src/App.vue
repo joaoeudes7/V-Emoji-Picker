@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <VEmojiPicker :pack="pack" @select="selectEmoji" />
+    <VEmojiPicker :pack="pack" labelSearch="Pesquisar..." @select="selectEmoji" />
   </div>
 </template>
 
