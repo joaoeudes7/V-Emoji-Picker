@@ -53,7 +53,8 @@ export default {
   pack: { type: Array, required: true },
   labelSearch: { type: String, default: 'Pesquisar...' },
   showCategory: { type: Boolean, default: true },
-  emojisByRow: { type: Number, default: 5}
+  emojisByRow: { type: Number, default: 5 },
+  showSearch: { type: Boolean, default: () => true }
 }
 ```
 
@@ -69,5 +70,5 @@ export default {
 ![](.emoji.png)
 
 # Demo
-Click here to view in Browser: 
+Click here to view in Browser:
 [Vue Component | Emojis | Simples Example](https://codesandbox.io/s/0m9x7ooo8v)
