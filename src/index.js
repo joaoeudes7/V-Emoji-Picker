@@ -1,26 +1,26 @@
-import VEmojiPicker from './components/VEmojiPicker/VEmojiPicker.vue';
+import VEmojiPicker from "./components/VEmojiPicker/VEmojiPicker.vue";
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
-	if (install.installed) return;
-	install.installed = true;
-	Vue.component('VEmojiPicker', VEmojiPicker);
+  if (install.installed) return;
+  install.installed = true;
+  Vue.component("VEmojiPicker", VEmojiPicker);
 }
 
 // Create module definition for Vue.use()
 const plugin = {
-	install,
+  install
 };
 
 // Auto-install when vue is found (eg. in browser via <script> tag)
 let GlobalVue = null;
-if (typeof window !== 'undefined') {
-	GlobalVue = window.Vue;
-} else if (typeof global !== 'undefined') {
-	GlobalVue = global.Vue;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
 }
 if (GlobalVue) {
-	GlobalVue.use(plugin);
+  GlobalVue.use(plugin);
 }
 
 export default VEmojiPicker;

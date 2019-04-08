@@ -1,15 +1,20 @@
 <template>
   <div id="app">
-    <VEmojiPicker :pack="pack" labelSearch="Pesquisar..." @select="selectEmoji" />
+    <VEmojiPicker
+      :pack="pack"
+      labelSearch="Pesquisar..."
+      @select="selectEmoji"
+      :continuousList="true"
+    />
   </div>
 </template>
 
 <script>
-import VEmojiPicker from './components/VEmojiPicker';
-import packData from '../data/emojis.json';
+import VEmojiPicker from "./components/VEmojiPicker";
+import packData from "../data/emojis.json";
 
 export default {
-  name: 'Demo',
+  name: "Demo",
   components: {
     VEmojiPicker
   },
@@ -18,8 +23,9 @@ export default {
   }),
   methods: {
     selectEmoji(emoji) {
-      console.log(emoji)
+      // eslint-disable-next-line no-console
+      console.log(emoji);
     }
   }
-}
+};
 </script>

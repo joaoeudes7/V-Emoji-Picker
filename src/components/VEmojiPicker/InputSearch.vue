@@ -1,7 +1,12 @@
 <template>
   <div id="InputSearch">
     <div class="container-search">
-      <input type="text" :value="value" @keyup="onKeyUp($event)" :placeholder="placeholder">
+      <input
+        type="text"
+        :value="value"
+        @keyup="onKeyUp($event)"
+        :placeholder="placeholder"
+      />
     </div>
   </div>
 </template>
@@ -44,6 +49,7 @@ export default {
     box-sizing: border-box;
     border-radius: 8px;
     background: #f6f6f6;
+    color: #4a4a4a;
     border: 1px solid #e2e2e2;
   }
 }

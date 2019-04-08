@@ -1,3 +1,3 @@
-import VEmojiPicker from './VEmojiPicker'
+import VEmojiPicker from "./VEmojiPicker";
 
 export default VEmojiPicker;
