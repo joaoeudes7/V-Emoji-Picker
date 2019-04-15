@@ -1,17 +1,18 @@
 <template>
   <div id="Categories">
     <div
-      :class="['category', { 'active': index === active }]"
+      :class="['category', { active: index === active }]"
       v-for="(categorie, index) in categories"
       :key="index"
-      @click="onSelect(index)" >
-      <VSvg :name="categorie.icon"/>
+      @click="onSelect(index)"
+    >
+      <VSvg :name="categorie.icon" />
     </div>
   </div>
 </template>
 
 <script>
-import VSvg from './VSvg';
+import VSvg from "./VSvg";
 
 export default {
   name: "Categories",
@@ -50,7 +51,7 @@ export default {
   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid #e4e4e4;
-  background: #F0F0F0;
+  background: #f0f0f0;
   color: white;
 }
 
@@ -77,4 +78,3 @@ export default {
   }
 }
 </style>
-
