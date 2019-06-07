@@ -1,16 +1,17 @@
 <template>
   <div id="app">
     <VEmojiPicker
-      :pack="pack"
       labelSearch="Pesquisar..."
-      @select="selectEmoji"
+      :showSearch="false"
+      :pack="pack"
       :continuousList="true"
+      @select="selectEmoji"
     />
   </div>
 </template>
 
 <script>
-import VEmojiPicker from "./components/VEmojiPicker";
+import VEmojiPicker from "../dist/v-emoji-picker.umd.min.js";
 import packData from "../data/emojis.json";
 
 export default {
