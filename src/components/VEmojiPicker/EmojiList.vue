@@ -102,8 +102,9 @@ export default {
     category(new_category) {
       if (this.continuousList) {
         const firstItemCategory = this.$refs[new_category][0];
-        this.$refs["container-emoji"].scrollTop =
-          firstItemCategory.offsetTop - 80;
+        const scrollTop = firstItemCategory.offsetTop - 80;
+
+        this.$refs["container-emoji"].scrollTop = scrollTop;
       }
     }
   }
