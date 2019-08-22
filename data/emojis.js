@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 class Emoji {
   constructor(emoji, description, category, aliases, tags) {
     this.emoji = emoji;
@@ -9,136 +10,34 @@ class Emoji {
 }
 
 export default [
-  new Emoji("😀", "grinning face", "Peoples", ["grinning"], ["smile", "happy"]),
-  new Emoji(
-    "😃",
-    "smiling face with open mouth",
-    "Peoples",
-    ["smiley"],
-    ["happy", "joy", "haha"]
-  ),
-  new Emoji(
-    "😄",
-    "smiling face with open mouth & smiling eyes",
-    "Peoples",
-    ["smile"],
-    ["happy", "joy", "laugh", "pleased"]
-  ),
+  new Emoji("😀", "grinning face", "Peoples", ["grinning"], ["smile","happy"]),
+  new Emoji("😃", "smiling face with open mouth", "Peoples", ["smiley"], ["happy","joy","haha"]),
+  new Emoji("😄", "smiling face with open mouth & smiling eyes", "Peoples", ["smile"], ["happy","joy","laugh","pleased"]),
   new Emoji("😁", "grinning face with smiling eyes", "Peoples", ["grin"], []),
-  new Emoji(
-    "😆",
-    "smiling face with open mouth & closed eyes",
-    "Peoples",
-    ["laughing", "satisfied"],
-    ["happy", "haha"]
-  ),
-  new Emoji(
-    "😅",
-    "smiling face with open mouth & cold sweat",
-    "Peoples",
-    ["sweat_smile"],
-    ["hot"]
-  ),
+  new Emoji("😆", "smiling face with open mouth & closed eyes", "Peoples", ["laughing","satisfied"], ["happy","haha"]),
+  new Emoji("😅", "smiling face with open mouth & cold sweat", "Peoples", ["sweat_smile"], ["hot"]),
   new Emoji("😂", "face with tears of joy", "Peoples", ["joy"], ["tears"]),
-  new Emoji(
-    "🤣",
-    "rolling on the floor laughing",
-    "Peoples",
-    ["rofl"],
-    ["lol", "laughing"]
-  ),
-  new Emoji("😌", "smiling face", "Peoples", ["relaxed"], ["blush", "pleased"]),
-  new Emoji(
-    "😊",
-    "smiling face with smiling eyes",
-    "Peoples",
-    ["blush"],
-    ["proud"]
-  ),
+  new Emoji("🤣", "rolling on the floor laughing", "Peoples", ["rofl"], ["lol","laughing"]),
+  new Emoji("😌", "smiling face", "Peoples", ["relaxed"], ["blush","pleased"]),
+  new Emoji("😊", "smiling face with smiling eyes", "Peoples", ["blush"], ["proud"]),
   new Emoji("😇", "smiling face with halo", "Peoples", ["innocent"], ["angel"]),
-  new Emoji(
-    "🙂",
-    "slightly smiling face",
-    "Peoples",
-    ["slightly_smiling_face"],
-    []
-  ),
+  new Emoji("🙂", "slightly smiling face", "Peoples", ["slightly_smiling_face"], []),
   new Emoji("🙃", "upside-down face", "Peoples", ["upside_down_face"], []),
   new Emoji("😉", "winking face", "Peoples", ["wink"], ["flirt"]),
   new Emoji("😌", "relieved face", "Peoples", ["relieved"], ["whew"]),
-  new Emoji(
-    "😍",
-    "smiling face with heart-eyes",
-    "Peoples",
-    ["heart_eyes"],
-    ["love", "crush"]
-  ),
-  new Emoji(
-    "😘",
-    "face blowing a kiss",
-    "Peoples",
-    ["kissing_heart"],
-    ["flirt"]
-  ),
+  new Emoji("😍", "smiling face with heart-eyes", "Peoples", ["heart_eyes"], ["love","crush"]),
+  new Emoji("😘", "face blowing a kiss", "Peoples", ["kissing_heart"], ["flirt"]),
   new Emoji("😗", "kissing face", "Peoples", ["kissing"], []),
-  new Emoji(
-    "😙",
-    "kissing face with smiling eyes",
-    "Peoples",
-    ["kissing_smiling_eyes"],
-    []
-  ),
-  new Emoji(
-    "😚",
-    "kissing face with closed eyes",
-    "Peoples",
-    ["kissing_closed_eyes"],
-    []
-  ),
-  new Emoji(
-    "😋",
-    "face savouring delicious food",
-    "Peoples",
-    ["yum"],
-    ["tongue", "lick"]
-  ),
-  new Emoji(
-    "😜",
-    "face with stuck-out tongue & winking eye",
-    "Peoples",
-    ["stuck_out_tongue_winking_eye"],
-    ["prank", "silly"]
-  ),
-  new Emoji(
-    "😝",
-    "face with stuck-out tongue & closed eyes",
-    "Peoples",
-    ["stuck_out_tongue_closed_eyes"],
-    ["prank"]
-  ),
-  new Emoji(
-    "😛",
-    "face with stuck-out tongue",
-    "Peoples",
-    ["stuck_out_tongue"],
-    []
-  ),
-  new Emoji(
-    "🤑",
-    "money-mouth face",
-    "Peoples",
-    ["money_mouth_face"],
-    ["rich"]
-  ),
+  new Emoji("😙", "kissing face with smiling eyes", "Peoples", ["kissing_smiling_eyes"], []),
+  new Emoji("😚", "kissing face with closed eyes", "Peoples", ["kissing_closed_eyes"], []),
+  new Emoji("😋", "face savouring delicious food", "Peoples", ["yum"], ["tongue","lick"]),
+  new Emoji("😜", "face with stuck-out tongue & winking eye", "Peoples", ["stuck_out_tongue_winking_eye"], ["prank","silly"]),
+  new Emoji("😝", "face with stuck-out tongue & closed eyes", "Peoples", ["stuck_out_tongue_closed_eyes"], ["prank"]),
+  new Emoji("😛", "face with stuck-out tongue", "Peoples", ["stuck_out_tongue"], []),
+  new Emoji("🤑", "money-mouth face", "Peoples", ["money_mouth_face"], ["rich"]),
   new Emoji("🤗", "hugging face", "Peoples", ["hugs"], []),
-  new Emoji("🤓", "nerd face", "Peoples", ["nerd_face"], ["geek", "glasses"]),
-  new Emoji(
-    "😎",
-    "smiling face with sunglasses",
-    "Peoples",
-    ["sunglasses"],
-    ["cool"]
-  ),
+  new Emoji("🤓", "nerd face", "Peoples", ["nerd_face"], ["geek","glasses"]),
+  new Emoji("😎", "smiling face with sunglasses", "Peoples", ["sunglasses"], ["cool"]),
   new Emoji("🤡", "clown face", "Peoples", ["clown_face"], []),
   new Emoji("🤠", "cowboy hat face", "Peoples", ["cowboy_hat_face"], []),
   new Emoji("😏", "smirking face", "Peoples", ["smirk"], ["smug"]),
@@ -147,98 +46,32 @@ export default [
   new Emoji("😔", "pensive face", "Peoples", ["pensive"], []),
   new Emoji("😟", "worried face", "Peoples", ["worried"], ["nervous"]),
   new Emoji("😕", "confused face", "Peoples", ["confused"], []),
-  new Emoji(
-    "🙁",
-    "slightly frowning face",
-    "Peoples",
-    ["slightly_frowning_face"],
-    []
-  ),
+  new Emoji("🙁", "slightly frowning face", "Peoples", ["slightly_frowning_face"], []),
   new Emoji("☹️", "frowning face", "Peoples", ["frowning_face"], []),
   new Emoji("😣", "persevering face", "Peoples", ["persevere"], ["struggling"]),
   new Emoji("😖", "confounded face", "Peoples", ["confounded"], []),
-  new Emoji("😫", "tired face", "Peoples", ["tired_face"], ["upset", "whine"]),
+  new Emoji("😫", "tired face", "Peoples", ["tired_face"], ["upset","whine"]),
   new Emoji("😩", "weary face", "Peoples", ["weary"], ["tired"]),
-  new Emoji(
-    "😤",
-    "face with steam from nose",
-    "Peoples",
-    ["triumph"],
-    ["smug"]
-  ),
-  new Emoji("😠", "angry face", "Peoples", ["angry"], ["mad", "annoyed"]),
-  new Emoji("😡", "pouting face", "Peoples", ["rage", "pout"], ["angry"]),
-  new Emoji(
-    "😶",
-    "face without mouth",
-    "Peoples",
-    ["no_mouth"],
-    ["mute", "silence"]
-  ),
+  new Emoji("😤", "face with steam from nose", "Peoples", ["triumph"], ["smug"]),
+  new Emoji("😠", "angry face", "Peoples", ["angry"], ["mad","annoyed"]),
+  new Emoji("😡", "pouting face", "Peoples", ["rage","pout"], ["angry"]),
+  new Emoji("😶", "face without mouth", "Peoples", ["no_mouth"], ["mute","silence"]),
   new Emoji("😐", "neutral face", "Peoples", ["neutral_face"], ["meh"]),
   new Emoji("😑", "expressionless face", "Peoples", ["expressionless"], []),
-  new Emoji(
-    "😯",
-    "hushed face",
-    "Peoples",
-    ["hushed"],
-    ["silence", "speechless"]
-  ),
+  new Emoji("😯", "hushed face", "Peoples", ["hushed"], ["silence","speechless"]),
   new Emoji("😦", "frowning face with open mouth", "Peoples", ["frowning"], []),
   new Emoji("😧", "anguished face", "Peoples", ["anguished"], ["stunned"]),
-  new Emoji(
-    "😮",
-    "face with open mouth",
-    "Peoples",
-    ["open_mouth"],
-    ["surprise", "impressed", "wow"]
-  ),
-  new Emoji(
-    "😲",
-    "astonished face",
-    "Peoples",
-    ["astonished"],
-    ["amazed", "gasp"]
-  ),
+  new Emoji("😮", "face with open mouth", "Peoples", ["open_mouth"], ["surprise","impressed","wow"]),
+  new Emoji("😲", "astonished face", "Peoples", ["astonished"], ["amazed","gasp"]),
   new Emoji("😵", "dizzy face", "Peoples", ["dizzy_face"], []),
   new Emoji("😳", "flushed face", "Peoples", ["flushed"], []),
-  new Emoji(
-    "😱",
-    "face screaming in fear",
-    "Peoples",
-    ["scream"],
-    ["horror", "shocked"]
-  ),
-  new Emoji(
-    "😨",
-    "fearful face",
-    "Peoples",
-    ["fearful"],
-    ["scared", "shocked", "oops"]
-  ),
-  new Emoji(
-    "😰",
-    "face with open mouth & cold sweat",
-    "Peoples",
-    ["cold_sweat"],
-    ["nervous"]
-  ),
-  new Emoji("😢", "crying face", "Peoples", ["cry"], ["sad", "tear"]),
-  new Emoji(
-    "😥",
-    "disappointed but relieved face",
-    "Peoples",
-    ["disappointed_relieved"],
-    ["phew", "sweat", "nervous"]
-  ),
+  new Emoji("😱", "face screaming in fear", "Peoples", ["scream"], ["horror","shocked"]),
+  new Emoji("😨", "fearful face", "Peoples", ["fearful"], ["scared","shocked","oops"]),
+  new Emoji("😰", "face with open mouth & cold sweat", "Peoples", ["cold_sweat"], ["nervous"]),
+  new Emoji("😢", "crying face", "Peoples", ["cry"], ["sad","tear"]),
+  new Emoji("😥", "disappointed but relieved face", "Peoples", ["disappointed_relieved"], ["phew","sweat","nervous"]),
   new Emoji("🤤", "drooling face", "Peoples", ["drooling_face"], []),
-  new Emoji(
-    "😭",
-    "loudly crying face",
-    "Peoples",
-    ["sob"],
-    ["sad", "cry", "bawling"]
-  ),
+  new Emoji("😭", "loudly crying face", "Peoples", ["sob"], ["sad","cry","bawling"]),
   new Emoji("😓", "face with cold sweat", "Peoples", ["sweat"], []),
   new Emoji("😪", "sleepy face", "Peoples", ["sleepy"], ["tired"]),
   new Emoji("😴", "sleeping face", "Peoples", ["sleeping"], ["zzz"]),
@@ -246,428 +79,116 @@ export default [
   new Emoji("🤔", "thinking face", "Peoples", ["thinking"], []),
   new Emoji("🤥", "lying face", "Peoples", ["lying_face"], ["liar"]),
   new Emoji("😬", "grimacing face", "Peoples", ["grimacing"], []),
-  new Emoji(
-    "🤐",
-    "zipper-mouth face",
-    "Peoples",
-    ["zipper_mouth_face"],
-    ["silence", "hush"]
-  ),
-  new Emoji(
-    "🤢",
-    "nauseated face",
-    "Peoples",
-    ["nauseated_face"],
-    ["sick", "barf", "disgusted"]
-  ),
-  new Emoji(
-    "🤧",
-    "sneezing face",
-    "Peoples",
-    ["sneezing_face"],
-    ["achoo", "sick"]
-  ),
-  new Emoji(
-    "😷",
-    "face with medical mask",
-    "Peoples",
-    ["mask"],
-    ["sick", "ill"]
-  ),
-  new Emoji(
-    "🤒",
-    "face with thermometer",
-    "Peoples",
-    ["face_with_thermometer"],
-    ["sick"]
-  ),
-  new Emoji(
-    "🤕",
-    "face with head-bandage",
-    "Peoples",
-    ["face_with_head_bandage"],
-    ["hurt"]
-  ),
-  new Emoji(
-    "😈",
-    "smiling face with horns",
-    "Peoples",
-    ["smiling_imp"],
-    ["devil", "evil", "horns"]
-  ),
-  new Emoji(
-    "👿",
-    "angry face with horns",
-    "Peoples",
-    ["imp"],
-    ["angry", "devil", "evil", "horns"]
-  ),
+  new Emoji("🤐", "zipper-mouth face", "Peoples", ["zipper_mouth_face"], ["silence","hush"]),
+  new Emoji("🤢", "nauseated face", "Peoples", ["nauseated_face"], ["sick","barf","disgusted"]),
+  new Emoji("🤧", "sneezing face", "Peoples", ["sneezing_face"], ["achoo","sick"]),
+  new Emoji("😷", "face with medical mask", "Peoples", ["mask"], ["sick","ill"]),
+  new Emoji("🤒", "face with thermometer", "Peoples", ["face_with_thermometer"], ["sick"]),
+  new Emoji("🤕", "face with head-bandage", "Peoples", ["face_with_head_bandage"], ["hurt"]),
+  new Emoji("😈", "smiling face with horns", "Peoples", ["smiling_imp"], ["devil","evil","horns"]),
+  new Emoji("👿", "angry face with horns", "Peoples", ["imp"], ["angry","devil","evil","horns"]),
   new Emoji("👹", "ogre", "Peoples", ["japanese_ogre"], ["monster"]),
   new Emoji("👺", "goblin", "Peoples", ["japanese_goblin"], []),
-  new Emoji(
-    "💩",
-    "pile of poo",
-    "Peoples",
-    ["hankey", "poop", "shit"],
-    ["crap"]
-  ),
+  new Emoji("💩", "pile of poo", "Peoples", ["hankey","poop","shit"], ["crap"]),
   new Emoji("👻", "ghost", "Peoples", ["ghost"], ["halloween"]),
-  new Emoji("💀", "skull", "Peoples", ["skull"], ["dead", "danger", "poison"]),
-  new Emoji(
-    "☠️",
-    "skull and crossbones",
-    "Peoples",
-    ["skull_and_crossbones"],
-    ["danger", "pirate"]
-  ),
+  new Emoji("💀", "skull", "Peoples", ["skull"], ["dead","danger","poison"]),
+  new Emoji("☠️", "skull and crossbones", "Peoples", ["skull_and_crossbones"], ["danger","pirate"]),
   new Emoji("👽", "alien", "Peoples", ["alien"], ["ufo"]),
-  new Emoji(
-    "👾",
-    "alien monster",
-    "Peoples",
-    ["space_invader"],
-    ["game", "retro"]
-  ),
+  new Emoji("👾", "alien monster", "Peoples", ["space_invader"], ["game","retro"]),
   new Emoji("🤖", "robot face", "Peoples", ["robot"], []),
-  new Emoji(
-    "🎃",
-    "jack-o-lantern",
-    "Peoples",
-    ["jack_o_lantern"],
-    ["halloween"]
-  ),
-  new Emoji(
-    "😺",
-    "smiling cat face with open mouth",
-    "Peoples",
-    ["smiley_cat"],
-    []
-  ),
-  new Emoji(
-    "😸",
-    "grinning cat face with smiling eyes",
-    "Peoples",
-    ["smile_cat"],
-    []
-  ),
+  new Emoji("🎃", "jack-o-lantern", "Peoples", ["jack_o_lantern"], ["halloween"]),
+  new Emoji("😺", "smiling cat face with open mouth", "Peoples", ["smiley_cat"], []),
+  new Emoji("😸", "grinning cat face with smiling eyes", "Peoples", ["smile_cat"], []),
   new Emoji("😹", "cat face with tears of joy", "Peoples", ["joy_cat"], []),
-  new Emoji(
-    "😻",
-    "smiling cat face with heart-eyes",
-    "Peoples",
-    ["heart_eyes_cat"],
-    []
-  ),
+  new Emoji("😻", "smiling cat face with heart-eyes", "Peoples", ["heart_eyes_cat"], []),
   new Emoji("😼", "cat face with wry smile", "Peoples", ["smirk_cat"], []),
-  new Emoji(
-    "😽",
-    "kissing cat face with closed eyes",
-    "Peoples",
-    ["kissing_cat"],
-    []
-  ),
+  new Emoji("😽", "kissing cat face with closed eyes", "Peoples", ["kissing_cat"], []),
   new Emoji("🙀", "weary cat face", "Peoples", ["scream_cat"], ["horror"]),
-  new Emoji(
-    "😿",
-    "crying cat face",
-    "Peoples",
-    ["crying_cat_face"],
-    ["sad", "tear"]
-  ),
+  new Emoji("😿", "crying cat face", "Peoples", ["crying_cat_face"], ["sad","tear"]),
   new Emoji("😾", "pouting cat face", "Peoples", ["pouting_cat"], []),
   new Emoji("👐", "open hands", "Peoples", ["open_hands"], []),
   new Emoji("🙌", "raising hands", "Peoples", ["raised_hands"], ["hooray"]),
-  new Emoji(
-    "👏",
-    "clapping hands",
-    "Peoples",
-    ["clap"],
-    ["praise", "applause"]
-  ),
-  new Emoji(
-    "🙏",
-    "folded hands",
-    "Peoples",
-    ["pray"],
-    ["please", "hope", "wish"]
-  ),
+  new Emoji("👏", "clapping hands", "Peoples", ["clap"], ["praise","applause"]),
+  new Emoji("🙏", "folded hands", "Peoples", ["pray"], ["please","hope","wish"]),
   new Emoji("🤝", "handshake", "Peoples", ["handshake"], ["deal"]),
-  new Emoji(
-    "👍",
-    "thumbs up",
-    "Peoples",
-    ["+1", "thumbsup"],
-    ["approve", "ok"]
-  ),
-  new Emoji(
-    "👎",
-    "thumbs down",
-    "Peoples",
-    ["-1", "thumbsdown"],
-    ["disapprove", "bury"]
-  ),
-  new Emoji(
-    "👊",
-    "oncoming fist",
-    "Peoples",
-    ["fist_oncoming", "facepunch", "punch"],
-    ["attack"]
-  ),
-  new Emoji("✊", "raised fist", "Peoples", ["fist_raised", "fist"], ["power"]),
+  new Emoji("👍", "thumbs up", "Peoples", ["+1","thumbsup"], ["approve","ok"]),
+  new Emoji("👎", "thumbs down", "Peoples", ["-1","thumbsdown"], ["disapprove","bury"]),
+  new Emoji("👊", "oncoming fist", "Peoples", ["fist_oncoming","facepunch","punch"], ["attack"]),
+  new Emoji("✊", "raised fist", "Peoples", ["fist_raised","fist"], ["power"]),
   new Emoji("🤛", "left-facing fist", "Peoples", ["fist_left"], []),
   new Emoji("🤜", "right-facing fist", "Peoples", ["fist_right"], []),
-  new Emoji(
-    "🤞",
-    "crossed fingers",
-    "Peoples",
-    ["crossed_fingers"],
-    ["luck", "hopeful"]
-  ),
-  new Emoji("✌️", "victory hand", "Peoples", ["v"], ["victory", "peace"]),
+  new Emoji("🤞", "crossed fingers", "Peoples", ["crossed_fingers"], ["luck","hopeful"]),
+  new Emoji("✌️", "victory hand", "Peoples", ["v"], ["victory","peace"]),
   new Emoji("🤘", "sign of the horns", "Peoples", ["metal"], []),
   new Emoji("👌", "OK hand", "Peoples", ["ok_hand"], []),
-  new Emoji(
-    "👈",
-    "backhand index pointing left",
-    "Peoples",
-    ["point_left"],
-    []
-  ),
-  new Emoji(
-    "👉",
-    "backhand index pointing right",
-    "Peoples",
-    ["point_right"],
-    []
-  ),
+  new Emoji("👈", "backhand index pointing left", "Peoples", ["point_left"], []),
+  new Emoji("👉", "backhand index pointing right", "Peoples", ["point_right"], []),
   new Emoji("👆", "backhand index pointing up", "Peoples", ["point_up_2"], []),
-  new Emoji(
-    "👇",
-    "backhand index pointing down",
-    "Peoples",
-    ["point_down"],
-    []
-  ),
+  new Emoji("👇", "backhand index pointing down", "Peoples", ["point_down"], []),
   new Emoji("☝️", "index pointing up", "Peoples", ["point_up"], []),
-  new Emoji(
-    "✋",
-    "raised hand",
-    "Peoples",
-    ["hand", "raised_hand"],
-    ["highfive", "stop"]
-  ),
-  new Emoji(
-    "🤚",
-    "raised back of hand",
-    "Peoples",
-    ["raised_back_of_hand"],
-    []
-  ),
-  new Emoji(
-    "🖐",
-    "raised hand with fingers splayed",
-    "Peoples",
-    ["raised_hand_with_fingers_splayed"],
-    []
-  ),
-  new Emoji(
-    "🖖",
-    "vulcan salute",
-    "Peoples",
-    ["vulcan_salute"],
-    ["prosper", "spock"]
-  ),
+  new Emoji("✋", "raised hand", "Peoples", ["hand","raised_hand"], ["highfive","stop"]),
+  new Emoji("🤚", "raised back of hand", "Peoples", ["raised_back_of_hand"], []),
+  new Emoji("🖐", "raised hand with fingers splayed", "Peoples", ["raised_hand_with_fingers_splayed"], []),
+  new Emoji("🖖", "vulcan salute", "Peoples", ["vulcan_salute"], ["prosper","spock"]),
   new Emoji("👋", "waving hand", "Peoples", ["wave"], ["goodbye"]),
   new Emoji("🤙", "call me hand", "Peoples", ["call_me_hand"], []),
-  new Emoji(
-    "💪",
-    "flexed biceps",
-    "Peoples",
-    ["muscle"],
-    ["flex", "bicep", "strong", "workout"]
-  ),
-  new Emoji("🖕", "middle finger", "Peoples", ["middle_finger", "fu"], []),
+  new Emoji("💪", "flexed biceps", "Peoples", ["muscle"], ["flex","bicep","strong","workout"]),
+  new Emoji("🖕", "middle finger", "Peoples", ["middle_finger","fu"], []),
   new Emoji("✍️", "writing hand", "Peoples", ["writing_hand"], []),
   new Emoji("🤳", "selfie", "Peoples", ["selfie"], []),
-  new Emoji(
-    "💅",
-    "nail polish",
-    "Peoples",
-    ["nail_care"],
-    ["beauty", "manicure"]
-  ),
-  new Emoji(
-    "💍",
-    "ring",
-    "Peoples",
-    ["ring"],
-    ["wedding", "marriage", "engaged"]
-  ),
+  new Emoji("💅", "nail polish", "Peoples", ["nail_care"], ["beauty","manicure"]),
+  new Emoji("💍", "ring", "Peoples", ["ring"], ["wedding","marriage","engaged"]),
   new Emoji("💄", "lipstick", "Peoples", ["lipstick"], ["makeup"]),
   new Emoji("💋", "kiss mark", "Peoples", ["kiss"], ["lipstick"]),
   new Emoji("👄", "mouth", "Peoples", ["lips"], ["kiss"]),
   new Emoji("👅", "tongue", "Peoples", ["tongue"], ["taste"]),
-  new Emoji("👂", "ear", "Peoples", ["ear"], ["hear", "sound", "listen"]),
+  new Emoji("👂", "ear", "Peoples", ["ear"], ["hear","sound","listen"]),
   new Emoji("👃", "nose", "Peoples", ["nose"], ["smell"]),
-  new Emoji("👣", "footprints", "Peoples", ["footprints"], ["feet", "tracks"]),
+  new Emoji("👣", "footprints", "Peoples", ["footprints"], ["feet","tracks"]),
   new Emoji("👁", "eye", "Peoples", ["eye"], []),
-  new Emoji("👀", "eyes", "Peoples", ["eyes"], ["look", "see", "watch"]),
+  new Emoji("👀", "eyes", "Peoples", ["eyes"], ["look","see","watch"]),
   new Emoji("🗣", "speaking head", "Peoples", ["speaking_head"], []),
-  new Emoji(
-    "👤",
-    "bust in silhouette",
-    "Peoples",
-    ["bust_in_silhouette"],
-    ["user"]
-  ),
-  new Emoji(
-    "👥",
-    "busts in silhouette",
-    "Peoples",
-    ["busts_in_silhouette"],
-    ["users", "group", "team"]
-  ),
-  new Emoji("👶", "baby", "Peoples", ["baby"], ["child", "newborn"]),
+  new Emoji("👤", "bust in silhouette", "Peoples", ["bust_in_silhouette"], ["user"]),
+  new Emoji("👥", "busts in silhouette", "Peoples", ["busts_in_silhouette"], ["users","group","team"]),
+  new Emoji("👶", "baby", "Peoples", ["baby"], ["child","newborn"]),
   new Emoji("👦", "boy", "Peoples", ["boy"], ["child"]),
   new Emoji("👧", "girl", "Peoples", ["girl"], ["child"]),
-  new Emoji("👨", "man", "Peoples", ["man"], ["mustache", "father", "dad"]),
+  new Emoji("👨", "man", "Peoples", ["man"], ["mustache","father","dad"]),
   new Emoji("👩", "woman", "Peoples", ["woman"], ["girls"]),
   new Emoji("👱‍♀", "blond-haired woman", "Peoples", ["blonde_woman"], []),
-  new Emoji(
-    "👱",
-    "blond-haired person",
-    "Peoples",
-    ["blonde_man", "person_with_blond_hair"],
-    ["boy"]
-  ),
+  new Emoji("👱", "blond-haired person", "Peoples", ["blonde_man","person_with_blond_hair"], ["boy"]),
   new Emoji("👴", "old man", "Peoples", ["older_man"], []),
   new Emoji("👵", "old woman", "Peoples", ["older_woman"], []),
-  new Emoji(
-    "👲",
-    "man with Chinese cap",
-    "Peoples",
-    ["man_with_gua_pi_mao"],
-    []
-  ),
-  new Emoji(
-    "👳‍♀",
-    "woman wearing turban",
-    "Peoples",
-    ["woman_with_turban"],
-    []
-  ),
+  new Emoji("👲", "man with Chinese cap", "Peoples", ["man_with_gua_pi_mao"], []),
+  new Emoji("👳‍♀", "woman wearing turban", "Peoples", ["woman_with_turban"], []),
   new Emoji("👳", "person wearing turban", "Peoples", ["man_with_turban"], []),
   new Emoji("👮‍♀", "woman police officer", "Peoples", ["policewoman"], []),
-  new Emoji(
-    "👮",
-    "police officer",
-    "Peoples",
-    ["policeman", "cop"],
-    ["police", "law"]
-  ),
-  new Emoji(
-    "👷‍♀",
-    "woman construction worker",
-    "Peoples",
-    ["construction_worker_woman"],
-    []
-  ),
-  new Emoji(
-    "👷",
-    "construction worker",
-    "Peoples",
-    ["construction_worker_man", "construction_worker"],
-    ["helmet"]
-  ),
+  new Emoji("👮", "police officer", "Peoples", ["policeman","cop"], ["police","law"]),
+  new Emoji("👷‍♀", "woman construction worker", "Peoples", ["construction_worker_woman"], []),
+  new Emoji("👷", "construction worker", "Peoples", ["construction_worker_man","construction_worker"], ["helmet"]),
   new Emoji("💂‍♀", "woman guard", "Peoples", ["guardswoman"], []),
   new Emoji("💂", "guard", "Peoples", ["guardsman"], []),
-  new Emoji(
-    "👩‍⚕",
-    "woman health worker",
-    "Peoples",
-    ["woman_health_worker"],
-    ["doctor", "nurse"]
-  ),
-  new Emoji(
-    "👨‍⚕",
-    "man health worker",
-    "Peoples",
-    ["man_health_worker"],
-    ["doctor", "nurse"]
-  ),
+  new Emoji("👩‍⚕", "woman health worker", "Peoples", ["woman_health_worker"], ["doctor","nurse"]),
+  new Emoji("👨‍⚕", "man health worker", "Peoples", ["man_health_worker"], ["doctor","nurse"]),
   new Emoji("👩‍🌾", "woman farmer", "Peoples", ["woman_farmer"], []),
   new Emoji("👨‍🌾", "man farmer", "Peoples", ["man_farmer"], []),
   new Emoji("👩‍🍳", "woman cook", "Peoples", ["woman_cook"], ["chef"]),
   new Emoji("👨‍🍳", "man cook", "Peoples", ["man_cook"], ["chef"]),
-  new Emoji(
-    "👩‍🎓",
-    "woman student",
-    "Peoples",
-    ["woman_student"],
-    ["graduation"]
-  ),
+  new Emoji("👩‍🎓", "woman student", "Peoples", ["woman_student"], ["graduation"]),
   new Emoji("👨‍🎓", "man student", "Peoples", ["man_student"], ["graduation"]),
   new Emoji("👩‍🎤", "woman singer", "Peoples", ["woman_singer"], ["rockstar"]),
   new Emoji("👨‍🎤", "man singer", "Peoples", ["man_singer"], ["rockstar"]),
-  new Emoji(
-    "👩‍🏫",
-    "woman teacher",
-    "Peoples",
-    ["woman_teacher"],
-    ["school", "professor"]
-  ),
-  new Emoji(
-    "👨‍🏫",
-    "man teacher",
-    "Peoples",
-    ["man_teacher"],
-    ["school", "professor"]
-  ),
-  new Emoji(
-    "👩‍🏭",
-    "woman factory worker",
-    "Peoples",
-    ["woman_factory_worker"],
-    []
-  ),
+  new Emoji("👩‍🏫", "woman teacher", "Peoples", ["woman_teacher"], ["school","professor"]),
+  new Emoji("👨‍🏫", "man teacher", "Peoples", ["man_teacher"], ["school","professor"]),
+  new Emoji("👩‍🏭", "woman factory worker", "Peoples", ["woman_factory_worker"], []),
   new Emoji("👨‍🏭", "man factory worker", "Peoples", ["man_factory_worker"], []),
-  new Emoji(
-    "👩‍💻",
-    "woman technologist",
-    "Peoples",
-    ["woman_technologist"],
-    ["coder"]
-  ),
-  new Emoji(
-    "👨‍💻",
-    "man technologist",
-    "Peoples",
-    ["man_technologist"],
-    ["coder"]
-  ),
-  new Emoji(
-    "👩‍💼",
-    "woman office worker",
-    "Peoples",
-    ["woman_office_worker"],
-    ["business"]
-  ),
-  new Emoji(
-    "👨‍💼",
-    "man office worker",
-    "Peoples",
-    ["man_office_worker"],
-    ["business"]
-  ),
+  new Emoji("👩‍💻", "woman technologist", "Peoples", ["woman_technologist"], ["coder"]),
+  new Emoji("👨‍💻", "man technologist", "Peoples", ["man_technologist"], ["coder"]),
+  new Emoji("👩‍💼", "woman office worker", "Peoples", ["woman_office_worker"], ["business"]),
+  new Emoji("👨‍💼", "man office worker", "Peoples", ["man_office_worker"], ["business"]),
   new Emoji("👩‍🔧", "woman mechanic", "Peoples", ["woman_mechanic"], []),
   new Emoji("👨‍🔧", "man mechanic", "Peoples", ["man_mechanic"], []),
-  new Emoji(
-    "👩‍🔬",
-    "woman scientist",
-    "Peoples",
-    ["woman_scientist"],
-    ["research"]
-  ),
+  new Emoji("👩‍🔬", "woman scientist", "Peoples", ["woman_scientist"], ["research"]),
   new Emoji("👨‍🔬", "man scientist", "Peoples", ["man_scientist"], ["research"]),
   new Emoji("👩‍🎨", "woman artist", "Peoples", ["woman_artist"], ["painter"]),
   new Emoji("👨‍🎨", "man artist", "Peoples", ["man_artist"], ["painter"]),
@@ -677,394 +198,94 @@ export default [
   new Emoji("👨‍🚀", "man astronaut", "Peoples", ["man_astronaut"], ["space"]),
   new Emoji("🤶", "Mrs. Claus", "Peoples", ["mrs_claus"], ["santa"]),
   new Emoji("🎅", "Santa Claus", "Peoples", ["santa"], ["christmas"]),
-  new Emoji(
-    "👸",
-    "princess",
-    "Peoples",
-    ["princess"],
-    ["blonde", "crown", "royal"]
-  ),
-  new Emoji("🤴", "prince", "Peoples", ["prince"], ["crown", "royal"]),
-  new Emoji(
-    "👰",
-    "bride with veil",
-    "Peoples",
-    ["bride_with_veil"],
-    ["marriage", "wedding"]
-  ),
-  new Emoji(
-    "🤵",
-    "man in tuxedo",
-    "Peoples",
-    ["man_in_tuxedo"],
-    ["groom", "marriage", "wedding"]
-  ),
+  new Emoji("👸", "princess", "Peoples", ["princess"], ["blonde","crown","royal"]),
+  new Emoji("🤴", "prince", "Peoples", ["prince"], ["crown","royal"]),
+  new Emoji("👰", "bride with veil", "Peoples", ["bride_with_veil"], ["marriage","wedding"]),
+  new Emoji("🤵", "man in tuxedo", "Peoples", ["man_in_tuxedo"], ["groom","marriage","wedding"]),
   new Emoji("👼", "baby angel", "Peoples", ["angel"], []),
   new Emoji("🤰", "pregnant woman", "Peoples", ["pregnant_woman"], []),
-  new Emoji(
-    "🙇‍♀",
-    "woman bowing",
-    "Peoples",
-    ["bowing_woman"],
-    ["respect", "thanks"]
-  ),
-  new Emoji(
-    "🙇",
-    "person bowing",
-    "Peoples",
-    ["bowing_man", "bow"],
-    ["respect", "thanks"]
-  ),
-  new Emoji(
-    "💁",
-    "person tipping hand",
-    "Peoples",
-    ["tipping_hand_woman", "information_desk_person", "sassy_woman"],
-    []
-  ),
-  new Emoji(
-    "💁‍♂",
-    "man tipping hand",
-    "Peoples",
-    ["tipping_hand_man", "sassy_man"],
-    ["information"]
-  ),
-  new Emoji(
-    "🙅",
-    "person gesturing NO",
-    "Peoples",
-    ["no_good_woman", "no_good", "ng_woman"],
-    ["stop", "halt"]
-  ),
-  new Emoji(
-    "🙅‍♂",
-    "man gesturing NO",
-    "Peoples",
-    ["no_good_man", "ng_man"],
-    ["stop", "halt"]
-  ),
+  new Emoji("🙇‍♀", "woman bowing", "Peoples", ["bowing_woman"], ["respect","thanks"]),
+  new Emoji("🙇", "person bowing", "Peoples", ["bowing_man","bow"], ["respect","thanks"]),
+  new Emoji("💁", "person tipping hand", "Peoples", ["tipping_hand_woman","information_desk_person","sassy_woman"], []),
+  new Emoji("💁‍♂", "man tipping hand", "Peoples", ["tipping_hand_man","sassy_man"], ["information"]),
+  new Emoji("🙅", "person gesturing NO", "Peoples", ["no_good_woman","no_good","ng_woman"], ["stop","halt"]),
+  new Emoji("🙅‍♂", "man gesturing NO", "Peoples", ["no_good_man","ng_man"], ["stop","halt"]),
   new Emoji("🙆", "person gesturing OK", "Peoples", ["ok_woman"], []),
   new Emoji("🙆‍♂", "man gesturing OK", "Peoples", ["ok_man"], []),
-  new Emoji(
-    "🙋",
-    "person raising hand",
-    "Peoples",
-    ["raising_hand_woman", "raising_hand"],
-    []
-  ),
+  new Emoji("🙋", "person raising hand", "Peoples", ["raising_hand_woman","raising_hand"], []),
   new Emoji("🙋‍♂", "man raising hand", "Peoples", ["raising_hand_man"], []),
   new Emoji("🤦‍♀", "woman facepalming", "Peoples", ["woman_facepalming"], []),
   new Emoji("🤦‍♂", "man facepalming", "Peoples", ["man_facepalming"], []),
   new Emoji("🤷‍♀", "woman shrugging", "Peoples", ["woman_shrugging"], []),
   new Emoji("🤷‍♂", "man shrugging", "Peoples", ["man_shrugging"], []),
-  new Emoji(
-    "🙎",
-    "person pouting",
-    "Peoples",
-    ["pouting_woman", "person_with_pouting_face"],
-    []
-  ),
+  new Emoji("🙎", "person pouting", "Peoples", ["pouting_woman","person_with_pouting_face"], []),
   new Emoji("🙎‍♂", "man pouting", "Peoples", ["pouting_man"], []),
-  new Emoji(
-    "🙍",
-    "person frowning",
-    "Peoples",
-    ["frowning_woman", "person_frowning"],
-    ["sad"]
-  ),
+  new Emoji("🙍", "person frowning", "Peoples", ["frowning_woman","person_frowning"], ["sad"]),
   new Emoji("🙍‍♂", "man frowning", "Peoples", ["frowning_man"], []),
-  new Emoji(
-    "💇",
-    "person getting haircut",
-    "Peoples",
-    ["haircut_woman", "haircut"],
-    ["beauty"]
-  ),
+  new Emoji("💇", "person getting haircut", "Peoples", ["haircut_woman","haircut"], ["beauty"]),
   new Emoji("💇‍♂", "man getting haircut", "Peoples", ["haircut_man"], []),
-  new Emoji(
-    "💆",
-    "person getting massage",
-    "Peoples",
-    ["massage_woman", "massage"],
-    ["spa"]
-  ),
+  new Emoji("💆", "person getting massage", "Peoples", ["massage_woman","massage"], ["spa"]),
   new Emoji("💆‍♂", "man getting massage", "Peoples", ["massage_man"], ["spa"]),
-  new Emoji(
-    "🕴",
-    "man in business suit levitating",
-    "Peoples",
-    ["business_suit_levitating"],
-    []
-  ),
+  new Emoji("🕴", "man in business suit levitating", "Peoples", ["business_suit_levitating"], []),
   new Emoji("💃", "woman dancing", "Peoples", ["dancer"], ["dress"]),
   new Emoji("🕺", "man dancing", "Peoples", ["man_dancing"], ["dancer"]),
-  new Emoji(
-    "👯",
-    "people with bunny ears partying",
-    "Peoples",
-    ["dancing_women", "dancers"],
-    ["bunny"]
-  ),
-  new Emoji(
-    "👯‍♂",
-    "men with bunny ears partying",
-    "Peoples",
-    ["dancing_men"],
-    ["bunny"]
-  ),
+  new Emoji("👯", "people with bunny ears partying", "Peoples", ["dancing_women","dancers"], ["bunny"]),
+  new Emoji("👯‍♂", "men with bunny ears partying", "Peoples", ["dancing_men"], ["bunny"]),
   new Emoji("🚶‍♀", "woman walking", "Peoples", ["walking_woman"], []),
-  new Emoji("🚶", "person walking", "Peoples", ["walking_man", "walking"], []),
-  new Emoji(
-    "🏃‍♀",
-    "woman running",
-    "Peoples",
-    ["running_woman"],
-    ["exercise", "workout", "marathon"]
-  ),
-  new Emoji(
-    "🏃",
-    "person running",
-    "Peoples",
-    ["running_man", "runner", "running"],
-    ["exercise", "workout", "marathon"]
-  ),
-  new Emoji(
-    "👫",
-    "man and woman holding hands",
-    "Peoples",
-    ["couple"],
-    ["date"]
-  ),
-  new Emoji(
-    "👭",
-    "two women holding hands",
-    "Peoples",
-    ["two_women_holding_hands"],
-    ["couple", "date"]
-  ),
-  new Emoji(
-    "👬",
-    "two men holding hands",
-    "Peoples",
-    ["two_men_holding_hands"],
-    ["couple", "date"]
-  ),
-  new Emoji(
-    "💑",
-    "couple with heart",
-    "Peoples",
-    ["couple_with_heart_woman_man", "couple_with_heart"],
-    []
-  ),
-  new Emoji(
-    "👩‍❤️‍👩",
-    "couple with heart: woman, woman",
-    "Peoples",
-    ["couple_with_heart_woman_woman"],
-    []
-  ),
-  new Emoji(
-    "👨‍❤️‍👨",
-    "couple with heart: man, man",
-    "Peoples",
-    ["couple_with_heart_man_man"],
-    []
-  ),
+  new Emoji("🚶", "person walking", "Peoples", ["walking_man","walking"], []),
+  new Emoji("🏃‍♀", "woman running", "Peoples", ["running_woman"], ["exercise","workout","marathon"]),
+  new Emoji("🏃", "person running", "Peoples", ["running_man","runner","running"], ["exercise","workout","marathon"]),
+  new Emoji("👫", "man and woman holding hands", "Peoples", ["couple"], ["date"]),
+  new Emoji("👭", "two women holding hands", "Peoples", ["two_women_holding_hands"], ["couple","date"]),
+  new Emoji("👬", "two men holding hands", "Peoples", ["two_men_holding_hands"], ["couple","date"]),
+  new Emoji("💑", "couple with heart", "Peoples", ["couple_with_heart_woman_man","couple_with_heart"], []),
+  new Emoji("👩‍❤️‍👩", "couple with heart: woman, woman", "Peoples", ["couple_with_heart_woman_woman"], []),
+  new Emoji("👨‍❤️‍👨", "couple with heart: man, man", "Peoples", ["couple_with_heart_man_man"], []),
   new Emoji("💏", "kiss", "Peoples", ["couplekiss_man_woman"], []),
-  new Emoji(
-    "👩‍❤️‍💋‍👩",
-    "kiss: woman, woman",
-    "Peoples",
-    ["couplekiss_woman_woman"],
-    []
-  ),
+  new Emoji("👩‍❤️‍💋‍👩", "kiss: woman, woman", "Peoples", ["couplekiss_woman_woman"], []),
   new Emoji("👨‍❤️‍💋‍👨", "kiss: man, man", "Peoples", ["couplekiss_man_man"], []),
-  new Emoji(
-    "👪",
-    "family",
-    "Peoples",
-    ["family_man_woman_boy", "family"],
-    ["home", "parents", "child"]
-  ),
-  new Emoji(
-    "👨‍👩‍👧",
-    "family: man, woman, girl",
-    "Peoples",
-    ["family_man_woman_girl"],
-    []
-  ),
-  new Emoji(
-    "👨‍👩‍👧‍👦",
-    "family: man, woman, girl, boy",
-    "Peoples",
-    ["family_man_woman_girl_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👩‍👦‍👦",
-    "family: man, woman, boy, boy",
-    "Peoples",
-    ["family_man_woman_boy_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👩‍👧‍👧",
-    "family: man, woman, girl, girl",
-    "Peoples",
-    ["family_man_woman_girl_girl"],
-    []
-  ),
-  new Emoji(
-    "👩‍👩‍👦",
-    "family: woman, woman, boy",
-    "Peoples",
-    ["family_woman_woman_boy"],
-    []
-  ),
-  new Emoji(
-    "👩‍👩‍👧",
-    "family: woman, woman, girl",
-    "Peoples",
-    ["family_woman_woman_girl"],
-    []
-  ),
-  new Emoji(
-    "👩‍👩‍👧‍👦",
-    "family: woman, woman, girl, boy",
-    "Peoples",
-    ["family_woman_woman_girl_boy"],
-    []
-  ),
-  new Emoji(
-    "👩‍👩‍👦‍👦",
-    "family: woman, woman, boy, boy",
-    "Peoples",
-    ["family_woman_woman_boy_boy"],
-    []
-  ),
-  new Emoji(
-    "👩‍👩‍👧‍👧",
-    "family: woman, woman, girl, girl",
-    "Peoples",
-    ["family_woman_woman_girl_girl"],
-    []
-  ),
-  new Emoji(
-    "👨‍👨‍👦",
-    "family: man, man, boy",
-    "Peoples",
-    ["family_man_man_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👨‍👧",
-    "family: man, man, girl",
-    "Peoples",
-    ["family_man_man_girl"],
-    []
-  ),
-  new Emoji(
-    "👨‍👨‍👧‍👦",
-    "family: man, man, girl, boy",
-    "Peoples",
-    ["family_man_man_girl_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👨‍👦‍👦",
-    "family: man, man, boy, boy",
-    "Peoples",
-    ["family_man_man_boy_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👨‍👧‍👧",
-    "family: man, man, girl, girl",
-    "Peoples",
-    ["family_man_man_girl_girl"],
-    []
-  ),
+  new Emoji("👪", "family", "Peoples", ["family_man_woman_boy","family"], ["home","parents","child"]),
+  new Emoji("👨‍👩‍👧", "family: man, woman, girl", "Peoples", ["family_man_woman_girl"], []),
+  new Emoji("👨‍👩‍👧‍👦", "family: man, woman, girl, boy", "Peoples", ["family_man_woman_girl_boy"], []),
+  new Emoji("👨‍👩‍👦‍👦", "family: man, woman, boy, boy", "Peoples", ["family_man_woman_boy_boy"], []),
+  new Emoji("👨‍👩‍👧‍👧", "family: man, woman, girl, girl", "Peoples", ["family_man_woman_girl_girl"], []),
+  new Emoji("👩‍👩‍👦", "family: woman, woman, boy", "Peoples", ["family_woman_woman_boy"], []),
+  new Emoji("👩‍👩‍👧", "family: woman, woman, girl", "Peoples", ["family_woman_woman_girl"], []),
+  new Emoji("👩‍👩‍👧‍👦", "family: woman, woman, girl, boy", "Peoples", ["family_woman_woman_girl_boy"], []),
+  new Emoji("👩‍👩‍👦‍👦", "family: woman, woman, boy, boy", "Peoples", ["family_woman_woman_boy_boy"], []),
+  new Emoji("👩‍👩‍👧‍👧", "family: woman, woman, girl, girl", "Peoples", ["family_woman_woman_girl_girl"], []),
+  new Emoji("👨‍👨‍👦", "family: man, man, boy", "Peoples", ["family_man_man_boy"], []),
+  new Emoji("👨‍👨‍👧", "family: man, man, girl", "Peoples", ["family_man_man_girl"], []),
+  new Emoji("👨‍👨‍👧‍👦", "family: man, man, girl, boy", "Peoples", ["family_man_man_girl_boy"], []),
+  new Emoji("👨‍👨‍👦‍👦", "family: man, man, boy, boy", "Peoples", ["family_man_man_boy_boy"], []),
+  new Emoji("👨‍👨‍👧‍👧", "family: man, man, girl, girl", "Peoples", ["family_man_man_girl_girl"], []),
   new Emoji("👩‍👦", "family: woman, boy", "Peoples", ["family_woman_boy"], []),
   new Emoji("👩‍👧", "family: woman, girl", "Peoples", ["family_woman_girl"], []),
-  new Emoji(
-    "👩‍👧‍👦",
-    "family: woman, girl, boy",
-    "Peoples",
-    ["family_woman_girl_boy"],
-    []
-  ),
-  new Emoji(
-    "👩‍👦‍👦",
-    "family: woman, boy, boy",
-    "Peoples",
-    ["family_woman_boy_boy"],
-    []
-  ),
-  new Emoji(
-    "👩‍👧‍👧",
-    "family: woman, girl, girl",
-    "Peoples",
-    ["family_woman_girl_girl"],
-    []
-  ),
+  new Emoji("👩‍👧‍👦", "family: woman, girl, boy", "Peoples", ["family_woman_girl_boy"], []),
+  new Emoji("👩‍👦‍👦", "family: woman, boy, boy", "Peoples", ["family_woman_boy_boy"], []),
+  new Emoji("👩‍👧‍👧", "family: woman, girl, girl", "Peoples", ["family_woman_girl_girl"], []),
   new Emoji("👨‍👦", "family: man, boy", "Peoples", ["family_man_boy"], []),
   new Emoji("👨‍👧", "family: man, girl", "Peoples", ["family_man_girl"], []),
-  new Emoji(
-    "👨‍👧‍👦",
-    "family: man, girl, boy",
-    "Peoples",
-    ["family_man_girl_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👦‍👦",
-    "family: man, boy, boy",
-    "Peoples",
-    ["family_man_boy_boy"],
-    []
-  ),
-  new Emoji(
-    "👨‍👧‍👧",
-    "family: man, girl, girl",
-    "Peoples",
-    ["family_man_girl_girl"],
-    []
-  ),
+  new Emoji("👨‍👧‍👦", "family: man, girl, boy", "Peoples", ["family_man_girl_boy"], []),
+  new Emoji("👨‍👦‍👦", "family: man, boy, boy", "Peoples", ["family_man_boy_boy"], []),
+  new Emoji("👨‍👧‍👧", "family: man, girl, girl", "Peoples", ["family_man_girl_girl"], []),
   new Emoji("👚", "woman’s clothes", "Peoples", ["womans_clothes"], []),
-  new Emoji("👕", "t-shirt", "Peoples", ["shirt", "tshirt"], []),
+  new Emoji("👕", "t-shirt", "Peoples", ["shirt","tshirt"], []),
   new Emoji("👖", "jeans", "Peoples", ["jeans"], ["pants"]),
-  new Emoji("👔", "necktie", "Peoples", ["necktie"], ["shirt", "formal"]),
+  new Emoji("👔", "necktie", "Peoples", ["necktie"], ["shirt","formal"]),
   new Emoji("👗", "dress", "Peoples", ["dress"], []),
   new Emoji("👙", "bikini", "Peoples", ["bikini"], ["beach"]),
   new Emoji("👘", "kimono", "Peoples", ["kimono"], []),
   new Emoji("👠", "high-heeled shoe", "Peoples", ["high_heel"], ["shoe"]),
   new Emoji("👡", "woman’s sandal", "Peoples", ["sandal"], ["shoe"]),
   new Emoji("👢", "woman’s boot", "Peoples", ["boot"], []),
-  new Emoji("👞", "man’s shoe", "Peoples", ["mans_shoe", "shoe"], []),
-  new Emoji(
-    "👟",
-    "running shoe",
-    "Peoples",
-    ["athletic_shoe"],
-    ["sneaker", "sport", "running"]
-  ),
+  new Emoji("👞", "man’s shoe", "Peoples", ["mans_shoe","shoe"], []),
+  new Emoji("👟", "running shoe", "Peoples", ["athletic_shoe"], ["sneaker","sport","running"]),
   new Emoji("👒", "woman’s hat", "Peoples", ["womans_hat"], []),
-  new Emoji("🎩", "top hat", "Peoples", ["tophat"], ["hat", "classy"]),
-  new Emoji(
-    "🎓",
-    "graduation cap",
-    "Peoples",
-    ["mortar_board"],
-    ["education", "college", "university", "graduation"]
-  ),
-  new Emoji("👑", "crown", "Peoples", ["crown"], ["king", "queen", "royal"]),
-  new Emoji(
-    "⛑",
-    "rescue worker’s helmet",
-    "Peoples",
-    ["rescue_worker_helmet"],
-    []
-  ),
+  new Emoji("🎩", "top hat", "Peoples", ["tophat"], ["hat","classy"]),
+  new Emoji("🎓", "graduation cap", "Peoples", ["mortar_board"], ["education","college","university","graduation"]),
+  new Emoji("👑", "crown", "Peoples", ["crown"], ["king","queen","royal"]),
+  new Emoji("⛑", "rescue worker’s helmet", "Peoples", ["rescue_worker_helmet"], []),
   new Emoji("🎒", "school backpack", "Peoples", ["school_satchel"], []),
   new Emoji("👝", "clutch bag", "Peoples", ["pouch"], ["bag"]),
   new Emoji("👛", "purse", "Peoples", ["purse"], []),
@@ -1072,13 +293,7 @@ export default [
   new Emoji("💼", "briefcase", "Peoples", ["briefcase"], ["business"]),
   new Emoji("👓", "glasses", "Peoples", ["eyeglasses"], ["glasses"]),
   new Emoji("🕶", "sunglasses", "Peoples", ["dark_sunglasses"], []),
-  new Emoji(
-    "🌂",
-    "closed umbrella",
-    "Peoples",
-    ["closed_umbrella"],
-    ["weather", "rain"]
-  ),
+  new Emoji("🌂", "closed umbrella", "Peoples", ["closed_umbrella"], ["weather","rain"]),
   new Emoji("☂️", "umbrella", "Peoples", ["open_umbrella"], []),
   new Emoji("🐶", "dog face", "Nature", ["dog"], ["pet"]),
   new Emoji("🐱", "cat face", "Nature", ["cat"], ["pet"]),
@@ -1096,27 +311,9 @@ export default [
   new Emoji("🐽", "pig nose", "Nature", ["pig_nose"], []),
   new Emoji("🐸", "frog face", "Nature", ["frog"], []),
   new Emoji("🐵", "monkey face", "Nature", ["monkey_face"], []),
-  new Emoji(
-    "🙈",
-    "see-no-evil monkey",
-    "Nature",
-    ["see_no_evil"],
-    ["monkey", "blind", "ignore"]
-  ),
-  new Emoji(
-    "🙉",
-    "hear-no-evil monkey",
-    "Nature",
-    ["hear_no_evil"],
-    ["monkey", "deaf"]
-  ),
-  new Emoji(
-    "🙊",
-    "speak-no-evil monkey",
-    "Nature",
-    ["speak_no_evil"],
-    ["monkey", "mute", "hush"]
-  ),
+  new Emoji("🙈", "see-no-evil monkey", "Nature", ["see_no_evil"], ["monkey","blind","ignore"]),
+  new Emoji("🙉", "hear-no-evil monkey", "Nature", ["hear_no_evil"], ["monkey","deaf"]),
+  new Emoji("🙊", "speak-no-evil monkey", "Nature", ["speak_no_evil"], ["monkey","mute","hush"]),
   new Emoji("🐒", "monkey", "Nature", ["monkey"], []),
   new Emoji("🐔", "chicken", "Nature", ["chicken"], []),
   new Emoji("🐧", "penguin", "Nature", ["penguin"], []),
@@ -1132,11 +329,11 @@ export default [
   new Emoji("🐗", "boar", "Nature", ["boar"], []),
   new Emoji("🐴", "horse face", "Nature", ["horse"], []),
   new Emoji("🦄", "unicorn face", "Nature", ["unicorn"], []),
-  new Emoji("🐝", "honeybee", "Nature", ["bee", "honeybee"], []),
+  new Emoji("🐝", "honeybee", "Nature", ["bee","honeybee"], []),
   new Emoji("🐛", "bug", "Nature", ["bug"], []),
   new Emoji("🦋", "butterfly", "Nature", ["butterfly"], []),
   new Emoji("🐌", "snail", "Nature", ["snail"], ["slow"]),
-  new Emoji("🐚", "spiral shell", "Nature", ["shell"], ["sea", "beach"]),
+  new Emoji("🐚", "spiral shell", "Nature", ["shell"], ["sea","beach"]),
   new Emoji("🐞", "lady beetle", "Nature", ["beetle"], ["bug"]),
   new Emoji("🐜", "ant", "Nature", ["ant"], []),
   new Emoji("🕷", "spider", "Nature", ["spider"], []),
@@ -1152,7 +349,7 @@ export default [
   new Emoji("🐠", "tropical fish", "Nature", ["tropical_fish"], []),
   new Emoji("🐟", "fish", "Nature", ["fish"], []),
   new Emoji("🐡", "blowfish", "Nature", ["blowfish"], []),
-  new Emoji("🐬", "dolphin", "Nature", ["dolphin", "flipper"], []),
+  new Emoji("🐬", "dolphin", "Nature", ["dolphin","flipper"], []),
   new Emoji("🦈", "shark", "Nature", ["shark"], []),
   new Emoji("🐳", "spouting whale", "Nature", ["whale"], ["sea"]),
   new Emoji("🐋", "whale", "Nature", ["whale2"], []),
@@ -1183,7 +380,7 @@ export default [
   new Emoji("🐁", "mouse", "Nature", ["mouse2"], []),
   new Emoji("🐀", "rat", "Nature", ["rat"], []),
   new Emoji("🐿", "chipmunk", "Nature", ["chipmunk"], []),
-  new Emoji("🐾", "paw prints", "Nature", ["feet", "paw_prints"], []),
+  new Emoji("🐾", "paw prints", "Nature", ["feet","paw_prints"], []),
   new Emoji("🐉", "dragon", "Nature", ["dragon"], []),
   new Emoji("🐲", "dragon face", "Nature", ["dragon_face"], []),
   new Emoji("🌵", "cactus", "Nature", ["cactus"], []),
@@ -1208,179 +405,59 @@ export default [
   new Emoji("🥀", "wilted flower", "Nature", ["wilted_flower"], []),
   new Emoji("🌻", "sunflower", "Nature", ["sunflower"], []),
   new Emoji("🌼", "blossom", "Nature", ["blossom"], []),
-  new Emoji(
-    "🌸",
-    "cherry blossom",
-    "Nature",
-    ["cherry_blossom"],
-    ["flower", "spring"]
-  ),
+  new Emoji("🌸", "cherry blossom", "Nature", ["cherry_blossom"], ["flower","spring"]),
   new Emoji("🌺", "hibiscus", "Nature", ["hibiscus"], []),
-  new Emoji(
-    "🌎",
-    "globe showing Americas",
-    "Nature",
-    ["earth_americas"],
-    ["globe", "world", "international"]
-  ),
-  new Emoji(
-    "🌍",
-    "globe showing Europe-Africa",
-    "Nature",
-    ["earth_africa"],
-    ["globe", "world", "international"]
-  ),
-  new Emoji(
-    "🌏",
-    "globe showing Asia-Australia",
-    "Nature",
-    ["earth_asia"],
-    ["globe", "world", "international"]
-  ),
+  new Emoji("🌎", "globe showing Americas", "Nature", ["earth_americas"], ["globe","world","international"]),
+  new Emoji("🌍", "globe showing Europe-Africa", "Nature", ["earth_africa"], ["globe","world","international"]),
+  new Emoji("🌏", "globe showing Asia-Australia", "Nature", ["earth_asia"], ["globe","world","international"]),
   new Emoji("🌕", "full moon", "Nature", ["full_moon"], []),
   new Emoji("🌖", "waning gibbous moon", "Nature", ["waning_gibbous_moon"], []),
   new Emoji("🌗", "last quarter moon", "Nature", ["last_quarter_moon"], []),
-  new Emoji(
-    "🌘",
-    "waning crescent moon",
-    "Nature",
-    ["waning_crescent_moon"],
-    []
-  ),
+  new Emoji("🌘", "waning crescent moon", "Nature", ["waning_crescent_moon"], []),
   new Emoji("🌑", "new moon", "Nature", ["new_moon"], []),
-  new Emoji(
-    "🌒",
-    "waxing crescent moon",
-    "Nature",
-    ["waxing_crescent_moon"],
-    []
-  ),
+  new Emoji("🌒", "waxing crescent moon", "Nature", ["waxing_crescent_moon"], []),
   new Emoji("🌓", "first quarter moon", "Nature", ["first_quarter_moon"], []),
-  new Emoji(
-    "🌔",
-    "waxing gibbous moon",
-    "Nature",
-    ["moon", "waxing_gibbous_moon"],
-    []
-  ),
+  new Emoji("🌔", "waxing gibbous moon", "Nature", ["moon","waxing_gibbous_moon"], []),
   new Emoji("🌚", "new moon face", "Nature", ["new_moon_with_face"], []),
   new Emoji("🌝", "full moon with face", "Nature", ["full_moon_with_face"], []),
   new Emoji("🌞", "sun with face", "Nature", ["sun_with_face"], ["summer"]),
-  new Emoji(
-    "🌛",
-    "first quarter moon with face",
-    "Nature",
-    ["first_quarter_moon_with_face"],
-    []
-  ),
-  new Emoji(
-    "🌜",
-    "last quarter moon with face",
-    "Nature",
-    ["last_quarter_moon_with_face"],
-    []
-  ),
+  new Emoji("🌛", "first quarter moon with face", "Nature", ["first_quarter_moon_with_face"], []),
+  new Emoji("🌜", "last quarter moon with face", "Nature", ["last_quarter_moon_with_face"], []),
   new Emoji("🌙", "crescent moon", "Nature", ["crescent_moon"], ["night"]),
   new Emoji("💫", "dizzy", "Nature", ["dizzy"], ["star"]),
   new Emoji("⭐️", "white medium star", "Nature", ["star"], []),
   new Emoji("🌟", "glowing star", "Nature", ["star2"], []),
   new Emoji("✨", "sparkles", "Nature", ["sparkles"], ["shiny"]),
-  new Emoji("⚡️", "high voltage", "Nature", ["zap"], ["lightning", "thunder"]),
+  new Emoji("⚡️", "high voltage", "Nature", ["zap"], ["lightning","thunder"]),
   new Emoji("🔥", "fire", "Nature", ["fire"], ["burn"]),
-  new Emoji("💥", "collision", "Nature", ["boom", "collision"], ["explode"]),
+  new Emoji("💥", "collision", "Nature", ["boom","collision"], ["explode"]),
   new Emoji("☄", "comet", "Nature", ["comet"], []),
   new Emoji("☀️", "sun", "Nature", ["sunny"], ["weather"]),
-  new Emoji(
-    "🌤",
-    "sun behind small cloud",
-    "Nature",
-    ["sun_behind_small_cloud"],
-    []
-  ),
-  new Emoji(
-    "⛅️",
-    "sun behind cloud",
-    "Nature",
-    ["partly_sunny"],
-    ["weather", "cloud"]
-  ),
-  new Emoji(
-    "🌥",
-    "sun behind large cloud",
-    "Nature",
-    ["sun_behind_large_cloud"],
-    []
-  ),
-  new Emoji(
-    "🌦",
-    "sun behind rain cloud",
-    "Nature",
-    ["sun_behind_rain_cloud"],
-    []
-  ),
+  new Emoji("🌤", "sun behind small cloud", "Nature", ["sun_behind_small_cloud"], []),
+  new Emoji("⛅️", "sun behind cloud", "Nature", ["partly_sunny"], ["weather","cloud"]),
+  new Emoji("🌥", "sun behind large cloud", "Nature", ["sun_behind_large_cloud"], []),
+  new Emoji("🌦", "sun behind rain cloud", "Nature", ["sun_behind_rain_cloud"], []),
   new Emoji("🌈", "rainbow", "Nature", ["rainbow"], []),
   new Emoji("☁️", "cloud", "Nature", ["cloud"], []),
   new Emoji("🌧", "cloud with rain", "Nature", ["cloud_with_rain"], []),
-  new Emoji(
-    "⛈",
-    "cloud with lightning and rain",
-    "Nature",
-    ["cloud_with_lightning_and_rain"],
-    []
-  ),
-  new Emoji(
-    "🌩",
-    "cloud with lightning",
-    "Nature",
-    ["cloud_with_lightning"],
-    []
-  ),
+  new Emoji("⛈", "cloud with lightning and rain", "Nature", ["cloud_with_lightning_and_rain"], []),
+  new Emoji("🌩", "cloud with lightning", "Nature", ["cloud_with_lightning"], []),
   new Emoji("🌨", "cloud with snow", "Nature", ["cloud_with_snow"], []),
-  new Emoji(
-    "☃️",
-    "snowman",
-    "Nature",
-    ["snowman_with_snow"],
-    ["winter", "christmas"]
-  ),
+  new Emoji("☃️", "snowman", "Nature", ["snowman_with_snow"], ["winter","christmas"]),
   new Emoji("⛄️", "snowman without snow", "Nature", ["snowman"], ["winter"]),
-  new Emoji(
-    "❄️",
-    "snowflake",
-    "Nature",
-    ["snowflake"],
-    ["winter", "cold", "weather"]
-  ),
+  new Emoji("❄️", "snowflake", "Nature", ["snowflake"], ["winter","cold","weather"]),
   new Emoji("🌬", "wind face", "Nature", ["wind_face"], []),
-  new Emoji("💨", "dashing away", "Nature", ["dash"], ["wind", "blow", "fast"]),
+  new Emoji("💨", "dashing away", "Nature", ["dash"], ["wind","blow","fast"]),
   new Emoji("🌪", "tornado", "Nature", ["tornado"], []),
   new Emoji("🌫", "fog", "Nature", ["fog"], []),
   new Emoji("🌊", "water wave", "Nature", ["ocean"], ["sea"]),
   new Emoji("💧", "droplet", "Nature", ["droplet"], ["water"]),
-  new Emoji(
-    "💦",
-    "sweat droplets",
-    "Nature",
-    ["sweat_drops"],
-    ["water", "workout"]
-  ),
-  new Emoji(
-    "☔️",
-    "umbrella with rain drops",
-    "Nature",
-    ["umbrella"],
-    ["rain", "weather"]
-  ),
+  new Emoji("💦", "sweat droplets", "Nature", ["sweat_drops"], ["water","workout"]),
+  new Emoji("☔️", "umbrella with rain drops", "Nature", ["umbrella"], ["rain","weather"]),
   new Emoji("🍏", "green apple", "Foods", ["green_apple"], ["fruit"]),
   new Emoji("🍎", "red apple", "Foods", ["apple"], []),
   new Emoji("🍐", "pear", "Foods", ["pear"], []),
-  new Emoji(
-    "🍊",
-    "tangerine",
-    "Foods",
-    ["tangerine", "orange", "mandarin"],
-    []
-  ),
+  new Emoji("🍊", "tangerine", "Foods", ["tangerine","orange","mandarin"], []),
   new Emoji("🍋", "lemon", "Foods", ["lemon"], []),
   new Emoji("🍌", "banana", "Foods", ["banana"], ["fruit"]),
   new Emoji("🍉", "watermelon", "Foods", ["watermelon"], []),
@@ -1412,7 +489,7 @@ export default [
   new Emoji("🥓", "bacon", "Foods", ["bacon"], []),
   new Emoji("🥞", "pancakes", "Foods", ["pancakes"], []),
   new Emoji("🍤", "fried shrimp", "Foods", ["fried_shrimp"], ["tempura"]),
-  new Emoji("🍗", "poultry leg", "Foods", ["poultry_leg"], ["meat", "chicken"]),
+  new Emoji("🍗", "poultry leg", "Foods", ["poultry_leg"], ["meat","chicken"]),
   new Emoji("🍖", "meat on bone", "Foods", ["meat_on_bone"], []),
   new Emoji("🍕", "pizza", "Foods", ["pizza"], []),
   new Emoji("🌭", "hot dog", "Foods", ["hotdog"], []),
@@ -1422,13 +499,7 @@ export default [
   new Emoji("🌮", "taco", "Foods", ["taco"], []),
   new Emoji("🌯", "burrito", "Foods", ["burrito"], []),
   new Emoji("🥗", "green salad", "Foods", ["green_salad"], []),
-  new Emoji(
-    "🥘",
-    "shallow pan of food",
-    "Foods",
-    ["shallow_pan_of_food"],
-    ["paella", "curry"]
-  ),
+  new Emoji("🥘", "shallow pan of food", "Foods", ["shallow_pan_of_food"], ["paella","curry"]),
   new Emoji("🍝", "spaghetti", "Foods", ["spaghetti"], ["pasta"]),
   new Emoji("🍜", "steaming bowl", "Foods", ["ramen"], ["noodle"]),
   new Emoji("🍲", "pot of food", "Foods", ["stew"], []),
@@ -1455,50 +526,20 @@ export default [
   new Emoji("🍪", "cookie", "Foods", ["cookie"], []),
   new Emoji("🥛", "glass of milk", "Foods", ["milk_glass"], []),
   new Emoji("🍼", "baby bottle", "Foods", ["baby_bottle"], ["milk"]),
-  new Emoji("☕️", "hot beverage", "Foods", ["coffee"], ["cafe", "espresso"]),
-  new Emoji(
-    "🍵",
-    "teacup without handle",
-    "Foods",
-    ["tea"],
-    ["green", "breakfast"]
-  ),
+  new Emoji("☕️", "hot beverage", "Foods", ["coffee"], ["cafe","espresso"]),
+  new Emoji("🍵", "teacup without handle", "Foods", ["tea"], ["green","breakfast"]),
   new Emoji("🍶", "sake", "Foods", ["sake"], []),
   new Emoji("🍺", "beer mug", "Foods", ["beer"], ["drink"]),
   new Emoji("🍻", "clinking beer mugs", "Foods", ["beers"], ["drinks"]),
-  new Emoji(
-    "🥂",
-    "clinking glasses",
-    "Foods",
-    ["clinking_glasses"],
-    ["cheers", "toast"]
-  ),
+  new Emoji("🥂", "clinking glasses", "Foods", ["clinking_glasses"], ["cheers","toast"]),
   new Emoji("🍷", "wine glass", "Foods", ["wine_glass"], []),
   new Emoji("🥃", "tumbler glass", "Foods", ["tumbler_glass"], ["whisky"]),
   new Emoji("🍸", "cocktail glass", "Foods", ["cocktail"], ["drink"]),
-  new Emoji(
-    "🍹",
-    "tropical drink",
-    "Foods",
-    ["tropical_drink"],
-    ["summer", "vacation"]
-  ),
-  new Emoji(
-    "🍾",
-    "bottle with popping cork",
-    "Foods",
-    ["champagne"],
-    ["bottle", "bubbly", "celebration"]
-  ),
+  new Emoji("🍹", "tropical drink", "Foods", ["tropical_drink"], ["summer","vacation"]),
+  new Emoji("🍾", "bottle with popping cork", "Foods", ["champagne"], ["bottle","bubbly","celebration"]),
   new Emoji("🥄", "spoon", "Foods", ["spoon"], []),
   new Emoji("🍴", "fork and knife", "Foods", ["fork_and_knife"], ["cutlery"]),
-  new Emoji(
-    "🍽",
-    "fork and knife with plate",
-    "Foods",
-    ["plate_with_cutlery"],
-    ["dining", "dinner"]
-  ),
+  new Emoji("🍽", "fork and knife with plate", "Foods", ["plate_with_cutlery"], ["dining","dinner"]),
   new Emoji("⚽️", "soccer ball", "Activity", ["soccer"], ["sports"]),
   new Emoji("🏀", "basketball", "Activity", ["basketball"], ["sports"]),
   new Emoji("🏈", "american football", "Activity", ["football"], ["sports"]),
@@ -1506,7 +547,7 @@ export default [
   new Emoji("🎾", "tennis", "Activity", ["tennis"], ["sports"]),
   new Emoji("🏐", "volleyball", "Activity", ["volleyball"], []),
   new Emoji("🏉", "rugby football", "Activity", ["rugby_football"], []),
-  new Emoji("🎱", "pool 8 ball", "Activity", ["8ball"], ["pool", "billiards"]),
+  new Emoji("🎱", "pool 8 ball", "Activity", ["8ball"], ["pool","billiards"]),
   new Emoji("🏓", "ping pong", "Activity", ["ping_pong"], []),
   new Emoji("🏸", "badminton", "Activity", ["badminton"], []),
   new Emoji("🥅", "goal net", "Activity", ["goal_net"], []),
@@ -1517,146 +558,44 @@ export default [
   new Emoji("🏹", "bow and arrow", "Activity", ["bow_and_arrow"], ["archery"]),
   new Emoji("🎣", "fishing pole", "Activity", ["fishing_pole_and_fish"], []),
   new Emoji("🥊", "boxing glove", "Activity", ["boxing_glove"], []),
-  new Emoji(
-    "🥋",
-    "martial arts uniform",
-    "Activity",
-    ["martial_arts_uniform"],
-    []
-  ),
+  new Emoji("🥋", "martial arts uniform", "Activity", ["martial_arts_uniform"], []),
   new Emoji("⛸", "ice skate", "Activity", ["ice_skate"], ["skating"]),
   new Emoji("🎿", "skis", "Activity", ["ski"], []),
   new Emoji("⛷", "skier", "Activity", ["skier"], []),
   new Emoji("🏂", "snowboarder", "Activity", ["snowboarder"], []),
-  new Emoji(
-    "🏋️‍♀️",
-    "woman lifting weights",
-    "Activity",
-    ["weight_lifting_woman"],
-    ["gym", "workout"]
-  ),
-  new Emoji(
-    "🏋",
-    "person lifting weights",
-    "Activity",
-    ["weight_lifting_man"],
-    ["gym", "workout"]
-  ),
+  new Emoji("🏋️‍♀️", "woman lifting weights", "Activity", ["weight_lifting_woman"], ["gym","workout"]),
+  new Emoji("🏋", "person lifting weights", "Activity", ["weight_lifting_man"], ["gym","workout"]),
   new Emoji("🤺", "person fencing", "Activity", ["person_fencing"], []),
   new Emoji("🤼‍♀", "women wrestling", "Activity", ["women_wrestling"], []),
   new Emoji("🤼‍♂", "men wrestling", "Activity", ["men_wrestling"], []),
-  new Emoji(
-    "🤸‍♀",
-    "woman cartwheeling",
-    "Activity",
-    ["woman_cartwheeling"],
-    []
-  ),
+  new Emoji("🤸‍♀", "woman cartwheeling", "Activity", ["woman_cartwheeling"], []),
   new Emoji("🤸‍♂", "man cartwheeling", "Activity", ["man_cartwheeling"], []),
   new Emoji("⛹️‍♀️", "woman bouncing ball", "Activity", ["basketball_woman"], []),
   new Emoji("⛹", "person bouncing ball", "Activity", ["basketball_man"], []),
-  new Emoji(
-    "🤾‍♀",
-    "woman playing handball",
-    "Activity",
-    ["woman_playing_handball"],
-    []
-  ),
-  new Emoji(
-    "🤾‍♂",
-    "man playing handball",
-    "Activity",
-    ["man_playing_handball"],
-    []
-  ),
+  new Emoji("🤾‍♀", "woman playing handball", "Activity", ["woman_playing_handball"], []),
+  new Emoji("🤾‍♂", "man playing handball", "Activity", ["man_playing_handball"], []),
   new Emoji("🏌️‍♀️", "woman golfing", "Activity", ["golfing_woman"], []),
   new Emoji("🏌", "person golfing", "Activity", ["golfing_man"], []),
   new Emoji("🏄‍♀", "woman surfing", "Activity", ["surfing_woman"], []),
-  new Emoji("🏄", "person surfing", "Activity", ["surfing_man", "surfer"], []),
+  new Emoji("🏄", "person surfing", "Activity", ["surfing_man","surfer"], []),
   new Emoji("🏊‍♀", "woman swimming", "Activity", ["swimming_woman"], []),
-  new Emoji(
-    "🏊",
-    "person swimming",
-    "Activity",
-    ["swimming_man", "swimmer"],
-    []
-  ),
-  new Emoji(
-    "🤽‍♀",
-    "woman playing water polo",
-    "Activity",
-    ["woman_playing_water_polo"],
-    []
-  ),
-  new Emoji(
-    "🤽‍♂",
-    "man playing water polo",
-    "Activity",
-    ["man_playing_water_polo"],
-    []
-  ),
+  new Emoji("🏊", "person swimming", "Activity", ["swimming_man","swimmer"], []),
+  new Emoji("🤽‍♀", "woman playing water polo", "Activity", ["woman_playing_water_polo"], []),
+  new Emoji("🤽‍♂", "man playing water polo", "Activity", ["man_playing_water_polo"], []),
   new Emoji("🚣‍♀", "woman rowing boat", "Activity", ["rowing_woman"], []),
-  new Emoji(
-    "🚣",
-    "person rowing boat",
-    "Activity",
-    ["rowing_man", "rowboat"],
-    []
-  ),
+  new Emoji("🚣", "person rowing boat", "Activity", ["rowing_man","rowboat"], []),
   new Emoji("🏇", "horse racing", "Activity", ["horse_racing"], []),
   new Emoji("🚴‍♀", "woman biking", "Activity", ["biking_woman"], []),
-  new Emoji("🚴", "person biking", "Activity", ["biking_man", "bicyclist"], []),
-  new Emoji(
-    "🚵‍♀",
-    "woman mountain biking",
-    "Activity",
-    ["mountain_biking_woman"],
-    []
-  ),
-  new Emoji(
-    "🚵",
-    "person mountain biking",
-    "Activity",
-    ["mountain_biking_man", "mountain_bicyclist"],
-    []
-  ),
-  new Emoji(
-    "🎽",
-    "running shirt",
-    "Activity",
-    ["running_shirt_with_sash"],
-    ["marathon"]
-  ),
-  new Emoji(
-    "🏅",
-    "sports medal",
-    "Activity",
-    ["medal_sports"],
-    ["gold", "winner"]
-  ),
+  new Emoji("🚴", "person biking", "Activity", ["biking_man","bicyclist"], []),
+  new Emoji("🚵‍♀", "woman mountain biking", "Activity", ["mountain_biking_woman"], []),
+  new Emoji("🚵", "person mountain biking", "Activity", ["mountain_biking_man","mountain_bicyclist"], []),
+  new Emoji("🎽", "running shirt", "Activity", ["running_shirt_with_sash"], ["marathon"]),
+  new Emoji("🏅", "sports medal", "Activity", ["medal_sports"], ["gold","winner"]),
   new Emoji("🎖", "military medal", "Activity", ["medal_military"], []),
   new Emoji("🥇", "1st place medal", "Activity", ["1st_place_medal"], ["gold"]),
-  new Emoji(
-    "🥈",
-    "2nd place medal",
-    "Activity",
-    ["2nd_place_medal"],
-    ["silver"]
-  ),
-  new Emoji(
-    "🥉",
-    "3rd place medal",
-    "Activity",
-    ["3rd_place_medal"],
-    ["bronze"]
-  ),
-  new Emoji(
-    "🏆",
-    "trophy",
-    "Activity",
-    ["trophy"],
-    ["award", "contest", "winner"]
-  ),
+  new Emoji("🥈", "2nd place medal", "Activity", ["2nd_place_medal"], ["silver"]),
+  new Emoji("🥉", "3rd place medal", "Activity", ["3rd_place_medal"], ["bronze"]),
+  new Emoji("🏆", "trophy", "Activity", ["trophy"], ["award","contest","winner"]),
   new Emoji("🏵", "rosette", "Activity", ["rosette"], []),
   new Emoji("🎗", "reminder ribbon", "Activity", ["reminder_ribbon"], []),
   new Emoji("🎫", "ticket", "Activity", ["ticket"], []),
@@ -1664,48 +603,24 @@ export default [
   new Emoji("🎪", "circus tent", "Activity", ["circus_tent"], []),
   new Emoji("🤹‍♀", "woman juggling", "Activity", ["woman_juggling"], []),
   new Emoji("🤹‍♂", "man juggling", "Activity", ["man_juggling"], []),
-  new Emoji(
-    "🎭",
-    "performing arts",
-    "Activity",
-    ["performing_arts"],
-    ["theater", "drama"]
-  ),
-  new Emoji("🎨", "artist palette", "Activity", ["art"], ["design", "paint"]),
+  new Emoji("🎭", "performing arts", "Activity", ["performing_arts"], ["theater","drama"]),
+  new Emoji("🎨", "artist palette", "Activity", ["art"], ["design","paint"]),
   new Emoji("🎬", "clapper board", "Activity", ["clapper"], ["film"]),
   new Emoji("🎤", "microphone", "Activity", ["microphone"], ["sing"]),
-  new Emoji(
-    "🎧",
-    "headphone",
-    "Activity",
-    ["headphones"],
-    ["music", "earphones"]
-  ),
+  new Emoji("🎧", "headphone", "Activity", ["headphones"], ["music","earphones"]),
   new Emoji("🎼", "musical score", "Activity", ["musical_score"], []),
-  new Emoji(
-    "🎹",
-    "musical keyboard",
-    "Activity",
-    ["musical_keyboard"],
-    ["piano"]
-  ),
+  new Emoji("🎹", "musical keyboard", "Activity", ["musical_keyboard"], ["piano"]),
   new Emoji("🥁", "drum", "Activity", ["drum"], []),
   new Emoji("🎷", "saxophone", "Activity", ["saxophone"], []),
   new Emoji("🎺", "trumpet", "Activity", ["trumpet"], []),
   new Emoji("🎸", "guitar", "Activity", ["guitar"], ["rock"]),
   new Emoji("🎻", "violin", "Activity", ["violin"], []),
-  new Emoji("🎲", "game die", "Activity", ["game_die"], ["dice", "gambling"]),
+  new Emoji("🎲", "game die", "Activity", ["game_die"], ["dice","gambling"]),
   new Emoji("🎯", "direct hit", "Activity", ["dart"], ["target"]),
   new Emoji("🎳", "bowling", "Activity", ["bowling"], []),
-  new Emoji(
-    "🎮",
-    "video game",
-    "Activity",
-    ["video_game"],
-    ["play", "controller", "console"]
-  ),
+  new Emoji("🎮", "video game", "Activity", ["video_game"], ["play","controller","console"]),
   new Emoji("🎰", "slot machine", "Activity", ["slot_machine"], []),
-  new Emoji("🚗", "automobile", "Places", ["car", "red_car"], []),
+  new Emoji("🚗", "automobile", "Places", ["car","red_car"], []),
   new Emoji("🚕", "taxi", "Places", ["taxi"], []),
   new Emoji("🚙", "sport utility vehicle", "Places", ["blue_car"], []),
   new Emoji("🚌", "bus", "Places", ["bus"], []),
@@ -1722,13 +637,7 @@ export default [
   new Emoji("🚲", "bicycle", "Places", ["bike"], ["bicycle"]),
   new Emoji("🛵", "motor scooter", "Places", ["motor_scooter"], []),
   new Emoji("🏍", "motorcycle", "Places", ["motorcycle"], []),
-  new Emoji(
-    "🚨",
-    "police car light",
-    "Places",
-    ["rotating_light"],
-    ["911", "emergency"]
-  ),
+  new Emoji("🚨", "police car light", "Places", ["rotating_light"], ["911","emergency"]),
   new Emoji("🚔", "oncoming police car", "Places", ["oncoming_police_car"], []),
   new Emoji("🚍", "oncoming bus", "Places", ["oncoming_bus"], []),
   new Emoji("🚘", "oncoming automobile", "Places", ["oncoming_automobile"], []),
@@ -1740,20 +649,8 @@ export default [
   new Emoji("🚋", "tram car", "Places", ["train"], []),
   new Emoji("🚞", "mountain railway", "Places", ["mountain_railway"], []),
   new Emoji("🚝", "monorail", "Places", ["monorail"], []),
-  new Emoji(
-    "🚄",
-    "high-speed train",
-    "Places",
-    ["bullettrain_side"],
-    ["train"]
-  ),
-  new Emoji(
-    "🚅",
-    "high-speed train with bullet nose",
-    "Places",
-    ["bullettrain_front"],
-    ["train"]
-  ),
+  new Emoji("🚄", "high-speed train", "Places", ["bullettrain_side"], ["train"]),
+  new Emoji("🚅", "high-speed train with bullet nose", "Places", ["bullettrain_front"], ["train"]),
   new Emoji("🚈", "light rail", "Places", ["light_rail"], []),
   new Emoji("🚂", "locomotive", "Places", ["steam_locomotive"], ["train"]),
   new Emoji("🚆", "train", "Places", ["train2"], []),
@@ -1765,17 +662,11 @@ export default [
   new Emoji("✈️", "airplane", "Places", ["airplane"], ["flight"]),
   new Emoji("🛫", "airplane departure", "Places", ["flight_departure"], []),
   new Emoji("🛬", "airplane arrival", "Places", ["flight_arrival"], []),
-  new Emoji("🚀", "rocket", "Places", ["rocket"], ["ship", "launch"]),
-  new Emoji(
-    "🛰",
-    "satellite",
-    "Places",
-    ["artificial_satellite"],
-    ["orbit", "space"]
-  ),
+  new Emoji("🚀", "rocket", "Places", ["rocket"], ["ship","launch"]),
+  new Emoji("🛰", "satellite", "Places", ["artificial_satellite"], ["orbit","space"]),
   new Emoji("💺", "seat", "Places", ["seat"], []),
   new Emoji("🛶", "canoe", "Places", ["canoe"], []),
-  new Emoji("⛵️", "sailboat", "Places", ["boat", "sailboat"], []),
+  new Emoji("⛵️", "sailboat", "Places", ["boat","sailboat"], []),
   new Emoji("🛥", "motor boat", "Places", ["motor_boat"], []),
   new Emoji("🚤", "speedboat", "Places", ["speedboat"], ["ship"]),
   new Emoji("🛳", "passenger ship", "Places", ["passenger_ship"], ["cruise"]),
@@ -1785,13 +676,7 @@ export default [
   new Emoji("🚧", "construction", "Places", ["construction"], ["wip"]),
   new Emoji("⛽️", "fuel pump", "Places", ["fuelpump"], []),
   new Emoji("🚏", "bus stop", "Places", ["busstop"], []),
-  new Emoji(
-    "🚦",
-    "vertical traffic light",
-    "Places",
-    ["vertical_traffic_light"],
-    ["semaphore"]
-  ),
+  new Emoji("🚦", "vertical traffic light", "Places", ["vertical_traffic_light"], ["semaphore"]),
   new Emoji("🚥", "horizontal traffic light", "Places", ["traffic_light"], []),
   new Emoji("🗺", "world map", "Places", ["world_map"], ["travel"]),
   new Emoji("🗿", "moai", "Places", ["moyai"], ["stone"]),
@@ -1804,13 +689,7 @@ export default [
   new Emoji("🎡", "ferris wheel", "Places", ["ferris_wheel"], []),
   new Emoji("🎢", "roller coaster", "Places", ["roller_coaster"], []),
   new Emoji("🎠", "carousel horse", "Places", ["carousel_horse"], []),
-  new Emoji(
-    "⛱",
-    "umbrella on ground",
-    "Places",
-    ["parasol_on_ground"],
-    ["beach_umbrella"]
-  ),
+  new Emoji("⛱", "umbrella on ground", "Places", ["parasol_on_ground"], ["beach_umbrella"]),
   new Emoji("🏖", "beach with umbrella", "Places", ["beach_umbrella"], []),
   new Emoji("🏝", "desert island", "Places", ["desert_island"], []),
   new Emoji("⛰", "mountain", "Places", ["mountain"], []),
@@ -1822,13 +701,7 @@ export default [
   new Emoji("⛺️", "tent", "Places", ["tent"], ["camping"]),
   new Emoji("🛤", "railway track", "Places", ["railway_track"], []),
   new Emoji("🛣", "motorway", "Places", ["motorway"], []),
-  new Emoji(
-    "🏗",
-    "building construction",
-    "Places",
-    ["building_construction"],
-    []
-  ),
+  new Emoji("🏗", "building construction", "Places", ["building_construction"], []),
   new Emoji("🏭", "factory", "Places", ["factory"], []),
   new Emoji("🏠", "house", "Places", ["house"], []),
   new Emoji("🏡", "house with garden", "Places", ["house_with_garden"], []),
@@ -1855,22 +728,10 @@ export default [
   new Emoji("🎑", "moon viewing ceremony", "Places", ["rice_scene"], []),
   new Emoji("🏞", "national park", "Places", ["national_park"], []),
   new Emoji("🌅", "sunrise", "Places", ["sunrise"], []),
-  new Emoji(
-    "🌄",
-    "sunrise over mountains",
-    "Places",
-    ["sunrise_over_mountains"],
-    []
-  ),
+  new Emoji("🌄", "sunrise over mountains", "Places", ["sunrise_over_mountains"], []),
   new Emoji("🌠", "shooting star", "Places", ["stars"], []),
   new Emoji("🎇", "sparkler", "Places", ["sparkler"], []),
-  new Emoji(
-    "🎆",
-    "fireworks",
-    "Places",
-    ["fireworks"],
-    ["festival", "celebration"]
-  ),
+  new Emoji("🎆", "fireworks", "Places", ["fireworks"], ["festival","celebration"]),
   new Emoji("🌇", "sunset", "Places", ["city_sunrise"], []),
   new Emoji("🌆", "cityscape at dusk", "Places", ["city_sunset"], []),
   new Emoji("🏙", "cityscape", "Places", ["cityscape"], ["skyline"]),
@@ -1879,27 +740,9 @@ export default [
   new Emoji("🌉", "bridge at night", "Places", ["bridge_at_night"], []),
   new Emoji("🌁", "foggy", "Places", ["foggy"], ["karl"]),
   new Emoji("⌚️", "watch", "Objects", ["watch"], ["time"]),
-  new Emoji(
-    "📱",
-    "mobile phone",
-    "Objects",
-    ["iphone"],
-    ["smartphone", "mobile"]
-  ),
-  new Emoji(
-    "📲",
-    "mobile phone with arrow",
-    "Objects",
-    ["calling"],
-    ["call", "incoming"]
-  ),
-  new Emoji(
-    "💻",
-    "laptop computer",
-    "Objects",
-    ["computer"],
-    ["desktop", "screen"]
-  ),
+  new Emoji("📱", "mobile phone", "Objects", ["iphone"], ["smartphone","mobile"]),
+  new Emoji("📲", "mobile phone with arrow", "Objects", ["calling"], ["call","incoming"]),
+  new Emoji("💻", "laptop computer", "Objects", ["computer"], ["desktop","screen"]),
   new Emoji("⌨️", "keyboard", "Objects", ["keyboard"], []),
   new Emoji("🖥", "desktop computer", "Objects", ["desktop_computer"], []),
   new Emoji("🖨", "printer", "Objects", ["printer"], []),
@@ -1915,34 +758,16 @@ export default [
   new Emoji("📷", "camera", "Objects", ["camera"], ["photo"]),
   new Emoji("📸", "camera with flash", "Objects", ["camera_flash"], ["photo"]),
   new Emoji("📹", "video camera", "Objects", ["video_camera"], []),
-  new Emoji(
-    "🎥",
-    "movie camera",
-    "Objects",
-    ["movie_camera"],
-    ["film", "video"]
-  ),
+  new Emoji("🎥", "movie camera", "Objects", ["movie_camera"], ["film","video"]),
   new Emoji("📽", "film projector", "Objects", ["film_projector"], []),
   new Emoji("🎞", "film frames", "Objects", ["film_strip"], []),
-  new Emoji(
-    "📞",
-    "telephone receiver",
-    "Objects",
-    ["telephone_receiver"],
-    ["phone", "call"]
-  ),
-  new Emoji("☎️", "telephone", "Objects", ["phone", "telephone"], []),
+  new Emoji("📞", "telephone receiver", "Objects", ["telephone_receiver"], ["phone","call"]),
+  new Emoji("☎️", "telephone", "Objects", ["phone","telephone"], []),
   new Emoji("📟", "pager", "Objects", ["pager"], []),
   new Emoji("📠", "fax machine", "Objects", ["fax"], []),
   new Emoji("📺", "television", "Objects", ["tv"], []),
   new Emoji("📻", "radio", "Objects", ["radio"], ["podcast"]),
-  new Emoji(
-    "🎙",
-    "studio microphone",
-    "Objects",
-    ["studio_microphone"],
-    ["podcast"]
-  ),
+  new Emoji("🎙", "studio microphone", "Objects", ["studio_microphone"], ["podcast"]),
   new Emoji("🎚", "level slider", "Objects", ["level_slider"], []),
   new Emoji("🎛", "control knobs", "Objects", ["control_knobs"], []),
   new Emoji("⏱", "stopwatch", "Objects", ["stopwatch"], []),
@@ -1950,33 +775,21 @@ export default [
   new Emoji("⏰", "alarm clock", "Objects", ["alarm_clock"], ["morning"]),
   new Emoji("🕰", "mantelpiece clock", "Objects", ["mantelpiece_clock"], []),
   new Emoji("⌛️", "hourglass", "Objects", ["hourglass"], ["time"]),
-  new Emoji(
-    "⏳",
-    "hourglass with flowing sand",
-    "Objects",
-    ["hourglass_flowing_sand"],
-    ["time"]
-  ),
+  new Emoji("⏳", "hourglass with flowing sand", "Objects", ["hourglass_flowing_sand"], ["time"]),
   new Emoji("📡", "satellite antenna", "Objects", ["satellite"], ["signal"]),
   new Emoji("🔋", "battery", "Objects", ["battery"], ["power"]),
   new Emoji("🔌", "electric plug", "Objects", ["electric_plug"], []),
-  new Emoji("💡", "light bulb", "Objects", ["bulb"], ["idea", "light"]),
+  new Emoji("💡", "light bulb", "Objects", ["bulb"], ["idea","light"]),
   new Emoji("🔦", "flashlight", "Objects", ["flashlight"], []),
   new Emoji("🕯", "candle", "Objects", ["candle"], []),
   new Emoji("🗑", "wastebasket", "Objects", ["wastebasket"], ["trash"]),
   new Emoji("🛢", "oil drum", "Objects", ["oil_drum"], []),
-  new Emoji(
-    "💸",
-    "money with wings",
-    "Objects",
-    ["money_with_wings"],
-    ["dollar"]
-  ),
+  new Emoji("💸", "money with wings", "Objects", ["money_with_wings"], ["dollar"]),
   new Emoji("💵", "dollar banknote", "Objects", ["dollar"], ["money"]),
   new Emoji("💴", "yen banknote", "Objects", ["yen"], []),
   new Emoji("💶", "euro banknote", "Objects", ["euro"], []),
   new Emoji("💷", "pound banknote", "Objects", ["pound"], []),
-  new Emoji("💰", "money bag", "Objects", ["moneybag"], ["dollar", "cream"]),
+  new Emoji("💰", "money bag", "Objects", ["moneybag"], ["dollar","cream"]),
   new Emoji("💳", "credit card", "Objects", ["credit_card"], ["subscription"]),
   new Emoji("💎", "gem stone", "Objects", ["gem"], ["diamond"]),
   new Emoji("⚖️", "balance scale", "Objects", ["balance_scale"], []),
@@ -1988,15 +801,9 @@ export default [
   new Emoji("🔩", "nut and bolt", "Objects", ["nut_and_bolt"], []),
   new Emoji("⚙️", "gear", "Objects", ["gear"], []),
   new Emoji("⛓", "chains", "Objects", ["chains"], []),
-  new Emoji("🔫", "pistol", "Objects", ["gun"], ["shoot", "weapon"]),
+  new Emoji("🔫", "pistol", "Objects", ["gun"], ["shoot","weapon"]),
   new Emoji("💣", "bomb", "Objects", ["bomb"], ["boom"]),
-  new Emoji(
-    "🔪",
-    "kitchen knife",
-    "Objects",
-    ["hocho", "knife"],
-    ["cut", "chop"]
-  ),
+  new Emoji("🔪", "kitchen knife", "Objects", ["hocho","knife"], ["cut","chop"]),
   new Emoji("🗡", "dagger", "Objects", ["dagger"], []),
   new Emoji("⚔️", "crossed swords", "Objects", ["crossed_swords"], []),
   new Emoji("🛡", "shield", "Objects", ["shield"], []),
@@ -2009,22 +816,10 @@ export default [
   new Emoji("💈", "barber pole", "Objects", ["barber"], []),
   new Emoji("⚗️", "alembic", "Objects", ["alembic"], []),
   new Emoji("🔭", "telescope", "Objects", ["telescope"], []),
-  new Emoji(
-    "🔬",
-    "microscope",
-    "Objects",
-    ["microscope"],
-    ["science", "laboratory", "investigate"]
-  ),
+  new Emoji("🔬", "microscope", "Objects", ["microscope"], ["science","laboratory","investigate"]),
   new Emoji("🕳", "hole", "Objects", ["hole"], []),
-  new Emoji("💊", "pill", "Objects", ["pill"], ["health", "medicine"]),
-  new Emoji(
-    "💉",
-    "syringe",
-    "Objects",
-    ["syringe"],
-    ["health", "hospital", "needle"]
-  ),
+  new Emoji("💊", "pill", "Objects", ["pill"], ["health","medicine"]),
+  new Emoji("💉", "syringe", "Objects", ["syringe"], ["health","hospital","needle"]),
   new Emoji("🌡", "thermometer", "Objects", ["thermometer"], []),
   new Emoji("🚽", "toilet", "Objects", ["toilet"], ["wc"]),
   new Emoji("🚰", "potable water", "Objects", ["potable_water"], []),
@@ -2032,7 +827,7 @@ export default [
   new Emoji("🛁", "bathtub", "Objects", ["bathtub"], []),
   new Emoji("🛀", "person taking bath", "Objects", ["bath"], ["shower"]),
   new Emoji("🛎", "bellhop bell", "Objects", ["bellhop_bell"], []),
-  new Emoji("🔑", "key", "Objects", ["key"], ["lock", "password"]),
+  new Emoji("🔑", "key", "Objects", ["key"], ["lock","password"]),
   new Emoji("🗝", "old key", "Objects", ["old_key"], []),
   new Emoji("🚪", "door", "Objects", ["door"], []),
   new Emoji("🛋", "couch and lamp", "Objects", ["couch_and_lamp"], []),
@@ -2041,107 +836,41 @@ export default [
   new Emoji("🖼", "framed picture", "Objects", ["framed_picture"], []),
   new Emoji("🛍", "shopping bags", "Objects", ["shopping"], ["bags"]),
   new Emoji("🛒", "shopping cart", "Objects", ["shopping_cart"], []),
-  new Emoji(
-    "🎁",
-    "wrapped gift",
-    "Objects",
-    ["gift"],
-    ["present", "birthday", "christmas"]
-  ),
-  new Emoji("🎈", "balloon", "Objects", ["balloon"], ["party", "birthday"]),
+  new Emoji("🎁", "wrapped gift", "Objects", ["gift"], ["present","birthday","christmas"]),
+  new Emoji("🎈", "balloon", "Objects", ["balloon"], ["party","birthday"]),
   new Emoji("🎏", "carp streamer", "Objects", ["flags"], []),
   new Emoji("🎀", "ribbon", "Objects", ["ribbon"], []),
   new Emoji("🎊", "confetti ball", "Objects", ["confetti_ball"], []),
-  new Emoji("🎉", "party popper", "Objects", ["tada"], ["hooray", "party"]),
+  new Emoji("🎉", "party popper", "Objects", ["tada"], ["hooray","party"]),
   new Emoji("🎎", "Japanese dolls", "Objects", ["dolls"], []),
-  new Emoji(
-    "🏮",
-    "red paper lantern",
-    "Objects",
-    ["izakaya_lantern", "lantern"],
-    []
-  ),
+  new Emoji("🏮", "red paper lantern", "Objects", ["izakaya_lantern","lantern"], []),
   new Emoji("🎐", "wind chime", "Objects", ["wind_chime"], []),
-  new Emoji("✉️", "envelope", "Objects", ["email", "envelope"], ["letter"]),
-  new Emoji(
-    "📩",
-    "envelope with arrow",
-    "Objects",
-    ["envelope_with_arrow"],
-    []
-  ),
+  new Emoji("✉️", "envelope", "Objects", ["email","envelope"], ["letter"]),
+  new Emoji("📩", "envelope with arrow", "Objects", ["envelope_with_arrow"], []),
   new Emoji("📨", "incoming envelope", "Objects", ["incoming_envelope"], []),
   new Emoji("📧", "e-mail", "Objects", ["e-mail"], []),
-  new Emoji(
-    "💌",
-    "love letter",
-    "Objects",
-    ["love_letter"],
-    ["email", "envelope"]
-  ),
+  new Emoji("💌", "love letter", "Objects", ["love_letter"], ["email","envelope"]),
   new Emoji("📥", "inbox tray", "Objects", ["inbox_tray"], []),
   new Emoji("📤", "outbox tray", "Objects", ["outbox_tray"], []),
   new Emoji("📦", "package", "Objects", ["package"], ["shipping"]),
   new Emoji("🏷", "label", "Objects", ["label"], ["tag"]),
-  new Emoji(
-    "📪",
-    "closed mailbox with lowered flag",
-    "Objects",
-    ["mailbox_closed"],
-    []
-  ),
-  new Emoji(
-    "📫",
-    "closed mailbox with raised flag",
-    "Objects",
-    ["mailbox"],
-    []
-  ),
-  new Emoji(
-    "📬",
-    "open mailbox with raised flag",
-    "Objects",
-    ["mailbox_with_mail"],
-    []
-  ),
-  new Emoji(
-    "📭",
-    "open mailbox with lowered flag",
-    "Objects",
-    ["mailbox_with_no_mail"],
-    []
-  ),
+  new Emoji("📪", "closed mailbox with lowered flag", "Objects", ["mailbox_closed"], []),
+  new Emoji("📫", "closed mailbox with raised flag", "Objects", ["mailbox"], []),
+  new Emoji("📬", "open mailbox with raised flag", "Objects", ["mailbox_with_mail"], []),
+  new Emoji("📭", "open mailbox with lowered flag", "Objects", ["mailbox_with_no_mail"], []),
   new Emoji("📮", "postbox", "Objects", ["postbox"], []),
   new Emoji("📯", "postal horn", "Objects", ["postal_horn"], []),
   new Emoji("📜", "scroll", "Objects", ["scroll"], ["document"]),
   new Emoji("📃", "page with curl", "Objects", ["page_with_curl"], []),
-  new Emoji(
-    "📄",
-    "page facing up",
-    "Objects",
-    ["page_facing_up"],
-    ["document"]
-  ),
+  new Emoji("📄", "page facing up", "Objects", ["page_facing_up"], ["document"]),
   new Emoji("📑", "bookmark tabs", "Objects", ["bookmark_tabs"], []),
-  new Emoji("📊", "bar chart", "Objects", ["bar_chart"], ["stats", "metrics"]),
-  new Emoji(
-    "📈",
-    "chart increasing",
-    "Objects",
-    ["chart_with_upwards_trend"],
-    ["graph", "metrics"]
-  ),
-  new Emoji(
-    "📉",
-    "chart decreasing",
-    "Objects",
-    ["chart_with_downwards_trend"],
-    ["graph", "metrics"]
-  ),
+  new Emoji("📊", "bar chart", "Objects", ["bar_chart"], ["stats","metrics"]),
+  new Emoji("📈", "chart increasing", "Objects", ["chart_with_upwards_trend"], ["graph","metrics"]),
+  new Emoji("📉", "chart decreasing", "Objects", ["chart_with_downwards_trend"], ["graph","metrics"]),
   new Emoji("🗒", "spiral notepad", "Objects", ["spiral_notepad"], []),
   new Emoji("🗓", "spiral calendar", "Objects", ["spiral_calendar"], []),
   new Emoji("📆", "tear-off calendar", "Objects", ["calendar"], ["schedule"]),
-  new Emoji("📅", "calendar", "Objects", ["date"], ["calendar", "schedule"]),
+  new Emoji("📅", "calendar", "Objects", ["date"], ["calendar","schedule"]),
   new Emoji("📇", "card index", "Objects", ["card_index"], []),
   new Emoji("🗃", "card file box", "Objects", ["card_file_box"], []),
   new Emoji("🗳", "ballot box with ballot", "Objects", ["ballot_box"], []),
@@ -2150,29 +879,17 @@ export default [
   new Emoji("📁", "file folder", "Objects", ["file_folder"], ["directory"]),
   new Emoji("📂", "open file folder", "Objects", ["open_file_folder"], []),
   new Emoji("🗂", "card index dividers", "Objects", ["card_index_dividers"], []),
-  new Emoji(
-    "🗞",
-    "rolled-up newspaper",
-    "Objects",
-    ["newspaper_roll"],
-    ["press"]
-  ),
+  new Emoji("🗞", "rolled-up newspaper", "Objects", ["newspaper_roll"], ["press"]),
   new Emoji("📰", "newspaper", "Objects", ["newspaper"], ["press"]),
   new Emoji("📓", "notebook", "Objects", ["notebook"], []),
-  new Emoji(
-    "📔",
-    "notebook with decorative cover",
-    "Objects",
-    ["notebook_with_decorative_cover"],
-    []
-  ),
+  new Emoji("📔", "notebook with decorative cover", "Objects", ["notebook_with_decorative_cover"], []),
   new Emoji("📒", "ledger", "Objects", ["ledger"], []),
   new Emoji("📕", "closed book", "Objects", ["closed_book"], []),
   new Emoji("📗", "green book", "Objects", ["green_book"], []),
   new Emoji("📘", "blue book", "Objects", ["blue_book"], []),
   new Emoji("📙", "orange book", "Objects", ["orange_book"], []),
   new Emoji("📚", "books", "Objects", ["books"], ["library"]),
-  new Emoji("📖", "open book", "Objects", ["book", "open_book"], []),
+  new Emoji("📖", "open book", "Objects", ["book","open_book"], []),
   new Emoji("🔖", "bookmark", "Objects", ["bookmark"], []),
   new Emoji("🔗", "link", "Objects", ["link"], []),
   new Emoji("📎", "paperclip", "Objects", ["paperclip"], []),
@@ -2187,31 +904,13 @@ export default [
   new Emoji("✒️", "black nib", "Objects", ["black_nib"], []),
   new Emoji("🖌", "paintbrush", "Objects", ["paintbrush"], []),
   new Emoji("🖍", "crayon", "Objects", ["crayon"], []),
-  new Emoji("📝", "memo", "Objects", ["memo", "pencil"], ["document", "note"]),
+  new Emoji("📝", "memo", "Objects", ["memo","pencil"], ["document","note"]),
   new Emoji("✏️", "pencil", "Objects", ["pencil2"], []),
-  new Emoji(
-    "🔍",
-    "left-pointing magnifying glass",
-    "Objects",
-    ["mag"],
-    ["search", "zoom"]
-  ),
-  new Emoji(
-    "🔎",
-    "right-pointing magnifying glass",
-    "Objects",
-    ["mag_right"],
-    []
-  ),
+  new Emoji("🔍", "left-pointing magnifying glass", "Objects", ["mag"], ["search","zoom"]),
+  new Emoji("🔎", "right-pointing magnifying glass", "Objects", ["mag_right"], []),
   new Emoji("🔏", "locked with pen", "Objects", ["lock_with_ink_pen"], []),
-  new Emoji(
-    "🔐",
-    "locked with key",
-    "Objects",
-    ["closed_lock_with_key"],
-    ["security"]
-  ),
-  new Emoji("🔒", "locked", "Objects", ["lock"], ["security", "private"]),
+  new Emoji("🔐", "locked with key", "Objects", ["closed_lock_with_key"], ["security"]),
+  new Emoji("🔒", "locked", "Objects", ["lock"], ["security","private"]),
   new Emoji("🔓", "unlocked", "Objects", ["unlock"], ["security"]),
   new Emoji("❤️", "red heart", "Symbols", ["heart"], ["love"]),
   new Emoji("💛", "yellow heart", "Symbols", ["yellow_heart"], []),
@@ -2220,26 +919,14 @@ export default [
   new Emoji("💜", "purple heart", "Symbols", ["purple_heart"], []),
   new Emoji("🖤", "black heart", "Symbols", ["black_heart"], []),
   new Emoji("💔", "broken heart", "Symbols", ["broken_heart"], []),
-  new Emoji(
-    "❣️",
-    "heavy heart exclamation",
-    "Symbols",
-    ["heavy_heart_exclamation"],
-    []
-  ),
+  new Emoji("❣️", "heavy heart exclamation", "Symbols", ["heavy_heart_exclamation"], []),
   new Emoji("💕", "two hearts", "Symbols", ["two_hearts"], []),
   new Emoji("💞", "revolving hearts", "Symbols", ["revolving_hearts"], []),
   new Emoji("💓", "beating heart", "Symbols", ["heartbeat"], []),
   new Emoji("💗", "growing heart", "Symbols", ["heartpulse"], []),
   new Emoji("💖", "sparkling heart", "Symbols", ["sparkling_heart"], []),
-  new Emoji("💘", "heart with arrow", "Symbols", ["cupid"], ["love", "heart"]),
-  new Emoji(
-    "💝",
-    "heart with ribbon",
-    "Symbols",
-    ["gift_heart"],
-    ["chocolates"]
-  ),
+  new Emoji("💘", "heart with arrow", "Symbols", ["cupid"], ["love","heart"]),
+  new Emoji("💝", "heart with ribbon", "Symbols", ["gift_heart"], ["chocolates"]),
   new Emoji("💟", "heart decoration", "Symbols", ["heart_decoration"], []),
   new Emoji("☮️", "peace symbol", "Symbols", ["peace_symbol"], []),
   new Emoji("✝️", "latin cross", "Symbols", ["latin_cross"], []),
@@ -2247,13 +934,7 @@ export default [
   new Emoji("🕉", "om", "Symbols", ["om"], []),
   new Emoji("☸️", "wheel of dharma", "Symbols", ["wheel_of_dharma"], []),
   new Emoji("✡️", "star of David", "Symbols", ["star_of_david"], []),
-  new Emoji(
-    "🔯",
-    "dotted six-pointed star",
-    "Symbols",
-    ["six_pointed_star"],
-    []
-  ),
+  new Emoji("🔯", "dotted six-pointed star", "Symbols", ["six_pointed_star"], []),
   new Emoji("🕎", "menorah", "Symbols", ["menorah"], []),
   new Emoji("☯️", "yin yang", "Symbols", ["yin_yang"], []),
   new Emoji("☦️", "orthodox cross", "Symbols", ["orthodox_cross"], []),
@@ -2276,61 +957,19 @@ export default [
   new Emoji("🉑", "Japanese “acceptable” button", "Symbols", ["accept"], []),
   new Emoji("☢️", "radioactive", "Symbols", ["radioactive"], []),
   new Emoji("☣️", "biohazard", "Symbols", ["biohazard"], []),
-  new Emoji(
-    "📴",
-    "mobile phone off",
-    "Symbols",
-    ["mobile_phone_off"],
-    ["mute", "off"]
-  ),
+  new Emoji("📴", "mobile phone off", "Symbols", ["mobile_phone_off"], ["mute","off"]),
   new Emoji("📳", "vibration mode", "Symbols", ["vibration_mode"], []),
-  new Emoji(
-    "🈶",
-    "Japanese “not free of charge” button",
-    "Symbols",
-    ["u6709"],
-    []
-  ),
-  new Emoji(
-    "🈚️",
-    "Japanese “free of charge” button",
-    "Symbols",
-    ["u7121"],
-    []
-  ),
+  new Emoji("🈶", "Japanese “not free of charge” button", "Symbols", ["u6709"], []),
+  new Emoji("🈚️", "Japanese “free of charge” button", "Symbols", ["u7121"], []),
   new Emoji("🈸", "Japanese “application” button", "Symbols", ["u7533"], []),
-  new Emoji(
-    "🈺",
-    "Japanese “open for business” button",
-    "Symbols",
-    ["u55b6"],
-    []
-  ),
+  new Emoji("🈺", "Japanese “open for business” button", "Symbols", ["u55b6"], []),
   new Emoji("🈷️", "Japanese “monthly amount” button", "Symbols", ["u6708"], []),
-  new Emoji(
-    "✴️",
-    "eight-pointed star",
-    "Symbols",
-    ["eight_pointed_black_star"],
-    []
-  ),
+  new Emoji("✴️", "eight-pointed star", "Symbols", ["eight_pointed_black_star"], []),
   new Emoji("🆚", "VS button", "Symbols", ["vs"], []),
   new Emoji("💮", "white flower", "Symbols", ["white_flower"], []),
-  new Emoji(
-    "🉐",
-    "Japanese “bargain” button",
-    "Symbols",
-    ["ideograph_advantage"],
-    []
-  ),
+  new Emoji("🉐", "Japanese “bargain” button", "Symbols", ["ideograph_advantage"], []),
   new Emoji("㊙️", "Japanese “secret” button", "Symbols", ["secret"], []),
-  new Emoji(
-    "㊗️",
-    "Japanese “congratulations” button",
-    "Symbols",
-    ["congratulations"],
-    []
-  ),
+  new Emoji("㊗️", "Japanese “congratulations” button", "Symbols", ["congratulations"], []),
   new Emoji("🈴", "Japanese “passing grade” button", "Symbols", ["u5408"], []),
   new Emoji("🈵", "Japanese “no vacancy” button", "Symbols", ["u6e80"], []),
   new Emoji("🈹", "Japanese “discount” button", "Symbols", ["u5272"], []),
@@ -2340,20 +979,14 @@ export default [
   new Emoji("🆎", "AB button (blood type)", "Symbols", ["ab"], []),
   new Emoji("🆑", "CL button", "Symbols", ["cl"], []),
   new Emoji("🅾️", "O button (blood type)", "Symbols", ["o2"], []),
-  new Emoji("🆘", "SOS button", "Symbols", ["sos"], ["help", "emergency"]),
+  new Emoji("🆘", "SOS button", "Symbols", ["sos"], ["help","emergency"]),
   new Emoji("❌", "cross mark", "Symbols", ["x"], []),
   new Emoji("⭕️", "heavy large circle", "Symbols", ["o"], []),
   new Emoji("🛑", "stop sign", "Symbols", ["stop_sign"], []),
   new Emoji("⛔️", "no entry", "Symbols", ["no_entry"], ["limit"]),
   new Emoji("📛", "name badge", "Symbols", ["name_badge"], []),
-  new Emoji(
-    "🚫",
-    "prohibited",
-    "Symbols",
-    ["no_entry_sign"],
-    ["block", "forbidden"]
-  ),
-  new Emoji("💯", "hundred points", "Symbols", ["100"], ["score", "perfect"]),
+  new Emoji("🚫", "prohibited", "Symbols", ["no_entry_sign"], ["block","forbidden"]),
+  new Emoji("💯", "hundred points", "Symbols", ["100"], ["score","perfect"]),
   new Emoji("💢", "anger symbol", "Symbols", ["anger"], ["angry"]),
   new Emoji("♨️", "hot springs", "Symbols", ["hotsprings"], []),
   new Emoji("🚷", "no pedestrians", "Symbols", ["no_pedestrians"], []),
@@ -2363,95 +996,35 @@ export default [
   new Emoji("🔞", "no one under eighteen", "Symbols", ["underage"], []),
   new Emoji("📵", "no mobile phones", "Symbols", ["no_mobile_phones"], []),
   new Emoji("🚭", "no smoking", "Symbols", ["no_smoking"], []),
-  new Emoji(
-    "❗️",
-    "exclamation mark",
-    "Symbols",
-    ["exclamation", "heavy_exclamation_mark"],
-    ["bang"]
-  ),
-  new Emoji(
-    "❕",
-    "white exclamation mark",
-    "Symbols",
-    ["grey_exclamation"],
-    []
-  ),
+  new Emoji("❗️", "exclamation mark", "Symbols", ["exclamation","heavy_exclamation_mark"], ["bang"]),
+  new Emoji("❕", "white exclamation mark", "Symbols", ["grey_exclamation"], []),
   new Emoji("❓", "question mark", "Symbols", ["question"], ["confused"]),
   new Emoji("❔", "white question mark", "Symbols", ["grey_question"], []),
   new Emoji("‼️", "double exclamation mark", "Symbols", ["bangbang"], []),
   new Emoji("⁉️", "exclamation question mark", "Symbols", ["interrobang"], []),
   new Emoji("🔅", "dim button", "Symbols", ["low_brightness"], []),
   new Emoji("🔆", "bright button", "Symbols", ["high_brightness"], []),
-  new Emoji(
-    "〽️",
-    "part alternation mark",
-    "Symbols",
-    ["part_alternation_mark"],
-    []
-  ),
+  new Emoji("〽️", "part alternation mark", "Symbols", ["part_alternation_mark"], []),
   new Emoji("⚠️", "warning", "Symbols", ["warning"], ["wip"]),
   new Emoji("🚸", "children crossing", "Symbols", ["children_crossing"], []),
   new Emoji("🔱", "trident emblem", "Symbols", ["trident"], []),
   new Emoji("⚜️", "fleur-de-lis", "Symbols", ["fleur_de_lis"], []),
   new Emoji("🔰", "Japanese symbol for beginner", "Symbols", ["beginner"], []),
-  new Emoji(
-    "♻️",
-    "recycling symbol",
-    "Symbols",
-    ["recycle"],
-    ["environment", "green"]
-  ),
-  new Emoji(
-    "✅",
-    "white heavy check mark",
-    "Symbols",
-    ["white_check_mark"],
-    []
-  ),
+  new Emoji("♻️", "recycling symbol", "Symbols", ["recycle"], ["environment","green"]),
+  new Emoji("✅", "white heavy check mark", "Symbols", ["white_check_mark"], []),
   new Emoji("🈯️", "Japanese “reserved” button", "Symbols", ["u6307"], []),
   new Emoji("💹", "chart increasing with yen", "Symbols", ["chart"], []),
   new Emoji("❇️", "sparkle", "Symbols", ["sparkle"], []),
-  new Emoji(
-    "✳️",
-    "eight-spoked asterisk",
-    "Symbols",
-    ["eight_spoked_asterisk"],
-    []
-  ),
-  new Emoji(
-    "❎",
-    "cross mark button",
-    "Symbols",
-    ["negative_squared_cross_mark"],
-    []
-  ),
-  new Emoji(
-    "🌐",
-    "globe with meridians",
-    "Symbols",
-    ["globe_with_meridians"],
-    ["world", "global", "international"]
-  ),
-  new Emoji(
-    "💠",
-    "diamond with a dot",
-    "Symbols",
-    ["diamond_shape_with_a_dot_inside"],
-    []
-  ),
+  new Emoji("✳️", "eight-spoked asterisk", "Symbols", ["eight_spoked_asterisk"], []),
+  new Emoji("❎", "cross mark button", "Symbols", ["negative_squared_cross_mark"], []),
+  new Emoji("🌐", "globe with meridians", "Symbols", ["globe_with_meridians"], ["world","global","international"]),
+  new Emoji("💠", "diamond with a dot", "Symbols", ["diamond_shape_with_a_dot_inside"], []),
   new Emoji("Ⓜ️", "circled M", "Symbols", ["m"], []),
   new Emoji("🌀", "cyclone", "Symbols", ["cyclone"], ["swirl"]),
   new Emoji("💤", "zzz", "Symbols", ["zzz"], ["sleeping"]),
   new Emoji("🏧", "ATM sign", "Symbols", ["atm"], []),
-  new Emoji("🚾", "water closet", "Symbols", ["wc"], ["toilet", "restroom"]),
-  new Emoji(
-    "♿️",
-    "wheelchair symbol",
-    "Symbols",
-    ["wheelchair"],
-    ["accessibility"]
-  ),
+  new Emoji("🚾", "water closet", "Symbols", ["wc"], ["toilet","restroom"]),
+  new Emoji("♿️", "wheelchair symbol", "Symbols", ["wheelchair"], ["accessibility"]),
   new Emoji("🅿️", "P button", "Symbols", ["parking"], []),
   new Emoji("🈳", "Japanese “vacancy” button", "Symbols", ["u7a7a"], []),
   new Emoji("🈂️", "Japanese “service charge” button", "Symbols", ["sa"], []),
@@ -2463,27 +1036,15 @@ export default [
   new Emoji("🚺", "women’s room", "Symbols", ["womens"], []),
   new Emoji("🚼", "baby symbol", "Symbols", ["baby_symbol"], []),
   new Emoji("🚻", "restroom", "Symbols", ["restroom"], ["toilet"]),
-  new Emoji(
-    "🚮",
-    "litter in bin sign",
-    "Symbols",
-    ["put_litter_in_its_place"],
-    []
-  ),
-  new Emoji("🎦", "cinema", "Symbols", ["cinema"], ["film", "movie"]),
+  new Emoji("🚮", "litter in bin sign", "Symbols", ["put_litter_in_its_place"], []),
+  new Emoji("🎦", "cinema", "Symbols", ["cinema"], ["film","movie"]),
   new Emoji("📶", "antenna bars", "Symbols", ["signal_strength"], ["wifi"]),
   new Emoji("🈁", "Japanese “here” button", "Symbols", ["koko"], []),
   new Emoji("🔣", "input symbols", "Symbols", ["symbols"], []),
   new Emoji("ℹ️", "information", "Symbols", ["information_source"], []),
   new Emoji("🔤", "input latin letters", "Symbols", ["abc"], ["alphabet"]),
   new Emoji("🔡", "input latin lowercase", "Symbols", ["abcd"], []),
-  new Emoji(
-    "🔠",
-    "input latin uppercase",
-    "Symbols",
-    ["capital_abcd"],
-    ["letters"]
-  ),
+  new Emoji("🔠", "input latin uppercase", "Symbols", ["capital_abcd"], ["letters"]),
   new Emoji("🆖", "NG button", "Symbols", ["ng"], []),
   new Emoji("🆗", "OK button", "Symbols", ["ok"], ["yes"]),
   new Emoji("🆙", "UP! button", "Symbols", ["up"], []),
@@ -2506,13 +1067,7 @@ export default [
   new Emoji("*️⃣", "keycap: *", "Symbols", ["asterisk"], []),
   new Emoji("▶️", "play button", "Symbols", ["arrow_forward"], []),
   new Emoji("⏸", "pause button", "Symbols", ["pause_button"], []),
-  new Emoji(
-    "⏯",
-    "play or pause button",
-    "Symbols",
-    ["play_or_pause_button"],
-    []
-  ),
+  new Emoji("⏯", "play or pause button", "Symbols", ["play_or_pause_button"], []),
   new Emoji("⏹", "stop button", "Symbols", ["stop_button"], []),
   new Emoji("⏺", "record button", "Symbols", ["record_button"], []),
   new Emoji("⏭", "next track button", "Symbols", ["next_track_button"], []),
@@ -2534,75 +1089,21 @@ export default [
   new Emoji("↖️", "up-left arrow", "Symbols", ["arrow_upper_left"], []),
   new Emoji("↕️", "up-down arrow", "Symbols", ["arrow_up_down"], []),
   new Emoji("↔️", "left-right arrow", "Symbols", ["left_right_arrow"], []),
-  new Emoji(
-    "↪️",
-    "left arrow curving right",
-    "Symbols",
-    ["arrow_right_hook"],
-    []
-  ),
-  new Emoji(
-    "↩️",
-    "right arrow curving left",
-    "Symbols",
-    ["leftwards_arrow_with_hook"],
-    ["return"]
-  ),
-  new Emoji(
-    "⤴️",
-    "right arrow curving up",
-    "Symbols",
-    ["arrow_heading_up"],
-    []
-  ),
-  new Emoji(
-    "⤵️",
-    "right arrow curving down",
-    "Symbols",
-    ["arrow_heading_down"],
-    []
-  ),
-  new Emoji(
-    "🔀",
-    "shuffle tracks button",
-    "Symbols",
-    ["twisted_rightwards_arrows"],
-    ["shuffle"]
-  ),
+  new Emoji("↪️", "left arrow curving right", "Symbols", ["arrow_right_hook"], []),
+  new Emoji("↩️", "right arrow curving left", "Symbols", ["leftwards_arrow_with_hook"], ["return"]),
+  new Emoji("⤴️", "right arrow curving up", "Symbols", ["arrow_heading_up"], []),
+  new Emoji("⤵️", "right arrow curving down", "Symbols", ["arrow_heading_down"], []),
+  new Emoji("🔀", "shuffle tracks button", "Symbols", ["twisted_rightwards_arrows"], ["shuffle"]),
   new Emoji("🔁", "repeat button", "Symbols", ["repeat"], ["loop"]),
   new Emoji("🔂", "repeat single button", "Symbols", ["repeat_one"], []),
-  new Emoji(
-    "🔄",
-    "anticlockwise arrows button",
-    "Symbols",
-    ["arrows_counterclockwise"],
-    ["sync"]
-  ),
-  new Emoji(
-    "🔃",
-    "clockwise vertical arrows",
-    "Symbols",
-    ["arrows_clockwise"],
-    []
-  ),
+  new Emoji("🔄", "anticlockwise arrows button", "Symbols", ["arrows_counterclockwise"], ["sync"]),
+  new Emoji("🔃", "clockwise vertical arrows", "Symbols", ["arrows_clockwise"], []),
   new Emoji("🎵", "musical note", "Symbols", ["musical_note"], []),
   new Emoji("🎶", "musical notes", "Symbols", ["notes"], ["music"]),
   new Emoji("➕", "heavy plus sign", "Symbols", ["heavy_plus_sign"], []),
   new Emoji("➖", "heavy minus sign", "Symbols", ["heavy_minus_sign"], []),
-  new Emoji(
-    "➗",
-    "heavy division sign",
-    "Symbols",
-    ["heavy_division_sign"],
-    []
-  ),
-  new Emoji(
-    "✖️",
-    "heavy multiplication x",
-    "Symbols",
-    ["heavy_multiplication_x"],
-    []
-  ),
+  new Emoji("➗", "heavy division sign", "Symbols", ["heavy_division_sign"], []),
+  new Emoji("✖️", "heavy multiplication x", "Symbols", ["heavy_multiplication_x"], []),
   new Emoji("💲", "heavy dollar sign", "Symbols", ["heavy_dollar_sign"], []),
   new Emoji("💱", "currency exchange", "Symbols", ["currency_exchange"], []),
   new Emoji("™️", "trade mark", "Symbols", ["tm"], ["trademark"]),
@@ -2617,130 +1118,46 @@ export default [
   new Emoji("🔝", "TOP arrow", "Symbols", ["top"], []),
   new Emoji("🔜", "SOON arrow", "Symbols", ["soon"], []),
   new Emoji("✔️", "heavy check mark", "Symbols", ["heavy_check_mark"], []),
-  new Emoji(
-    "☑️",
-    "ballot box with check",
-    "Symbols",
-    ["ballot_box_with_check"],
-    []
-  ),
+  new Emoji("☑️", "ballot box with check", "Symbols", ["ballot_box_with_check"], []),
   new Emoji("🔘", "radio button", "Symbols", ["radio_button"], []),
   new Emoji("⚪️", "white circle", "Symbols", ["white_circle"], []),
   new Emoji("⚫️", "black circle", "Symbols", ["black_circle"], []),
   new Emoji("🔴", "red circle", "Symbols", ["red_circle"], []),
   new Emoji("🔵", "blue circle", "Symbols", ["large_blue_circle"], []),
-  new Emoji(
-    "🔺",
-    "red triangle pointed up",
-    "Symbols",
-    ["small_red_triangle"],
-    []
-  ),
-  new Emoji(
-    "🔻",
-    "red triangle pointed down",
-    "Symbols",
-    ["small_red_triangle_down"],
-    []
-  ),
-  new Emoji(
-    "🔸",
-    "small orange diamond",
-    "Symbols",
-    ["small_orange_diamond"],
-    []
-  ),
+  new Emoji("🔺", "red triangle pointed up", "Symbols", ["small_red_triangle"], []),
+  new Emoji("🔻", "red triangle pointed down", "Symbols", ["small_red_triangle_down"], []),
+  new Emoji("🔸", "small orange diamond", "Symbols", ["small_orange_diamond"], []),
   new Emoji("🔹", "small blue diamond", "Symbols", ["small_blue_diamond"], []),
-  new Emoji(
-    "🔶",
-    "large orange diamond",
-    "Symbols",
-    ["large_orange_diamond"],
-    []
-  ),
+  new Emoji("🔶", "large orange diamond", "Symbols", ["large_orange_diamond"], []),
   new Emoji("🔷", "large blue diamond", "Symbols", ["large_blue_diamond"], []),
-  new Emoji(
-    "🔳",
-    "white square button",
-    "Symbols",
-    ["white_square_button"],
-    []
-  ),
-  new Emoji(
-    "🔲",
-    "black square button",
-    "Symbols",
-    ["black_square_button"],
-    []
-  ),
+  new Emoji("🔳", "white square button", "Symbols", ["white_square_button"], []),
+  new Emoji("🔲", "black square button", "Symbols", ["black_square_button"], []),
   new Emoji("▪️", "black small square", "Symbols", ["black_small_square"], []),
   new Emoji("▫️", "white small square", "Symbols", ["white_small_square"], []),
-  new Emoji(
-    "◾️",
-    "black medium-small square",
-    "Symbols",
-    ["black_medium_small_square"],
-    []
-  ),
-  new Emoji(
-    "◽️",
-    "white medium-small square",
-    "Symbols",
-    ["white_medium_small_square"],
-    []
-  ),
-  new Emoji(
-    "◼️",
-    "black medium square",
-    "Symbols",
-    ["black_medium_square"],
-    []
-  ),
-  new Emoji(
-    "◻️",
-    "white medium square",
-    "Symbols",
-    ["white_medium_square"],
-    []
-  ),
+  new Emoji("◾️", "black medium-small square", "Symbols", ["black_medium_small_square"], []),
+  new Emoji("◽️", "white medium-small square", "Symbols", ["white_medium_small_square"], []),
+  new Emoji("◼️", "black medium square", "Symbols", ["black_medium_square"], []),
+  new Emoji("◻️", "white medium square", "Symbols", ["white_medium_square"], []),
   new Emoji("⬛️", "black large square", "Symbols", ["black_large_square"], []),
   new Emoji("⬜️", "white large square", "Symbols", ["white_large_square"], []),
   new Emoji("🔈", "speaker low volume", "Symbols", ["speaker"], []),
-  new Emoji("🔇", "muted speaker", "Symbols", ["mute"], ["sound", "volume"]),
+  new Emoji("🔇", "muted speaker", "Symbols", ["mute"], ["sound","volume"]),
   new Emoji("🔉", "speaker medium volume", "Symbols", ["sound"], ["volume"]),
   new Emoji("🔊", "speaker high volume", "Symbols", ["loud_sound"], ["volume"]),
-  new Emoji("🔔", "bell", "Symbols", ["bell"], ["sound", "notification"]),
-  new Emoji("🔕", "bell with slash", "Symbols", ["no_bell"], ["volume", "off"]),
+  new Emoji("🔔", "bell", "Symbols", ["bell"], ["sound","notification"]),
+  new Emoji("🔕", "bell with slash", "Symbols", ["no_bell"], ["volume","off"]),
   new Emoji("📣", "megaphone", "Symbols", ["mega"], []),
   new Emoji("📢", "loudspeaker", "Symbols", ["loudspeaker"], ["announcement"]),
-  new Emoji(
-    "👁‍🗨",
-    "eye in speech bubble",
-    "Symbols",
-    ["eye_speech_bubble"],
-    []
-  ),
+  new Emoji("👁‍🗨", "eye in speech bubble", "Symbols", ["eye_speech_bubble"], []),
   new Emoji("💬", "speech balloon", "Symbols", ["speech_balloon"], ["comment"]),
-  new Emoji(
-    "💭",
-    "thought balloon",
-    "Symbols",
-    ["thought_balloon"],
-    ["thinking"]
-  ),
+  new Emoji("💭", "thought balloon", "Symbols", ["thought_balloon"], ["thinking"]),
   new Emoji("🗯", "right anger bubble", "Symbols", ["right_anger_bubble"], []),
   new Emoji("♠️", "spade suit", "Symbols", ["spades"], []),
   new Emoji("♣️", "club suit", "Symbols", ["clubs"], []),
   new Emoji("♥️", "heart suit", "Symbols", ["hearts"], []),
   new Emoji("♦️", "diamond suit", "Symbols", ["diamonds"], []),
   new Emoji("🃏", "joker", "Symbols", ["black_joker"], []),
-  new Emoji(
-    "🎴",
-    "flower playing cards",
-    "Symbols",
-    ["flower_playing_cards"],
-    []
-  ),
+  new Emoji("🎴", "flower playing cards", "Symbols", ["flower_playing_cards"], []),
   new Emoji("🀄️", "mahjong red dragon", "Symbols", ["mahjong"], []),
   new Emoji("🕐", "one o’clock", "Symbols", ["clock1"], []),
   new Emoji("🕑", "two o’clock", "Symbols", ["clock2"], []),
@@ -2768,13 +1185,7 @@ export default [
   new Emoji("🕧", "twelve-thirty", "Symbols", ["clock1230"], []),
   new Emoji("🏳️", "white flag", "Flags", ["white_flag"], []),
   new Emoji("🏴", "black flag", "Flags", ["black_flag"], []),
-  new Emoji(
-    "🏁",
-    "chequered flag",
-    "Flags",
-    ["checkered_flag"],
-    ["milestone", "finish"]
-  ),
+  new Emoji("🏁", "chequered flag", "Flags", ["checkered_flag"], ["milestone","finish"]),
   new Emoji("🚩", "triangular flag", "Flags", ["triangular_flag_on_post"], []),
   new Emoji("🏳️‍🌈", "rainbow flag", "Flags", ["rainbow_flag"], ["pride"]),
   new Emoji("🇦🇫", "Afghanistan", "Flags", ["afghanistan"], []),
@@ -2804,30 +1215,12 @@ export default [
   new Emoji("🇧🇲", "Bermuda", "Flags", ["bermuda"], []),
   new Emoji("🇧🇹", "Bhutan", "Flags", ["bhutan"], []),
   new Emoji("🇧🇴", "Bolivia", "Flags", ["bolivia"], []),
-  new Emoji(
-    "🇧🇶",
-    "Caribbean Netherlands",
-    "Flags",
-    ["caribbean_netherlands"],
-    []
-  ),
+  new Emoji("🇧🇶", "Caribbean Netherlands", "Flags", ["caribbean_netherlands"], []),
   new Emoji("🇧🇦", "Bosnia & Herzegovina", "Flags", ["bosnia_herzegovina"], []),
   new Emoji("🇧🇼", "Botswana", "Flags", ["botswana"], []),
   new Emoji("🇧🇷", "Brazil", "Flags", ["brazil"], []),
-  new Emoji(
-    "🇮🇴",
-    "British Indian Ocean Territory",
-    "Flags",
-    ["british_indian_ocean_territory"],
-    []
-  ),
-  new Emoji(
-    "🇻🇬",
-    "British Virgin Islands",
-    "Flags",
-    ["british_virgin_islands"],
-    []
-  ),
+  new Emoji("🇮🇴", "British Indian Ocean Territory", "Flags", ["british_indian_ocean_territory"], []),
+  new Emoji("🇻🇬", "British Virgin Islands", "Flags", ["british_virgin_islands"], []),
   new Emoji("🇧🇳", "Brunei", "Flags", ["brunei"], []),
   new Emoji("🇧🇬", "Bulgaria", "Flags", ["bulgaria"], []),
   new Emoji("🇧🇫", "Burkina Faso", "Flags", ["burkina_faso"], []),
@@ -2838,24 +1231,12 @@ export default [
   new Emoji("🇨🇦", "Canada", "Flags", ["canada"], []),
   new Emoji("🇮🇨", "Canary Islands", "Flags", ["canary_islands"], []),
   new Emoji("🇰🇾", "Cayman Islands", "Flags", ["cayman_islands"], []),
-  new Emoji(
-    "🇨🇫",
-    "Central African Republic",
-    "Flags",
-    ["central_african_republic"],
-    []
-  ),
+  new Emoji("🇨🇫", "Central African Republic", "Flags", ["central_african_republic"], []),
   new Emoji("🇹🇩", "Chad", "Flags", ["chad"], []),
   new Emoji("🇨🇱", "Chile", "Flags", ["chile"], []),
   new Emoji("🇨🇳", "China", "Flags", ["cn"], ["china"]),
   new Emoji("🇨🇽", "Christmas Island", "Flags", ["christmas_island"], []),
-  new Emoji(
-    "🇨🇨",
-    "Cocos (Keeling) Islands",
-    "Flags",
-    ["cocos_islands"],
-    ["keeling"]
-  ),
+  new Emoji("🇨🇨", "Cocos (Keeling) Islands", "Flags", ["cocos_islands"], ["keeling"]),
   new Emoji("🇨🇴", "Colombia", "Flags", ["colombia"], []),
   new Emoji("🇰🇲", "Comoros", "Flags", ["comoros"], []),
   new Emoji("🇨🇬", "Congo - Brazzaville", "Flags", ["congo_brazzaville"], []),
@@ -2879,25 +1260,19 @@ export default [
   new Emoji("🇪🇷", "Eritrea", "Flags", ["eritrea"], []),
   new Emoji("🇪🇪", "Estonia", "Flags", ["estonia"], []),
   new Emoji("🇪🇹", "Ethiopia", "Flags", ["ethiopia"], []),
-  new Emoji("🇪🇺", "European Union", "Flags", ["eu", "european_union"], []),
+  new Emoji("🇪🇺", "European Union", "Flags", ["eu","european_union"], []),
   new Emoji("🇫🇰", "Falkland Islands", "Flags", ["falkland_islands"], []),
   new Emoji("🇫🇴", "Faroe Islands", "Flags", ["faroe_islands"], []),
   new Emoji("🇫🇯", "Fiji", "Flags", ["fiji"], []),
   new Emoji("🇫🇮", "Finland", "Flags", ["finland"], []),
-  new Emoji("🇫🇷", "France", "Flags", ["fr"], ["france", "french"]),
+  new Emoji("🇫🇷", "France", "Flags", ["fr"], ["france","french"]),
   new Emoji("🇬🇫", "French Guiana", "Flags", ["french_guiana"], []),
   new Emoji("🇵🇫", "French Polynesia", "Flags", ["french_polynesia"], []),
-  new Emoji(
-    "🇹🇫",
-    "French Southern Territories",
-    "Flags",
-    ["french_southern_territories"],
-    []
-  ),
+  new Emoji("🇹🇫", "French Southern Territories", "Flags", ["french_southern_territories"], []),
   new Emoji("🇬🇦", "Gabon", "Flags", ["gabon"], []),
   new Emoji("🇬🇲", "Gambia", "Flags", ["gambia"], []),
   new Emoji("🇬🇪", "Georgia", "Flags", ["georgia"], []),
-  new Emoji("🇩🇪", "Germany", "Flags", ["de"], ["flag", "germany"]),
+  new Emoji("🇩🇪", "Germany", "Flags", ["de"], ["flag","germany"]),
   new Emoji("🇬🇭", "Ghana", "Flags", ["ghana"], []),
   new Emoji("🇬🇮", "Gibraltar", "Flags", ["gibraltar"], []),
   new Emoji("🇬🇷", "Greece", "Flags", ["greece"], []),
@@ -2977,25 +1352,13 @@ export default [
   new Emoji("🇳🇬", "Nigeria", "Flags", ["nigeria"], []),
   new Emoji("🇳🇺", "Niue", "Flags", ["niue"], []),
   new Emoji("🇳🇫", "Norfolk Island", "Flags", ["norfolk_island"], []),
-  new Emoji(
-    "🇲🇵",
-    "Northern Mariana Islands",
-    "Flags",
-    ["northern_mariana_islands"],
-    []
-  ),
+  new Emoji("🇲🇵", "Northern Mariana Islands", "Flags", ["northern_mariana_islands"], []),
   new Emoji("🇰🇵", "North Korea", "Flags", ["north_korea"], []),
   new Emoji("🇳🇴", "Norway", "Flags", ["norway"], []),
   new Emoji("🇴🇲", "Oman", "Flags", ["oman"], []),
   new Emoji("🇵🇰", "Pakistan", "Flags", ["pakistan"], []),
   new Emoji("🇵🇼", "Palau", "Flags", ["palau"], []),
-  new Emoji(
-    "🇵🇸",
-    "Palestinian Territories",
-    "Flags",
-    ["palestinian_territories"],
-    []
-  ),
+  new Emoji("🇵🇸", "Palestinian Territories", "Flags", ["palestinian_territories"], []),
   new Emoji("🇵🇦", "Panama", "Flags", ["panama"], []),
   new Emoji("🇵🇬", "Papua New Guinea", "Flags", ["papua_new_guinea"], []),
   new Emoji("🇵🇾", "Paraguay", "Flags", ["paraguay"], []),
@@ -3015,13 +1378,7 @@ export default [
   new Emoji("🇰🇳", "St. Kitts & Nevis", "Flags", ["st_kitts_nevis"], []),
   new Emoji("🇱🇨", "St. Lucia", "Flags", ["st_lucia"], []),
   new Emoji("🇵🇲", "St. Pierre & Miquelon", "Flags", ["st_pierre_miquelon"], []),
-  new Emoji(
-    "🇻🇨",
-    "St. Vincent & Grenadines",
-    "Flags",
-    ["st_vincent_grenadines"],
-    []
-  ),
+  new Emoji("🇻🇨", "St. Vincent & Grenadines", "Flags", ["st_vincent_grenadines"], []),
   new Emoji("🇼🇸", "Samoa", "Flags", ["samoa"], []),
   new Emoji("🇸🇲", "San Marino", "Flags", ["san_marino"], []),
   new Emoji("🇸🇹", "São Tomé & Príncipe", "Flags", ["sao_tome_principe"], []),
@@ -3037,13 +1394,7 @@ export default [
   new Emoji("🇸🇧", "Solomon Islands", "Flags", ["solomon_islands"], []),
   new Emoji("🇸🇴", "Somalia", "Flags", ["somalia"], []),
   new Emoji("🇿🇦", "South Africa", "Flags", ["south_africa"], []),
-  new Emoji(
-    "🇬🇸",
-    "South Georgia & South Sandwich Islands",
-    "Flags",
-    ["south_georgia_south_sandwich_islands"],
-    []
-  ),
+  new Emoji("🇬🇸", "South Georgia & South Sandwich Islands", "Flags", ["south_georgia_south_sandwich_islands"], []),
   new Emoji("🇰🇷", "South Korea", "Flags", ["kr"], ["korea"]),
   new Emoji("🇸🇸", "South Sudan", "Flags", ["south_sudan"], []),
   new Emoji("🇪🇸", "Spain", "Flags", ["es"], ["spain"]),
@@ -3066,31 +1417,13 @@ export default [
   new Emoji("🇹🇳", "Tunisia", "Flags", ["tunisia"], []),
   new Emoji("🇹🇷", "Turkey", "Flags", ["tr"], ["turkey"]),
   new Emoji("🇹🇲", "Turkmenistan", "Flags", ["turkmenistan"], []),
-  new Emoji(
-    "🇹🇨",
-    "Turks & Caicos Islands",
-    "Flags",
-    ["turks_caicos_islands"],
-    []
-  ),
+  new Emoji("🇹🇨", "Turks & Caicos Islands", "Flags", ["turks_caicos_islands"], []),
   new Emoji("🇹🇻", "Tuvalu", "Flags", ["tuvalu"], []),
   new Emoji("🇺🇬", "Uganda", "Flags", ["uganda"], []),
   new Emoji("🇺🇦", "Ukraine", "Flags", ["ukraine"], []),
-  new Emoji(
-    "🇦🇪",
-    "United Arab Emirates",
-    "Flags",
-    ["united_arab_emirates"],
-    []
-  ),
-  new Emoji("🇬🇧", "United Kingdom", "Flags", ["gb", "uk"], ["flag", "british"]),
-  new Emoji(
-    "🇺🇸",
-    "United States",
-    "Flags",
-    ["us"],
-    ["flag", "united", "america"]
-  ),
+  new Emoji("🇦🇪", "United Arab Emirates", "Flags", ["united_arab_emirates"], []),
+  new Emoji("🇬🇧", "United Kingdom", "Flags", ["gb","uk"], ["flag","british"]),
+  new Emoji("🇺🇸", "United States", "Flags", ["us"], ["flag","united","america"]),
   new Emoji("🇻🇮", "U.S. Virgin Islands", "Flags", ["us_virgin_islands"], []),
   new Emoji("🇺🇾", "Uruguay", "Flags", ["uruguay"], []),
   new Emoji("🇺🇿", "Uzbekistan", "Flags", ["uzbekistan"], []),
