@@ -7,5 +7,3 @@ export default {
   name: "Helper"
 };
 </script>
-
-<style></style>

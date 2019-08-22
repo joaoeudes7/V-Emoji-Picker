@@ -86,9 +86,9 @@ export default {
 
 <style lang="scss" scoped>
 #EmojiPicker {
+  font-family: Noto, Twemoji, NotomojiColor, Notomoji, Symbola, sans-serif;
   display: inline-flex;
   flex-direction: column;
-  font-family: "DejaVu Sans", sans-serif;
   align-items: center;
   background: #f0f0f0;
   border-radius: 4px;
