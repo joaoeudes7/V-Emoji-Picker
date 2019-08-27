@@ -84,9 +84,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #EmojiPicker {
-  font-family: Noto, Twemoji, NotomojiColor, Notomoji, Symbola, sans-serif;
+  font-family: Twemoji, NotomojiColor, Notomoji, Symbola, Noto, OpenSansEmoji;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
