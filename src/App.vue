@@ -15,7 +15,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { Emoji } from "./models/Emoji";
 
-import VEmojiPicker from "./components/VEmojiPicker";
+import VEmojiPicker from './index';
 
 @Component({
   components: {

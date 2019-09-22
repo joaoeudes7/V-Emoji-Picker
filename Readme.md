@@ -45,7 +45,21 @@ export default {
   }
 }
 </script>
+```
 
+or Global
+
+```js
+import Vue from "vue";
+import App from "./App.vue";
+import { VEmojiPicker } from 'v-emoji-picker';
+
+Vue.config.productionTip = false;
+Vue.use(VEmojiPicker);
+
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 ## Props
@@ -55,7 +69,8 @@ export default {
   labelSearch: { type: String, default: 'Pesquisar...' },
   showCategory: { type: Boolean, default: true },
   emojisByRow: { type: Number, default: 5 },
-  showSearch: { type: Boolean, default: () => true }
+  showSearch: { type: Boolean, default: () => true },
+  continuousList: { type: Boolean, default: false }
 }
 ```
 
@@ -67,7 +82,7 @@ export default {
 }
 ```
 
-# Estructure Emoji
+# Structure Emoji
 ![](.emoji.png)
 
 # Demo
