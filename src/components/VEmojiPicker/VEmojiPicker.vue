@@ -60,17 +60,17 @@ export default class VEmojiPicker extends Vue {
   }
 
   async onSelectEmoji(emoji: Emoji) {
-    this.updateFrequenty(emoji);
+    this.updateFrequently(emoji);
     this.$emit("select", emoji);
   }
 
-  async updateFrequenty(emoji: Emoji) {
-    this.mapEmojis["Frequenty"] = [
-      ...new Set([...this.mapEmojis["Frequenty"], emoji])
+  async updateFrequently(emoji: Emoji) {
+    this.mapEmojis["Frequently"] = [
+      ...new Set([...this.mapEmojis["Frequently"], emoji])
     ];
   }
   async mapperData(dataEmojis: Emoji[]) {
-    this.$set(this.mapEmojis, "Frequenty", []);
+    this.$set(this.mapEmojis, "Frequently", []);
     dataEmojis.forEach((emoji: Emoji) => {
       const _category = emoji.category;
 

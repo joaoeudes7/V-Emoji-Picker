@@ -1,11 +1,10 @@
 <template>
-  <span class="svg" :style="styleSVG">
-    <img loading="lazy" :src="icon" width="20px" :alt="name" />
-  </span>
+  <span class="svg" :style="styleSVG" :alt="name" v-html="icon" />
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import icons from './icons';
 
 @Component({})
 export default class VSvg extends Vue {
@@ -13,7 +12,7 @@ export default class VSvg extends Vue {
     @Prop({}) readonly styles!: object;
 
     get icon(): string {
-      return require(`@/assets/${this.name}.svg`);
+      return icons[this.name];
     }
 
     get styleSVG() {

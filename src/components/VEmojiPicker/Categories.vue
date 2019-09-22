@@ -25,7 +25,7 @@ import VSvg from "./VSvg.vue";
 export default class Categories extends Vue{
   active = 1;
   categories: Category[] = [
-      { name: "Frequenty", icon: "frequenty" },
+      { name: "Frequently", icon: "frequently" },
       { name: "Peoples", icon: "peoples" },
       { name: "Nature", icon: "nature" },
       { name: "Foods", icon: "foods" },
