@@ -1,6 +1,6 @@
 <template>
   <span class="svg" :style="styleSVG">
-    <img lazy :src="icon" width="20px" :alt="name" />
+    <img loading="lazy" :src="icon" width="20px" :alt="name" />
   </span>
 </template>
 
