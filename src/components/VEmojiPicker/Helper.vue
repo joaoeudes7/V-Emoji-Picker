@@ -2,8 +2,10 @@
   <div id="Helper"></div>
 </template>
 
-<script>
-export default {
-  name: "Helper"
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
+@Component({})
+export default class Helper extends Vue {
 };
 </script>

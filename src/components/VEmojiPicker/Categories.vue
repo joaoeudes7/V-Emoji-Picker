@@ -1,8 +1,8 @@
 <template>
   <div id="Categories">
     <div
-      :class="['category', { active: index === active }]"
       v-for="(categorie, index) in categories"
+      :class="['category', { active: index === active }]"
       :key="index"
       @click="onSelect(index)"
     >
@@ -11,16 +11,20 @@
   </div>
 </template>
 
-<script>
-import VSvg from "./VSvg";
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { Category } from '@/models/Category';
 
-export default {
-  name: "Categories",
+import VSvg from "./VSvg.vue";
+
+@Component({
   components: {
     VSvg
-  },
-  data: () => ({
-    categories: [
+  }
+})
+export default class Categories extends Vue{
+  active = 1;
+  categories: Category[] = [
       { name: "Frequenty", icon: "frequenty" },
       { name: "Peoples", icon: "peoples" },
       { name: "Nature", icon: "nature" },
@@ -30,16 +34,12 @@ export default {
       { name: "Places", icon: "places" },
       { name: "Symbols", icon: "symbols" },
       { name: "Flags", icon: "flags" }
-    ],
-    active: 1
-  }),
-  methods: {
-    onSelect(index) {
-      this.active = index;
+  ];
 
-      const _category = this.categories[index];
-      this.$emit("select", _category);
-    }
+  onSelect(index: number) {
+    this.active = index;
+
+    this.$emit("select", this.categories[index]);
   }
 };
 </script>

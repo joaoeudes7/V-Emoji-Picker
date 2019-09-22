@@ -1,58 +1,61 @@
 {
   "name": "v-emoji-picker",
   "version": "1.1.7",
-  "license": "MIT",
-  "homepage": "https://github.com/joaoeudes7/V-Emoji-Picker#readme",
   "author": {
     "name": "João Eudes Lima",
     "email": "joaoeudes7@gmail.com",
     "url": "https://github.com/joaoeudes7"
   },
-  "repository": "https://github.com/joaoeudes7/V-Emoji-Picker",
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --target lib --name v-emoji-picker ./src/index.js",
+    "build": "vue-cli-service build --target lib --name v-emoji-picker ./src/index.ts",
+    "lint": "vue-cli-service lint",
     "build-wc": "vue-cli-service build --target wc --name v-emoji-picker './src/components/**/*.vue'",
-    "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker './src/components/**/*.vue'",
-    "lint": "vue-cli-service lint"
+    "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker './src/components/**/*.vue'"
   },
   "main": "dist/v-emoji-picker.umd.js",
   "module": "dist/v-emoji-picker.esm.js",
   "unpkg": "dist/v-emoji-picker.min.js",
-  "style": "dist/v-emoji-picker.css",
-  "keywords": [
-    "javascript",
-    "vue",
-    "emoji"
-  ],
   "files": [
     "dist/*",
-    "data/*"
+    "data/*",
+    "Readme.md"
   ],
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-plugin-unit-jest": "^3.8.0",
-    "@vue/cli-service": "^3.8.4",
-    "@vue/eslint-config-prettier": "^4.0.1",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.2",
-    "babel-jest": "^24.8.0",
-    "eslint": "^6.0.1",
-    "eslint-plugin-prettier": "^3.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.2.3",
-    "fibers": "^4.0.1",
-    "sass": "^1.22.2",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.22.12",
+    "sass-loader": "^8.0.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.3",
+    "vue-cli-plugin-webpack-bundle-analyzer": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "homepage": "https://github.com/joaoeudes7/V-Emoji-Picker#readme",
+  "keywords": [
+    "javascript",
+    "vue",
+    "emoji"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/joaoeudes7/V-Emoji-Picker"
 }

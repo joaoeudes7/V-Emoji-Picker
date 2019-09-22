@@ -4,9 +4,12 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ["plugin:vue/essential", "@vue/prettier"],
-  rules: {},
+  extends: [ 'plugin:vue/essential', '@vue/typescript' ],
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  },
   parserOptions: {
-    parser: "babel-eslint"
+    parser: '@typescript-eslint/parser'
   }
-};
+}

@@ -1,31 +1,31 @@
 <template>
-  <span id="VSvg" :style="styleSVG" v-html="icon" />
+  <span class="svg" :style="styleSVG">
+    <img lazy :src="icon" width="20px" :alt="name" />
+  </span>
 </template>
 
-<script>
-import { categories } from "./_icons.js";
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-export default {
-  name: "VSvg",
-  props: {
-    name: { type: String, required: true },
-    styles: { type: Object }
-  },
-  computed: {
-    icon() {
-      return categories[this.name];
-    },
-    styleSVG() {
+@Component({})
+export default class VSvg extends Vue {
+    @Prop({ required: true }) readonly name!: string;
+    @Prop({}) readonly styles!: object;
+
+    get icon(): string {
+      return require(`@/assets/${this.name}.svg`);
+    }
+
+    get styleSVG() {
       return {
         ...this.styles
       };
     }
-  }
 };
 </script>
 
 <style scoped lang="scss">
-#VSvg {
+.svg {
   display: inline-block;
   vertical-align: middle;
 }

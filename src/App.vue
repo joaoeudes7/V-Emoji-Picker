@@ -2,42 +2,49 @@
   <div id="app">
     <VEmojiPicker
       labelSearch="Pesquisar..."
-      :showSearch="false"
-      :pack="pack"
-      :continuousList="true"
+      :showSearch="true"
+      :pack="dataEmojis"
+      :continuousList="false"
+      :emojisByRow="5"
       @select="selectEmoji"
     />
   </div>
 </template>
 
-<script>
-import VEmojiPicker from "./components/VEmojiPicker";
-import packData from "../data/emojis.js";
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { Emoji } from "./models/Emoji";
 
-export default {
-  name: "Demo",
+import VEmojiPicker from "./components/VEmojiPicker";
+
+@Component({
   components: {
     VEmojiPicker
-  },
-  data: () => ({
-    pack: packData
-  }),
-  methods: {
-    selectEmoji(emoji) {
-      // eslint-disable-next-line no-console
-      console.log(emoji);
-    }
   }
-};
+})
+export default class App extends Vue {
+  get dataEmojis(): any {
+    return require('../data/emojis.json')['data'];
+  }
+
+  selectEmoji(emoji: Emoji) {
+    console.log(emoji);
+  }
+}
 </script>
 
 <style lang="scss">
 @font-face {
-  font-family: Twemoji;
+  font-family: Segoe UI;
   font-weight: 400;
   font-display: swap;
-  src: url(https://ucarecdn.com/73cba3b1-b2fa-45d9-89e3-886542974668/)
-    format("truetype");
+  src: local("Segoe UI Light"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf)
+      format("truetype");
 }
 
 /* @font-face {

@@ -1,92 +1,91 @@
 <template>
   <div id="EmojiPicker">
-    <Categories v-if="showCategory" @select="onChangeCategory($event)" />
-    <InputSearch
-      v-if="showSearch"
-      v-model="filterEmoji"
-      :placeholder="labelSearch"
-    />
+    <Categories v-if="showCategory" @select="changeCategory" />
+    <InputSearch v-if="showSearch" @update="onSearch" :placeholder="labelSearch" />
     <EmojiList
-      :data="emojis"
+      :data="mapEmojis"
       :category="category"
       :filter="filterEmoji"
       :emojisByRow="emojisByRow"
       :continuousList="continuousList"
-      @select="onSelectEmoji($event)"
+      :hasSearch="showSearch"
+      @select="onSelectEmoji"
     />
   </div>
 </template>
 
-<script>
-import Categories from "./Categories";
-import EmojiList from "./EmojiList";
-import InputSearch from "./InputSearch";
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { Emoji } from "@/models/Emoji";
+import { Category } from "@/models/Category";
 
-export default {
-  name: "VEmojiPicker",
-  props: {
-    pack: { type: Array, required: true },
-    labelSearch: { type: String, default: "Pesquisar..." },
-    showCategory: { type: Boolean, default: true },
-    emojisByRow: { type: Number, default: 5 },
-    showSearch: { type: Boolean, default: () => true },
-    continuousList: { type: Boolean, default: () => false }
-  },
+import Categories from "./Categories.vue";
+import EmojiList from "./EmojiList.vue";
+import InputSearch from "./InputSearch.vue";
+
+@Component({
   components: {
     Categories,
     EmojiList,
     InputSearch
-  },
-  data: () => ({
-    mapEmojis: {},
-    category: "Peoples",
-    filterEmoji: ""
-  }),
-  created() {
+  }
+})
+export default class VEmojiPicker extends Vue {
+  @Prop({ required: true }) readonly pack!: Emoji[];
+  @Prop({ default: "Pesquisar..." }) readonly labelSearch!: string;
+  @Prop({ default: 5 }) readonly emojisByRow!: number;
+  @Prop({ default: true }) readonly showCategory!: boolean;
+  @Prop({ default: true }) readonly showSearch!: boolean;
+  @Prop({ default: false }) readonly continuousList!: boolean;
+
+  mapEmojis: any = {};
+  category = "Peoples";
+  filterEmoji = "";
+
+  private created() {
     this.mapperData(this.pack);
-  },
-  methods: {
-    onChangeCategory(category) {
+  }
+
+  async onSearch(term: string) {
+    this.filterEmoji = term;
+  }
+
+  async changeCategory(category: Category) {
+    const hasEmojis = this.mapEmojis[category.name].length;
+
+    if (hasEmojis) {
       this.category = category.name;
       this.$emit("changeCategory", this.category);
-    },
-    onSelectEmoji(emoji) {
-      this.updateFrequenty(emoji);
-      this.$emit("select", emoji);
-    },
-    updateFrequenty(emoji) {
-      this.mapEmojis["Frequenty"] = [
-        ...new Set([...this.mapEmojis["Frequenty"], emoji])
-      ];
-    },
-    mapperData(dataEmojis) {
-      this.$set(this.mapEmojis, "Frequenty", []);
-
-      dataEmojis.forEach(emoji => {
-        const _category = emoji["category"];
-
-        if (!this.mapEmojis[_category]) {
-          this.$set(this.mapEmojis, _category, [emoji]);
-        } else {
-          this.mapEmojis[_category].push(emoji);
-        }
-      });
-    }
-  },
-  beforeDestroy() {
-    delete this.mapEmojis;
-  },
-  computed: {
-    emojis() {
-      return this.mapEmojis;
     }
   }
-};
+
+  async onSelectEmoji(emoji: Emoji) {
+    this.updateFrequenty(emoji);
+    this.$emit("select", emoji);
+  }
+
+  async updateFrequenty(emoji: Emoji) {
+    this.mapEmojis["Frequenty"] = [
+      ...new Set([...this.mapEmojis["Frequenty"], emoji])
+    ];
+  }
+  async mapperData(dataEmojis: Emoji[]) {
+    this.$set(this.mapEmojis, "Frequenty", []);
+    dataEmojis.forEach((emoji: Emoji) => {
+      const _category = emoji.category;
+
+      if (!this.mapEmojis[_category]) {
+        this.$set(this.mapEmojis, _category, [emoji]);
+      } else {
+        this.mapEmojis[_category].push(emoji);
+      }
+    });
+  }
+}
 </script>
 
 <style lang="scss">
 #EmojiPicker {
-  font-family: Twemoji, NotomojiColor, Notomoji, Symbola, Noto, OpenSansEmoji;
   display: inline-flex;
   flex-direction: column;
   align-items: center;

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 class Emoji {
   constructor(emoji, description, category, aliases, tags) {
     this.emoji = emoji;
