@@ -14,6 +14,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { Emoji } from "./models/Emoji";
+import packEmoji from "../data/emojis";
 
 import VEmojiPicker from './index';
 
@@ -24,7 +25,7 @@ import VEmojiPicker from './index';
 })
 export default class App extends Vue {
   get dataEmojis(): any {
-    return require('../data/emojis.json')['data'];
+    return packEmoji;
   }
 
   selectEmoji(emoji: Emoji) {

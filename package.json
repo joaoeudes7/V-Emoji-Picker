@@ -9,6 +9,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --target lib --name v-emoji-picker ./src/index.ts",
+    "build:app": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-wc": "vue-cli-service build --target wc --name v-emoji-picker './src/components/**/*.vue'",
     "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker './src/components/**/*.vue'"
