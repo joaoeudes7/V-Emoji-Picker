@@ -2,11 +2,11 @@
   <div id="Categories">
     <div
       v-for="(category, index) in categories"
-      :class="['category', { active: index === active }]"
+      :class="['category', { active: category.name === current }]"
       :key="index"
       @click="onSelect(category)"
     >
-      <VSvg :name="categorie.icon" />
+      <VSvg :name="category.icon" />
     </div>
   </div>
 </template>
@@ -23,18 +23,8 @@ import VSvg from "./VSvg.vue";
   }
 })
 export default class Categories extends Vue{
-  active = 1;
-  categories: Category[] = [
-      { name: "Frequently", icon: "frequently" },
-      { name: "Peoples", icon: "peoples" },
-      { name: "Nature", icon: "nature" },
-      { name: "Foods", icon: "foods" },
-      { name: "Activity", icon: "activity" },
-      { name: "Objects", icon: "objects" },
-      { name: "Places", icon: "places" },
-      { name: "Symbols", icon: "symbols" },
-      { name: "Flags", icon: "flags" }
-  ];
+  @Prop({}) readonly categories!: Category[]
+  @Prop({}) readonly current!: string;
 
   onSelect(category: Category) {
     this.$emit("select", category);

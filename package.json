@@ -1,6 +1,6 @@
 {
   "name": "v-emoji-picker",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "author": {
     "name": "João Eudes Lima",
     "email": "joaoeudes7@gmail.com",
@@ -12,10 +12,10 @@
     "build:app": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-wc": "vue-cli-service build --target wc --name v-emoji-picker './src/components/**/*.vue'",
-    "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker './src/components/**/*.vue'"
+    "build-wc-async": "vue-cli-service build --target wc-async --name v-emoji-picker './src/components/**/*.vue'",
+    "prepublish": "yarn build"
   },
   "main": "dist/v-emoji-picker.umd.js",
-  "module": "dist/v-emoji-picker.esm.js",
   "unpkg": "dist/v-emoji-picker.min.js",
   "files": [
     "dist/*",
@@ -23,12 +23,10 @@
     "Readme.md"
   ],
   "dependencies": {
-    "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-typescript": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
@@ -41,6 +39,7 @@
     "sass": "^1.22.12",
     "sass-loader": "^8.0.0",
     "typescript": "^3.6.3",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
   "browserslist": [

@@ -12,4 +12,19 @@ export default class EmojiItem extends Vue {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.emoji {
+  display: inline-block;
+  text-align: center;
+  font-size: 25px;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background: #00000017;
+    border-radius: 8px;
+  }
+}
+</style>

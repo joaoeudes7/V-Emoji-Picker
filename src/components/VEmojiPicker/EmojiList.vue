@@ -157,15 +157,6 @@ export default class EmojiList extends Vue {
 .grid-emojis {
   display: grid;
   margin: 5px 0;
-  align-items: start;
-}
-
-.emoji {
-  display: inline-block;
-  text-align: center;
-  font-size: 25px;
-  padding: 5px;
-  max-height: 30px;
-  cursor: pointer;
+  justify-items: center;
 }
 </style>
