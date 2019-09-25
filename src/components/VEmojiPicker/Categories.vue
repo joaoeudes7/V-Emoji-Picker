@@ -1,10 +1,10 @@
 <template>
   <div id="Categories">
     <div
-      v-for="(categorie, index) in categories"
+      v-for="(category, index) in categories"
       :class="['category', { active: index === active }]"
       :key="index"
-      @click="onSelect(index)"
+      @click="onSelect(category)"
     >
       <VSvg :name="categorie.icon" />
     </div>
@@ -36,10 +36,8 @@ export default class Categories extends Vue{
       { name: "Flags", icon: "flags" }
   ];
 
-  onSelect(index: number) {
-    this.active = index;
-
-    this.$emit("select", this.categories[index]);
+  onSelect(category: Category) {
+    this.$emit("select", category);
   }
 };
 </script>
