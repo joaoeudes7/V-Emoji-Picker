@@ -22,13 +22,13 @@ yarn add v-emoji-picker
 ```vue
 <template>
   <div id="app">
-    <VEmojiPicker :pack="pack" @select="selectEmoji" />
+    <VEmojiPicker :pack="emojisNatives" @select="selectEmoji" />
   </div>
 </template>
 
 <script>
 import VEmojiPicker from 'v-emoji-picker';
-import packData from 'v-emoji-picker/data/emojis.json';
+import packEmoji from "v-emoji-picker/data/emojis.js";
 
 export default {
   name: 'Demo',
@@ -36,7 +36,7 @@ export default {
     VEmojiPicker
   },
   data: () => ({
-    pack: packData
+    emojisNatives: packEmoji
   }),
   methods: {
     selectEmoji(emoji) {
