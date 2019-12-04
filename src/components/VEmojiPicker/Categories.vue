@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Emit } from "vue-property-decorator";
 import { Category } from '@/models/Category';
 
 import VSvg from "./VSvg.vue";
@@ -26,8 +26,9 @@ export default class Categories extends Vue{
   @Prop({}) readonly categories!: Category[]
   @Prop({}) readonly current!: string;
 
+  @Emit('select')
   onSelect(category: Category) {
-    this.$emit("select", category);
+    return category;
   }
 };
 </script>

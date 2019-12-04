@@ -45,7 +45,7 @@ export default class InputSearch extends Vue {
   input {
     width: 100%;
     font-size: 14px;
-    padding: 8px;
+    padding: 6px 8px;
     box-sizing: border-box;
     border-radius: 8px;
     background: #f6f6f6;

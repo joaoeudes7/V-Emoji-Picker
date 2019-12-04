@@ -1,6 +1,11 @@
 <template>
   <div id="EmojiPicker">
-    <Categories v-if="showCategory" :categories="categories" :current="currentCategory" @select="changeCategory" />
+    <Categories
+      v-if="showCategory"
+      :categories="categories"
+      :current="currentCategory"
+      @select="changeCategory"
+    />
     <InputSearch v-if="showSearch" @update="onSearch" :placeholder="labelSearch" />
     <EmojiList
       :data="mapEmojis"
@@ -15,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
 import { Emoji } from "@/models/Emoji";
 import { Category } from "@/models/Category";
 
@@ -46,7 +51,7 @@ export default class VEmojiPicker extends Vue {
   currentCategory = this.category;
   filterEmoji = "";
 
-  private created() {
+  created() {
     this.mapperData(this.pack);
   }
 
@@ -61,11 +66,6 @@ export default class VEmojiPicker extends Vue {
     if (hasEmojis) {
       this.$emit("changeCategory", category);
     }
-  }
-
-  async onSelectEmoji(emoji: Emoji) {
-    this.updateFrequently(emoji);
-    this.$emit("select", emoji);
   }
 
   async updateFrequently(emoji: Emoji) {
@@ -86,7 +86,14 @@ export default class VEmojiPicker extends Vue {
     });
   }
 
-  @Watch('category')
+  @Emit("select")
+  async onSelectEmoji(emoji: Emoji) {
+    this.updateFrequently(emoji);
+
+    return emoji;
+  }
+
+  @Watch("category")
   onChangeCategory(newValue: string, old: string) {
     this.currentCategory = newValue;
   }
@@ -96,6 +103,7 @@ export default class VEmojiPicker extends Vue {
 <style lang="scss">
 #EmojiPicker {
   display: inline-flex;
+  text-rendering: optimizeLegibility;
   flex-direction: column;
   align-items: center;
   background: #f0f0f0;
