@@ -1,9 +1,9 @@
 # V-Emoji-Picker
 This simple package use Emojis Natives
 
-[![npm](https://img.shields.io/npm/v/v-emoji-picker.svg)
-![bundlephobia](https://img.shields.io/bundlephobia/minzip/v-emoji-picker.svg?style=flat)
-![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
+[![npm](https://img.shields.io/npm/v/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
+[![bundlephobia](https://img.shields.io/bundlephobia/minzip/v-emoji-picker.svg?style=flat)](https://bundlephobia.com/result?p=v-emoji-picker@latest)
+[![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker?ref=badge_shield)
 
