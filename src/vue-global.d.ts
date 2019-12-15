@@ -1,5 +1,4 @@
-import _Vue = require('vue')
+import Vue from 'vue';
 
-declare global {
-  const Vue: typeof _Vue
-}
+export default Vue;
+export as namespace Vue;
