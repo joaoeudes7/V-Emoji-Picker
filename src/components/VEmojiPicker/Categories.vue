@@ -6,31 +6,31 @@
       :key="index"
       @click="onSelect(category)"
     >
-      <VSvg :name="category.icon" />
+      <CategoryItem :name="category.name" :icon="category.icon" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue, Emit } from "vue-property-decorator";
-import { Category } from '@/models/Category';
+import { Category } from "@/models/Category";
 
-import VSvg from "./VSvg.vue";
+import CategoryItem from "./CategoryItem.vue";
 
 @Component({
   components: {
-    VSvg
+    CategoryItem
   }
 })
-export default class Categories extends Vue{
-  @Prop({}) readonly categories!: Category[]
+export default class Categories extends Vue {
+  @Prop({}) readonly categories!: Category[];
   @Prop({}) readonly current!: string;
 
-  @Emit('select')
+  @Emit("select")
   onSelect(category: Category) {
     return category;
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

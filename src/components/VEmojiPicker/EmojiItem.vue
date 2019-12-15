@@ -1,14 +1,15 @@
 
 <template>
-  <span class="emoji" v-html="data" />
+  <span class="emoji" v-html="emoji.data" />
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { IEmoji } from "@/models/Emoji";
 
 @Component({})
 export default class EmojiItem extends Vue {
-  @Prop({}) readonly data!: string;
+  @Prop({}) readonly emoji!: IEmoji;
 }
 </script>
 

@@ -3,25 +3,27 @@
     <div ref="container-emoji" class="container-emoji">
       <template v-if="continuousList">
         <div v-for="(category, category_name) in dataFilteredByCategory" :key="category_name">
-          <CategoryTitle v-show="category.length" :name="category_name" :ref="category_name" />
+          <CategoryLabel v-show="category.length" :name="category_name" :ref="category_name" />
           <div v-if="category.length" class="grid-emojis" :style="gridDynamic">
             <EmojiItem
               v-for="(emoji, index_e) in category"
               :key="`${category_name}-${index_e}`"
-              :data="emoji['emoji']"
+              :emoji="emoji"
               @click.native="onSelect(emoji)"
             />
           </div>
         </div>
       </template>
-      <div v-else class="grid-emojis" :style="gridDynamic">
-        <EmojiItem
-          v-for="(emoji, index) in dataFiltered"
-          :key="index"
-          :data="emoji['emoji']"
-          @click.native="onSelect(emoji)"
-        />
-      </div>
+      <template v-else>
+        <div class="grid-emojis" :style="gridDynamic">
+          <EmojiItem
+            v-for="(emoji, index) in dataFiltered"
+            :key="index"
+            :emoji="emoji"
+            @click.native="onSelect(emoji)"
+          />
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -38,12 +40,12 @@ import {
 import { Emoji } from "@/models/Emoji";
 
 import EmojiItem from "./EmojiItem.vue";
-import CategoryTitle from "./CategoryTitle.vue";
+import CategoryLabel from "./CategoryLabel.vue";
 
 @Component({
   components: {
     EmojiItem,
-    CategoryTitle
+    CategoryLabel
   }
 })
 export default class EmojiList extends Vue {
@@ -70,6 +72,7 @@ export default class EmojiList extends Vue {
       gridTemplateColumns: `repeat(${this.emojisByRow}, ${percent}%)`
     };
   }
+
   get dataFiltered() {
     let data = this.data[this.category];
     const searchValue = this.filter.trim().toLowerCase();
@@ -82,6 +85,7 @@ export default class EmojiList extends Vue {
 
     return data;
   }
+
   get dataFilteredByCategory() {
     let _data = Object.assign({}, this.data);
     const searchValue = this.filter.trim().toLowerCase();
