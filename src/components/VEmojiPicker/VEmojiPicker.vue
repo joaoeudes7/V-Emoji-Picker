@@ -1,10 +1,15 @@
 <template>
   <div id="EmojiPicker">
-    <Categories v-if="showCategory" @select="changeCategory" />
+    <Categories
+      v-if="showCategory"
+      :categories="categories"
+      :current="currentCategory"
+      @select="changeCategory"
+    />
     <InputSearch v-if="showSearch" @update="onSearch" :placeholder="labelSearch" />
     <EmojiList
       :data="mapEmojis"
-      :category="category"
+      :category="currentCategory"
       :filter="filterEmoji"
       :emojisByRow="emojisByRow"
       :continuousList="continuousList"
@@ -15,13 +20,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
 import { Emoji } from "@/models/Emoji";
 import { Category } from "@/models/Category";
 
 import Categories from "./Categories.vue";
 import EmojiList from "./EmojiList.vue";
 import InputSearch from "./InputSearch.vue";
+
+import CategoriesDefault from "./categories";
 
 @Component({
   components: {
@@ -34,15 +41,17 @@ export default class VEmojiPicker extends Vue {
   @Prop({ required: true }) readonly pack!: Emoji[];
   @Prop({ default: "Pesquisar..." }) readonly labelSearch!: string;
   @Prop({ default: 5 }) readonly emojisByRow!: number;
-  @Prop({ default: true }) readonly showCategory!: boolean;
   @Prop({ default: true }) readonly showSearch!: boolean;
   @Prop({ default: false }) readonly continuousList!: boolean;
+  @Prop({ default: true }) readonly showCategory!: boolean;
+  @Prop({ default: "Peoples" }) readonly category!: string;
+  @Prop({ default: () => CategoriesDefault }) readonly categories!: Category[];
 
   mapEmojis: any = {};
-  category = "Peoples";
+  currentCategory = this.category;
   filterEmoji = "";
 
-  private created() {
+  created() {
     this.mapperData(this.pack);
   }
 
@@ -52,25 +61,20 @@ export default class VEmojiPicker extends Vue {
 
   async changeCategory(category: Category) {
     const hasEmojis = this.mapEmojis[category.name].length;
+    this.currentCategory = category.name;
 
     if (hasEmojis) {
-      this.category = category.name;
-      this.$emit("changeCategory", this.category);
+      this.$emit("changeCategory", category);
     }
   }
 
-  async onSelectEmoji(emoji: Emoji) {
-    this.updateFrequenty(emoji);
-    this.$emit("select", emoji);
-  }
-
-  async updateFrequenty(emoji: Emoji) {
-    this.mapEmojis["Frequenty"] = [
-      ...new Set([...this.mapEmojis["Frequenty"], emoji])
+  async updateFrequently(emoji: Emoji) {
+    this.mapEmojis["Frequently"] = [
+      ...new Set([emoji, ...this.mapEmojis["Frequently"]])
     ];
   }
   async mapperData(dataEmojis: Emoji[]) {
-    this.$set(this.mapEmojis, "Frequenty", []);
+    this.$set(this.mapEmojis, "Frequently", []);
     dataEmojis.forEach((emoji: Emoji) => {
       const _category = emoji.category;
 
@@ -81,12 +85,25 @@ export default class VEmojiPicker extends Vue {
       }
     });
   }
+
+  @Emit("select")
+  async onSelectEmoji(emoji: Emoji) {
+    this.updateFrequently(emoji);
+
+    return emoji;
+  }
+
+  @Watch("category")
+  onChangeCategory(newValue: string, old: string) {
+    this.currentCategory = newValue;
+  }
 }
 </script>
 
 <style lang="scss">
 #EmojiPicker {
   display: inline-flex;
+  text-rendering: optimizeLegibility;
   flex-direction: column;
   align-items: center;
   background: #f0f0f0;

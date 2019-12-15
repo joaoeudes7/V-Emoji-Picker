@@ -1,18 +1,18 @@
 <template>
   <div id="Categories">
     <div
-      v-for="(categorie, index) in categories"
-      :class="['category', { active: index === active }]"
+      v-for="(category, index) in categories"
+      :class="['category', { active: category.name === current }]"
       :key="index"
-      @click="onSelect(index)"
+      @click="onSelect(category)"
     >
-      <VSvg :name="categorie.icon" />
+      <VSvg :name="category.icon" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Emit } from "vue-property-decorator";
 import { Category } from '@/models/Category';
 
 import VSvg from "./VSvg.vue";
@@ -23,23 +23,12 @@ import VSvg from "./VSvg.vue";
   }
 })
 export default class Categories extends Vue{
-  active = 1;
-  categories: Category[] = [
-      { name: "Frequenty", icon: "frequenty" },
-      { name: "Peoples", icon: "peoples" },
-      { name: "Nature", icon: "nature" },
-      { name: "Foods", icon: "foods" },
-      { name: "Activity", icon: "activity" },
-      { name: "Objects", icon: "objects" },
-      { name: "Places", icon: "places" },
-      { name: "Symbols", icon: "symbols" },
-      { name: "Flags", icon: "flags" }
-  ];
+  @Prop({}) readonly categories!: Category[]
+  @Prop({}) readonly current!: string;
 
-  onSelect(index: number) {
-    this.active = index;
-
-    this.$emit("select", this.categories[index]);
+  @Emit('select')
+  onSelect(category: Category) {
+    return category;
   }
 };
 </script>

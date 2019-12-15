@@ -27,7 +27,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch, Provide } from "vue-property-decorator";
+import {
+  Component,
+  Prop,
+  Vue,
+  Watch,
+  Provide,
+  Emit
+} from "vue-property-decorator";
 import { Emoji } from "@/models/Emoji";
 
 import EmojiItem from "./EmojiItem.vue";
@@ -46,10 +53,6 @@ export default class EmojiList extends Vue {
   @Prop({}) readonly continuousList!: boolean;
   @Prop({}) readonly category!: string;
   @Prop({}) readonly hasSearch!: boolean;
-
-  async onSelect(emoji: Emoji) {
-    this.$emit("select", emoji);
-  }
 
   searchByAlias(term: string, emoji: Emoji) {
     const isRelevant = (alias: string) => alias.toLowerCase().includes(term);
@@ -100,6 +103,11 @@ export default class EmojiList extends Vue {
 
   get containerEmoji(): any {
     return this.$refs["container-emoji"];
+  }
+
+  @Emit("select")
+  onSelect(emoji: Emoji) {
+    return emoji;
   }
 
   @Watch("data")
@@ -157,15 +165,6 @@ export default class EmojiList extends Vue {
 .grid-emojis {
   display: grid;
   margin: 5px 0;
-  align-items: start;
-}
-
-.emoji {
-  display: inline-block;
-  text-align: center;
-  font-size: 25px;
-  padding: 5px;
-  max-height: 30px;
-  cursor: pointer;
+  justify-items: center;
 }
 </style>
