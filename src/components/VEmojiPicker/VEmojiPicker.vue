@@ -1,8 +1,8 @@
 <template>
   <div id="EmojiPicker">
     <Categories
-      v-if="showCategory"
-      :categories="categories"
+      v-if="showCategories"
+      :categories="categoriesFilted"
       :current="currentCategory"
       @select="changeCategory"
     />
@@ -21,14 +21,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
-import { Emoji } from "@/models/Emoji";
-import { Category } from "@/models/Category";
+import { IEmoji } from "@/models/Emoji";
+import { ICategory } from "@/models/Category";
 
 import Categories from "./Categories.vue";
 import EmojiList from "./EmojiList.vue";
 import InputSearch from "./InputSearch.vue";
-
-import CategoriesDefault from "./categories";
 
 @Component({
   components: {
@@ -38,44 +36,61 @@ import CategoriesDefault from "./categories";
   }
 })
 export default class VEmojiPicker extends Vue {
-  @Prop({ required: true }) readonly pack!: Emoji[];
-  @Prop({ default: "Pesquisar..." }) readonly labelSearch!: string;
-  @Prop({ default: 5 }) readonly emojisByRow!: number;
-  @Prop({ default: true }) readonly showSearch!: boolean;
-  @Prop({ default: false }) readonly continuousList!: boolean;
-  @Prop({ default: true }) readonly showCategory!: boolean;
-  @Prop({ default: "Peoples" }) readonly category!: string;
-  @Prop({ default: () => CategoriesDefault }) readonly categories!: Category[];
+  @Prop({ default: () => [] as IEmoji[] }) customEmojis!: IEmoji[];
+  @Prop({ default: () => [] as ICategory[] }) customCategories!: ICategory[];
+  @Prop({ default: 5 }) emojisByRow!: number;
+  @Prop({ default: false }) continuousList!: boolean;
+  @Prop({ default: true }) showSearch!: boolean;
+  @Prop({ default: true }) showCategories!: boolean;
+  @Prop({ default: "Pesquisar..." }) labelSearch!: string;
+  @Prop({ default: "Peoples" }) initalCategory!: string;
+  @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
 
+  categories: ICategory[] = [];
   mapEmojis: any = {};
-  currentCategory = this.category;
+  currentCategory = this.initalCategory;
   filterEmoji = "";
 
   created() {
-    this.mapperData(this.pack);
+    if (this.customEmojis.length == 0) {
+      import("./emojis").then(e => {
+        this.mapperEmojisCategory(e.default);
+      });
+    } else {
+      this.mapperEmojisCategory(this.customEmojis);
+    }
+
+    if (this.customEmojis.length == 0) {
+      import("./categories").then(c => {
+        this.categories = c.default;
+      });
+    }
+
+    this.categories = this.customCategories;
   }
 
   async onSearch(term: string) {
     this.filterEmoji = term;
   }
 
-  async changeCategory(category: Category) {
+  async changeCategory(category: ICategory) {
     const hasEmojis = this.mapEmojis[category.name].length;
     this.currentCategory = category.name;
 
     if (hasEmojis) {
-      this.$emit("changeCategory", category);
+      this.onChangeCategory(category);
     }
   }
 
-  async updateFrequently(emoji: Emoji) {
+  async updateFrequently(emoji: IEmoji) {
     this.mapEmojis["Frequently"] = [
       ...new Set([emoji, ...this.mapEmojis["Frequently"]])
     ];
   }
-  async mapperData(dataEmojis: Emoji[]) {
+  async mapperEmojisCategory(emojis: IEmoji[]) {
     this.$set(this.mapEmojis, "Frequently", []);
-    dataEmojis.forEach((emoji: Emoji) => {
+
+    emojis.forEach((emoji: IEmoji) => {
       const _category = emoji.category;
 
       if (!this.mapEmojis[_category]) {
@@ -86,15 +101,24 @@ export default class VEmojiPicker extends Vue {
     });
   }
 
+  get categoriesFilted() {
+    return this.categories.filter(c => !this.exceptCategories.includes(c.name));
+  }
+
   @Emit("select")
-  async onSelectEmoji(emoji: Emoji) {
+  async onSelectEmoji(emoji: IEmoji) {
     this.updateFrequently(emoji);
 
     return emoji;
   }
 
+  @Emit('changeCategory')
+  async onChangeCategory(category: ICategory) {
+    return category;
+  }
+
   @Watch("category")
-  onChangeCategory(newValue: string, old: string) {
+  watchCategory(newValue: string, old: string) {
     this.currentCategory = newValue;
   }
 }
@@ -103,7 +127,9 @@ export default class VEmojiPicker extends Vue {
 <style lang="scss">
 #EmojiPicker {
   display: inline-flex;
-  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
   flex-direction: column;
   align-items: center;
   background: #f0f0f0;
@@ -112,5 +138,9 @@ export default class VEmojiPicker extends Vue {
   overflow: hidden;
   width: 325px;
   user-select: none;
+
+  @media screen and (max-width: 325px) {
+    width: 100%;
+  }
 }
 </style>
