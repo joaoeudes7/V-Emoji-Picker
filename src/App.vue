@@ -3,7 +3,6 @@
     <VEmojiPicker
       labelSearch="Pesquisar..."
       :showSearch="true"
-      :pack="dataEmojis"
       :continuousList="false"
       :emojisByRow="5"
       @select="selectEmoji"
@@ -14,9 +13,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { Emoji } from "./models/Emoji";
-import packEmoji from "../data/emojis";
 
-import VEmojiPicker from './index';
+import VEmojiPicker from "./index";
 
 @Component({
   components: {
@@ -24,10 +22,6 @@ import VEmojiPicker from './index';
   }
 })
 export default class App extends Vue {
-  get dataEmojis(): any {
-    return packEmoji;
-  }
-
   selectEmoji(emoji: Emoji) {
     console.log(emoji);
   }
