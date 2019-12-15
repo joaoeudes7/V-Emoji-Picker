@@ -21,12 +21,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
+
 import { IEmoji } from "@/models/Emoji";
 import { ICategory } from "@/models/Category";
 
-import Categories from "./Categories.vue";
-import EmojiList from "./EmojiList.vue";
-import InputSearch from "./InputSearch.vue";
+import Categories from "@/components/Categories.vue";
+import EmojiList from "@/components/EmojiList.vue";
+import InputSearch from "@/components/InputSearch.vue";
 
 @Component({
   components: {
@@ -53,7 +54,7 @@ export default class VEmojiPicker extends Vue {
 
   created() {
     if (this.customEmojis.length == 0) {
-      import("./emojis").then(e => {
+      import("@/utils/emojis").then(e => {
         this.mapperEmojisCategory(e.default);
       });
     } else {
@@ -61,7 +62,7 @@ export default class VEmojiPicker extends Vue {
     }
 
     if (this.customEmojis.length == 0) {
-      import("./categories").then(c => {
+      import("@/utils/categories").then(c => {
         this.categories = c.default;
       });
     }

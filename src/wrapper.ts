@@ -1,9 +1,9 @@
 import { PluginObject } from 'vue';
-import Component from './components/VEmojiPicker';
+import _VEmojiPicker from './VEmojiPicker.vue';
 
-const VEmojiPicker: PluginObject<Component> = {
+const VEmojiPicker: PluginObject<_VEmojiPicker> = {
   install(Vue, options) {
-    Vue.component(Component.name, Component);
+    Vue.component(_VEmojiPicker.name, _VEmojiPicker);
   }
 };
 
@@ -12,4 +12,4 @@ if (typeof window !== 'undefined' && (window as any).Vue) {
 }
 
 export { VEmojiPicker };
-export default Component;
+export default _VEmojiPicker;

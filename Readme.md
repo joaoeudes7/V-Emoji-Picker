@@ -52,6 +52,7 @@ or Global
 ```js
 import Vue from "vue";
 import App from "./App.vue";
+
 import { VEmojiPicker } from 'v-emoji-picker';
 
 Vue.config.productionTip = false;
@@ -63,14 +64,17 @@ new Vue({
 ```
 
 ## Props
-```js
+```ts
 {
-  pack: { type: Array, required: true },
-  labelSearch: { type: String, default: 'Pesquisar...' },
-  showCategory: { type: Boolean, default: true },
-  emojisByRow: { type: Number, default: 5 },
-  showSearch: { type: Boolean, default: () => true },
-  continuousList: { type: Boolean, default: false }
+  @Prop({ default: () => [] as IEmoji[] }) customEmojis!: IEmoji[];
+  @Prop({ default: () => [] as ICategory[] }) customCategories!: ICategory[];
+  @Prop({ default: 5 }) emojisByRow!: number;
+  @Prop({ default: false }) continuousList!: boolean;
+  @Prop({ default: true }) showSearch!: boolean;
+  @Prop({ default: true }) showCategories!: boolean;
+  @Prop({ default: "Pesquisar..." }) labelSearch!: string;
+  @Prop({ default: "Peoples" }) initalCategory!: string;
+  @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
 }
 ```
 
@@ -82,7 +86,44 @@ new Vue({
 }
 ```
 
+# Using custom Emojis
+- Array of itens with Interface IEmoji
+
+```js
+interface IEmoji {
+  data: string;
+  category: string;
+  aliases: string[];
+}
+```
+
+set in Prop `customEmojis`
+
+# Using custom Categories
+- Array of itens with Interface ICategory
+
+```js
+interface ICategory {
+  name: string;
+  icon: string;
+}
+```
+
+set in Prop `customCategories`
+
+# Updates version 2
+- Prop `customEmojis`
+- Prop `customCategories`
+- Prop `exceptCategories`
+- Support to Emojis SVG/Img/Natives (text)
+
+# Migrate to version 2
+- Folder /data removed
+- Prop `pack` removed (async auto import default emojis natives - text)
+- Prop `showCategory` changed to `showCategories`
+
 # Structure Emoji
 ![](.emoji.png)
+
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker?ref=badge_large)
