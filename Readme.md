@@ -1,18 +1,19 @@
 # V-Emoji-Picker
 This simple package using Emojis Natives
 
-[![npm](https://img.shields.io/npm/v/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
-[![bundlephobia](https://img.shields.io/bundlephobia/minzip/v-emoji-picker.svg?style=flat)](https://bundlephobia.com/result?p=v-emoji-picker@latest)
-[![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg)](https://www.npmjs.com/package/v-emoji-picker)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker?ref=badge_shield)
-
+[![npm](https://img.shields.io/npm/v/v-emoji-picker.svg?style=flat-square)](https://www.npmjs.com/package/v-emoji-picker)
+[![bundlephobia](https://img.shields.io/bundlephobia/minzip/v-emoji-picker.svg?style=flat-square)](https://bundlephobia.com/result?p=v-emoji-picker@latest)
+[![npm](https://img.shields.io/npm/dm/v-emoji-picker.svg?style=flat-square)](https://www.npmjs.com/package/v-emoji-picker)
+[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg?style=flat-square)](https://vuejs.org/)
+[![CodeFactor](https://www.codefactor.io/repository/github/joaoeudes7/v-emoji-picker/badge?style=flat-square)](https://www.codefactor.io/repository/github/joaoeudes7/v-emoji-picker)
 ![example: Android](.demo.png)
 
+---
 ## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Demo](#demo)
+----
 
 # Installation
 ```bash
@@ -87,7 +88,7 @@ new Vue({
 ```
 
 # Using custom Emojis
-- Array of itens with Interface IEmoji
+Array of itens with `Interface IEmoji`
 
 ```js
 interface IEmoji {
@@ -100,7 +101,7 @@ interface IEmoji {
 set in Prop `customEmojis`
 
 # Using custom Categories
-- Array of itens with Interface ICategory
+Array of itens with `Interface ICategory`
 
 ```js
 interface ICategory {
