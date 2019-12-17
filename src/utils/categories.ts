@@ -1,4 +1,4 @@
-import { Category } from '@/models/Category'
+import { Category, ICategory } from '@/models/Category'
 
 const icons = {
   activity: `
@@ -60,7 +60,7 @@ const icons = {
     `
 }
 
-export default [
+export const categoriesDefault: ICategory[] = [
   new Category("Frequently", icons["frequently"]),
   new Category("Peoples", icons["peoples"]),
   new Category("Nature", icons["nature"]),

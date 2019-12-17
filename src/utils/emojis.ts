@@ -1,6 +1,6 @@
-import { Emoji } from '@/models/Emoji';
+import { Emoji, IEmoji } from '@/models/Emoji';
 
-export default [
+export const emojisDefault: IEmoji[] = [
   new Emoji("😀", "Peoples", ["grinning"]),
   new Emoji("😃", "Peoples", ["smiley"]),
   new Emoji("😄", "Peoples", ["smile"]),

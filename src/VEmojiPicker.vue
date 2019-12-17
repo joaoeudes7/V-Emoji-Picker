@@ -22,12 +22,15 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
 
-import { IEmoji } from "@/models/Emoji";
-import { ICategory } from "@/models/Category";
+import { IEmoji } from "./models/Emoji";
+import { ICategory } from "./models/Category";
 
-import Categories from "@/components/Categories.vue";
-import EmojiList from "@/components/EmojiList.vue";
-import InputSearch from "@/components/InputSearch.vue";
+import { emojisDefault } from "./utils/emojis";
+import { categoriesDefault } from "./utils/categories";
+
+import Categories from "./components/Categories.vue";
+import EmojiList from "./components/EmojiList.vue";
+import InputSearch from "./components/InputSearch.vue";
 
 @Component({
   components: {
@@ -37,37 +40,22 @@ import InputSearch from "@/components/InputSearch.vue";
   }
 })
 export default class VEmojiPicker extends Vue {
-  @Prop({ default: () => [] as IEmoji[] }) customEmojis!: IEmoji[];
-  @Prop({ default: () => [] as ICategory[] }) customCategories!: ICategory[];
+  @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
+  @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
-  @Prop({ default: "Pesquisar..." }) labelSearch!: string;
+  @Prop({ default: "Search" }) labelSearch!: string;
   @Prop({ default: "Peoples" }) initalCategory!: string;
   @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
 
-  categories: ICategory[] = [];
   mapEmojis: any = {};
   currentCategory = this.initalCategory;
   filterEmoji = "";
 
   created() {
-    if (this.customEmojis.length == 0) {
-      import("@/utils/emojis").then(e => {
-        this.mapperEmojisCategory(e.default);
-      });
-    } else {
-      this.mapperEmojisCategory(this.customEmojis);
-    }
-
-    if (this.customEmojis.length == 0) {
-      import("@/utils/categories").then(c => {
-        this.categories = c.default;
-      });
-    }
-
-    this.categories = this.customCategories;
+    this.mapperEmojisCategory(this.customEmojis);
   }
 
   async onSearch(term: string) {
@@ -103,7 +91,9 @@ export default class VEmojiPicker extends Vue {
   }
 
   get categoriesFilted() {
-    return this.categories.filter(c => !this.exceptCategories.includes(c.name));
+    return this.customCategories.filter(
+      c => !this.exceptCategories.includes(c.name)
+    );
   }
 
   @Emit("select")
@@ -113,7 +103,7 @@ export default class VEmojiPicker extends Vue {
     return emoji;
   }
 
-  @Emit('changeCategory')
+  @Emit("changeCategory")
   async onChangeCategory(category: ICategory) {
     return category;
   }
