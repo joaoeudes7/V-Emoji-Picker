@@ -12,7 +12,6 @@ This simple package using Emojis Natives
 ## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo](#demo)
 ----
 
 # Installation
