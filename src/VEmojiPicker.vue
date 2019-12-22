@@ -76,6 +76,7 @@ export default class VEmojiPicker extends Vue {
       ...new Set([emoji, ...this.mapEmojis["Frequently"]])
     ];
   }
+
   async mapperEmojisCategory(emojis: IEmoji[]) {
     this.$set(this.mapEmojis, "Frequently", []);
 
