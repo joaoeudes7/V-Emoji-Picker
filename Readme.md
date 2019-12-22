@@ -9,9 +9,15 @@ This simple package using Emojis Natives
 ![example: Android](.demo.png)
 
 ---
-## Table of contents
+## Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Props](#props)
+- [Events](#events)
+- [Updates v2](#updates-version-2)
+- [Migrate v2](#migrate-to-version-2)
+- [Using SVG](#using-SVG)
+- [Structure emoji](#structure-emoji)
 ----
 
 # Installation
@@ -22,22 +28,19 @@ yarn add v-emoji-picker
 ```vue
 <template>
   <div id="app">
-    <VEmojiPicker :pack="emojisNatives" @select="selectEmoji" />
+    <VEmojiPicker @select="selectEmoji" />
   </div>
 </template>
 
 <script>
 import VEmojiPicker from 'v-emoji-picker';
-import packEmoji from "v-emoji-picker/data/emojis.js";
 
 export default {
   name: 'Demo',
   components: {
     VEmojiPicker
   },
-  data: () => ({
-    emojisNatives: packEmoji
-  }),
+  data: () => ({}),
   methods: {
     selectEmoji(emoji) {
       console.log(emoji)
@@ -87,7 +90,7 @@ new Vue({
 ```
 
 # Using custom Emojis
-Array of itens with `Interface IEmoji`
+Array of items with `Interface IEmoji`
 
 ```js
 interface IEmoji {
@@ -100,7 +103,7 @@ interface IEmoji {
 set in Prop `customEmojis`
 
 # Using custom Categories
-Array of itens with `Interface ICategory`
+Array of items with `Interface ICategory`
 
 ```js
 interface ICategory {
@@ -111,16 +114,23 @@ interface ICategory {
 
 set in Prop `customCategories`
 
+# Using SVG
+Doc coming soon...
+
 # Updates version 2
 - Prop `customEmojis`
 - Prop `customCategories`
 - Prop `exceptCategories`
+- Folder /data removed
+- Interface Emoji updated
 - Support to Emojis SVG/Img/Natives (text)
 
 # Migrate to version 2
-- Folder /data removed
+This was a one-time change to keep it clear and dynamic.
+
 - Prop `pack` removed (async auto import default emojis natives - text)
 - Prop `showCategory` changed to `showCategories`
+- Event content `event.emoji` changed to `emoji.data`
 
 # Structure Emoji
 ![](.emoji.png)
