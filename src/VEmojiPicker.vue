@@ -16,6 +16,7 @@
       :hasSearch="showSearch"
       @select="onSelectEmoji"
     />
+    <SkinSelect :skins="customSkins" v-model="currentSkin" />
   </div>
 </template>
 
@@ -24,19 +25,23 @@ import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
 
 import { IEmoji } from "./models/Emoji";
 import { ICategory } from "./models/Category";
+import { Skin } from "./models/Skin";
 
 import { emojisDefault } from "./utils/emojis";
 import { categoriesDefault } from "./utils/categories";
+import { skinsDefault } from "./utils/skins";
 
 import Categories from "./components/Categories.vue";
 import EmojiList from "./components/EmojiList.vue";
 import InputSearch from "./components/InputSearch.vue";
+import SkinSelect from "./components/SkinSelect.vue";
 
 @Component({
   components: {
     Categories,
     EmojiList,
-    InputSearch
+    InputSearch,
+    SkinSelect
   }
 })
 export default class VEmojiPicker extends Vue {
@@ -49,9 +54,11 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: "Search" }) labelSearch!: string;
   @Prop({ default: "Peoples" }) initalCategory!: string;
   @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
+  @Prop({ default: () => skinsDefault }) customSkins!: Skin[];
 
   mapEmojis: any = {};
   currentCategory = this.initalCategory;
+  currentSkin = "";
   filterEmoji = "";
 
   created() {

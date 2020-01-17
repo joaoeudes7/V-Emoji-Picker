@@ -133,8 +133,6 @@ export default class EmojiList extends Vue {
 
 <style lang="scss" scoped>
 #Emojis {
-  font-family: Twemoji, NotomojiColor, Notomoji, Symbola, Noto, Segoe UI Emoji,
-    OpenSansEmoji, monospace;
   display: block;
   width: 100%;
   max-width: 100%;

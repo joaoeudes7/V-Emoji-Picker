@@ -15,6 +15,10 @@ export default class EmojiItem extends Vue {
 
 <style lang="scss" scoped>
 .emoji {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol, Twemoji, NotomojiColor, Notomoji, Symbola, Noto,
+    Segoe UI Emoji, OpenSansEmoji, monospace;
   display: inline-block;
   text-align: center;
   font-size: 25px;

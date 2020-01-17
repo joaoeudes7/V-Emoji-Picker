@@ -1,5 +1,7 @@
 import { PluginObject } from 'vue';
+
 import _VEmojiPicker from './VEmojiPicker.vue';
+import EmojiItem from './components/EmojiItem.vue';
 
 const VEmojiPicker: PluginObject<_VEmojiPicker> = {
   install(Vue, options) {
@@ -13,5 +15,5 @@ if (typeof window !== 'undefined') {
   (window as any).Vue.use(VEmojiPicker)
 }
 
-export { VEmojiPicker };
+export { VEmojiPicker, EmojiItem };
 export default _VEmojiPicker;
