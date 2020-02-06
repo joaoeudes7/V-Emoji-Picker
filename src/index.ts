@@ -7,11 +7,5 @@ const VEmojiPicker: PluginObject<_VEmojiPicker> = {
   }
 };
 
-if (typeof window !== 'undefined') {
-  if (!window.Vue) window.Vue = require('vue').default;
-
-  (window as any).Vue.use(VEmojiPicker)
-}
-
 export { VEmojiPicker };
 export default _VEmojiPicker;
