@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES5",
     "module": "ESNext",
     "strict": true,
     "importHelpers": true,
@@ -10,10 +10,14 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "sourceMap": true,
+    "declarationMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "mocha",
+      "chai"
     ],
     "paths": {
       "@/*": [
