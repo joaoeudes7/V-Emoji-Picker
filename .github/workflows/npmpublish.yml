@@ -18,3 +18,4 @@ jobs:
           node-version: 12
       - run: yarn
       - run: yarn lint
+      - run: yarn test:unit
