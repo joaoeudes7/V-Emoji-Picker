@@ -9,6 +9,8 @@
               v-for="(emoji, index_e) in category"
               :key="`${category_name}-${index_e}`"
               :emoji="emoji"
+              :size="emojiSize"
+              :withBorder="emojiWithBorder"
               @click.native="onSelect(emoji)"
             />
           </div>
@@ -20,6 +22,8 @@
             v-for="(emoji, index) in dataFiltered"
             :key="index"
             :emoji="emoji"
+            :size="emojiSize"
+            :withBorder="emojiWithBorder"
             @click.native="onSelect(emoji)"
           />
         </div>
@@ -51,6 +55,8 @@ import CategoryLabel from "./CategoryLabel.vue";
 export default class EmojiList extends Vue {
   @Prop({ required: true }) readonly data!: any;
   @Prop({ required: true }) readonly emojisByRow!: number;
+  @Prop({}) readonly emojiWithBorder!: boolean;
+  @Prop({}) readonly emojiSize!: number;
   @Prop({}) readonly filter!: string;
   @Prop({}) readonly continuousList!: boolean;
   @Prop({}) readonly category!: string;
