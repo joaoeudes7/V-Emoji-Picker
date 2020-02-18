@@ -1,6 +1,6 @@
 {
   "name": "v-emoji-picker",
-  "version": "2.1.1",
+  "version": "2.1.2-beta.0",
   "author": {
     "name": "João Eudes Lima",
     "email": "joaoeudes7@gmail.com",
@@ -22,7 +22,7 @@
   "unpkg": "./lib/v-emoji-picker.min.js",
   "typings": "./lib/index.d.ts",
   "files": [
-    "lib/*js",
+    "lib/*",
     "Readme.md"
   ],
   "dependencies": {
