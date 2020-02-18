@@ -2,6 +2,7 @@
 node_modules
 /example/node_modules
 dist/
+lib/
 
 # local env files
 .env.local
