@@ -1,55 +1,66 @@
 import pkg from './package.json';
-import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs'; // Convert CommonJS modules to ES6
-import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
 import resolve from '@rollup/plugin-node-resolve';
-import del from 'rollup-plugin-delete'
+import typescript from 'rollup-plugin-typescript2';
+import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
 import css from 'rollup-plugin-css-porter';
 import sass from 'rollup-plugin-sass';
 import filesize from 'rollup-plugin-filesize';
 import { terser } from 'rollup-plugin-terser';
 
-const defaultName = 'VEmojiPicker'
-const defaultNameFiles = 'v-emoji-picker'
+// Default configs
+const name = 'VEmojiPicker'
+const pkgName = 'v-emoji-picker'
+const exports = 'named'
+const sourcemap = false
+const globals = {
+  'vue-property-decorator': 'vuePropertyDecorator'
+}
 
 export default {
   input: 'src/index.ts', // our source file
   output: [
-
     {
       // Keep the bundle as an ES module file, suitable for other bundlers
       // and inclusion as a <script type=module> tag in modern browsers
-      name: defaultName,
-      file: `lib/${defaultNameFiles}.esm.js`,
+      name,
+      file: `lib/${pkgName}.esm.js`,
       format: 'esm', // the preferred format
+      exports,
+      sourcemap
     },
     {
       // Universal Module Definition, works as amd, cjs and iife all in one
-      name: defaultName,
-      file: `lib/${defaultNameFiles}.umd.js`,
+      name,
+      file: `lib/${pkgName}.umd.js`,
       format: 'umd',
-      globals: {
-        'vue-property-decorator': 'vuePropertyDecorator'
-      }
+      exports,
+      sourcemap,
+      globals
     },
     {
       // A self-executing function, suitable for inclusion as a <script> tag.
       // (If you want to create a bundle for your application, you probably want to use this.)
-      name: defaultName,
-      file: `lib/${defaultNameFiles}.min.js`,
+      name,
+      file: `lib/${pkgName}.min.js`,
       format: 'iife',
-      globals: {
-        'vue-property-decorator': 'vuePropertyDecorator'
-      }
+      compact: true,
+      exports,
+      sourcemap,
+      globals,
+      plugins: [
+        terser()
+      ]
     },
-    // {
-    //   // CommonJS, suitable for Node and other bundlers
-    //   name: defaultName,
-    //   file: `lib/${defaultNameFiles}.cjs.js`,
-    //   format: 'cjs',
-    // },
+    {
+      // CommonJS, suitable for Node and other bundlers
+      name,
+      file: `lib/${pkgName}.cjs.js`,
+      format: 'cjs',
+      exports,
+      sourcemap,
+      globals
+    },
   ],
-
   external: [
     ...Object.keys(pkg.dependencies || {})
   ],
@@ -58,25 +69,16 @@ export default {
       typescript: require('typescript'),
       module: 'esnext',
       tsconfig: "tsconfig.json",
+      rollupCommonJSResolveHack: true,
       tsconfigOverride: { exclude: ["node_modules", "src/main.ts", "tests"] },
     }),
-    commonjs(),
-
-    // [Rollup Plugin Vue](https://rollup-plugin-vue.vuejs.org/)
-    vue({
-      css: true, // Dynamically inject css as a <style> tag
-      compileTemplate: true, // Explicitly convert template to render function
+    resolve({
+      extensions: ['.js', '.ts']
     }),
     sass(),
     css(),
-    resolve(),
-    terser({
-      include: [/^.+\.min\.js$/, "*esm*"],
-      exclude: ["some*"]
-    }),
-    del({
-      targets: 'lib/main.d.ts',
-      hook: 'generateBundle'
+    vue({
+      css: true
     }),
     filesize({
       showBrotliSize: true
