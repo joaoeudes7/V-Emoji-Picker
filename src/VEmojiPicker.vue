@@ -42,8 +42,8 @@ import InputSearch from "./components/InputSearch.vue";
   }
 })
 export default class VEmojiPicker extends Vue {
-  @Prop({ default: () => new Array() }) customEmojis!: IEmoji[];
-  @Prop({ default: () => new Array() }) customCategories!: ICategory[];
+  @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
+  @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
   @Prop({ default: 32 }) emojiSize!: number;
@@ -54,31 +54,12 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
 
-  dataEmojis: IEmoji[] = [];
-  dataCategories: ICategory[] = [];
-
   mapEmojis: any = {};
   currentCategory = this.initialCategory;
   filterEmoji = "";
 
   created() {
-    if (!this.customEmojis.length) {
-      import("./utils/emojis").then(data => {
-        this.dataEmojis = data.emojisDefault;
-        this.mapperEmojisCategory(this.dataEmojis);
-      });
-    } else {
-      this.dataEmojis = this.customEmojis;
-      this.mapperEmojisCategory(this.dataEmojis);
-    }
-
-    if (!this.customCategories.length) {
-      import("./utils/categories").then(data => {
-        this.dataCategories = data.categoriesDefault;
-      });
-    } else {
-      this.dataCategories = this.customCategories;
-    }
+    this.mapperEmojisCategory(this.customEmojis);
   }
 
   async onSearch(term: string) {
@@ -100,7 +81,7 @@ export default class VEmojiPicker extends Vue {
     ];
   }
 
-  mapperEmojisCategory(emojis: IEmoji[]) {
+  async mapperEmojisCategory(emojis: IEmoji[]) {
     this.$set(this.mapEmojis, "Frequently", []);
 
     emojis.forEach((emoji: IEmoji) => {
@@ -115,7 +96,7 @@ export default class VEmojiPicker extends Vue {
   }
 
   get categoriesFilted() {
-    return this.dataCategories.filter(
+    return this.customCategories.filter(
       c => !this.exceptCategories.includes(c.name)
     );
   }
