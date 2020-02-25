@@ -1,15 +1,13 @@
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
-import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
+import vue from 'rollup-plugin-vue';
 import css from 'rollup-plugin-css-porter';
 import sass from 'rollup-plugin-sass';
 import filesize from 'rollup-plugin-filesize';
-import { terser } from 'rollup-plugin-terser';
 
 // Default configs
 const name = 'VEmojiPicker'
-const pkgName = 'v-emoji-picker'
 const exports = 'named'
 const sourcemap = false
 const globals = {
@@ -18,51 +16,42 @@ const globals = {
 
 export default {
   input: 'src/index.ts', // our source file
+  inlineDynamicImports: true,
   output: [
     {
       // Keep the bundle as an ES module file, suitable for other bundlers
       // and inclusion as a <script type=module> tag in modern browsers
       name,
-      file: `lib/${pkgName}.esm.js`,
+      file: pkg.module,
       format: 'esm', // the preferred format
+      compact: true,
       exports,
       sourcemap
-    },
-    {
-      // Universal Module Definition, works as amd, cjs and iife all in one
-      name,
-      file: `lib/${pkgName}.umd.js`,
-      format: 'umd',
-      exports,
-      sourcemap,
-      globals
     },
     {
       // A self-executing function, suitable for inclusion as a <script> tag.
       // (If you want to create a bundle for your application, you probably want to use this.)
       name,
-      file: `lib/${pkgName}.min.js`,
+      file: pkg.unpkg,
       format: 'iife',
       compact: true,
       exports,
       sourcemap,
-      globals,
-      plugins: [
-        terser()
-      ]
+      globals
     },
     {
       // CommonJS, suitable for Node and other bundlers
       name,
-      file: `lib/${pkgName}.cjs.js`,
+      file: pkg.main,
       format: 'cjs',
+      compact: true,
       exports,
       sourcemap,
       globals
     },
   ],
   external: [
-    ...Object.keys(pkg.dependencies || {})
+    ...Object.keys(pkg.dependencies)
   ],
   plugins: [
     typescript({
@@ -70,18 +59,21 @@ export default {
       module: 'esnext',
       tsconfig: "tsconfig.json",
       rollupCommonJSResolveHack: true,
-      tsconfigOverride: { exclude: ["node_modules", "src/main.ts", "tests"] },
-    }),
-    resolve({
-      extensions: ['.js', '.ts']
+      tsconfigOverride: { exclude: ["node_modules", "src/main.ts", "tests"] }
     }),
     sass(),
     css(),
     vue({
-      css: true
+      css: true,
+      template: {
+        isProduction: true
+      }
+    }),
+    resolve({
+      extensions: ['.js', '.ts']
     }),
     filesize({
       showBrotliSize: true
-    })
+    }),
   ]
 };

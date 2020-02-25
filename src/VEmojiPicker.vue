@@ -42,8 +42,8 @@ import InputSearch from "./components/InputSearch.vue";
   }
 })
 export default class VEmojiPicker extends Vue {
-  @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
-  @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
+  @Prop({ default: () => new Array() }) customEmojis!: IEmoji[];
+  @Prop({ default: () => new Array() }) customCategories!: ICategory[];
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
   @Prop({ default: 32 }) emojiSize!: number;
@@ -51,15 +51,34 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
   @Prop({ default: "Search" }) labelSearch!: string;
-  @Prop({ default: "Peoples" }) initalCategory!: string;
+  @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
 
+  dataEmojis: IEmoji[] = [];
+  dataCategories: ICategory[] = [];
+
   mapEmojis: any = {};
-  currentCategory = this.initalCategory;
+  currentCategory = this.initialCategory;
   filterEmoji = "";
 
   created() {
-    this.mapperEmojisCategory(this.customEmojis);
+    if (!this.customEmojis.length) {
+      import("./utils/emojis").then(data => {
+        this.dataEmojis = data.emojisDefault;
+        this.mapperEmojisCategory(this.dataEmojis);
+      });
+    } else {
+      this.dataEmojis = this.customEmojis;
+      this.mapperEmojisCategory(this.dataEmojis);
+    }
+
+    if (!this.customCategories.length) {
+      import("./utils/categories").then(data => {
+        this.dataCategories = data.categoriesDefault;
+      });
+    } else {
+      this.dataCategories = this.customCategories;
+    }
   }
 
   async onSearch(term: string) {
@@ -81,7 +100,7 @@ export default class VEmojiPicker extends Vue {
     ];
   }
 
-  async mapperEmojisCategory(emojis: IEmoji[]) {
+  mapperEmojisCategory(emojis: IEmoji[]) {
     this.$set(this.mapEmojis, "Frequently", []);
 
     emojis.forEach((emoji: IEmoji) => {
@@ -96,7 +115,7 @@ export default class VEmojiPicker extends Vue {
   }
 
   get categoriesFilted() {
-    return this.customCategories.filter(
+    return this.dataCategories.filter(
       c => !this.exceptCategories.includes(c.name)
     );
   }
