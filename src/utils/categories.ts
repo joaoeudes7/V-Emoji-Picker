@@ -1,4 +1,4 @@
-import { Category, ICategory } from '@/models/Category'
+import { Category, ICategory } from '../models/Category'
 
 const icons = {
   activity: `
