@@ -56,7 +56,7 @@ or Global
 import Vue from "vue";
 import App from "./App.vue";
 
-import { VEmojiPicker } from 'v-emoji-picker';
+import VEmojiPicker from 'v-emoji-picker';
 
 Vue.config.productionTip = false;
 Vue.use(VEmojiPicker);
