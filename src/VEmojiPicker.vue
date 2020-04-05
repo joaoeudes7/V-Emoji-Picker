@@ -2,7 +2,7 @@
   <div id="EmojiPicker">
     <Categories
       v-if="showCategories"
-      :categories="categoriesFilted"
+      :categories="categoriesFiltered"
       :current="currentCategory"
       @select="changeCategory"
     />
@@ -11,6 +11,8 @@
       :data="mapEmojis"
       :category="currentCategory"
       :filter="filterEmoji"
+      :emojiWithBorder="emojiWithBorder"
+      :emojiSize="emojiSize"
       :emojisByRow="emojisByRow"
       :continuousList="continuousList"
       :hasSearch="showSearch"
@@ -23,8 +25,9 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
 
-import { IEmoji } from "./models/Emoji";
-import { ICategory } from "./models/Category";
+import { IEmoji, Emoji } from "./models/Emoji";
+import { ICategory, Category } from "./models/Category";
+import { MapEmojis } from "./models/MapEmojis";
 import { Skin } from "./models/Skin";
 
 import { emojisDefault } from "./utils/emojis";
@@ -47,22 +50,25 @@ import SkinSelect from "./components/SkinSelect.vue";
 export default class VEmojiPicker extends Vue {
   @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
   @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
+  @Prop({ default: 15 }) limitFrequently!: number;
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
+  @Prop({ default: 32 }) emojiSize!: number;
+  @Prop({ default: true }) emojiWithBorder!: boolean;
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
   @Prop({ default: "Search" }) labelSearch!: string;
-  @Prop({ default: "Peoples" }) initalCategory!: string;
+  @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
   @Prop({ default: () => skinsDefault }) customSkins!: Skin[];
 
-  mapEmojis: any = {};
-  currentCategory = this.initalCategory;
-  currentSkin = "";
+  mapEmojis: MapEmojis = {};
+  currentCategory = this.initialCategory;
   filterEmoji = "";
 
   created() {
     this.mapperEmojisCategory(this.customEmojis);
+    this.restoreFrequentlyEmojis();
   }
 
   async onSearch(term: string) {
@@ -79,9 +85,12 @@ export default class VEmojiPicker extends Vue {
   }
 
   async updateFrequently(emoji: IEmoji) {
-    this.mapEmojis["Frequently"] = [
-      ...new Set([emoji, ...this.mapEmojis["Frequently"]])
-    ];
+    const oldEmojis = this.mapEmojis["Frequently"];
+    const emojis = [...new Set([emoji, ...oldEmojis])];
+
+    this.mapEmojis["Frequently"] = emojis.slice(0, this.limitFrequently);
+
+    this.saveFrequentlyEmojis(emojis);
   }
 
   async mapperEmojisCategory(emojis: IEmoji[]) {
@@ -98,10 +107,31 @@ export default class VEmojiPicker extends Vue {
     });
   }
 
-  get categoriesFilted() {
-    return this.customCategories.filter(
-      c => !this.exceptCategories.includes(c.name)
-    );
+  async restoreFrequentlyEmojis() {
+    const jsonMapIndexEmojis = localStorage.getItem("frequentlyEmojis");
+
+    if (jsonMapIndexEmojis) {
+      const mapIndexEmojis = JSON.parse(jsonMapIndexEmojis) as [];
+      const emojis = mapIndexEmojis.map(index => this.customEmojis[index]);
+
+      this.mapEmojis["Frequently"] = emojis;
+    }
+  }
+
+  async saveFrequentlyEmojis(emojis: IEmoji[]) {
+    const mapIndexEmojis = emojis.map(emoji => {
+      const indexEmoji = this.customEmojis.indexOf(emoji);
+
+      return indexEmoji;
+    });
+
+    localStorage.setItem("frequentlyEmojis", JSON.stringify(mapIndexEmojis));
+  }
+
+  get categoriesFiltered() {
+    const { exceptCategories, customCategories } = this;
+
+    return customCategories.filter(c => !exceptCategories.includes(c.name));
   }
 
   @Emit("select")

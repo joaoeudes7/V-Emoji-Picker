@@ -56,7 +56,7 @@ or Global
 import Vue from "vue";
 import App from "./App.vue";
 
-import { VEmojiPicker } from 'v-emoji-picker';
+import VEmojiPicker from 'v-emoji-picker';
 
 Vue.config.productionTip = false;
 Vue.use(VEmojiPicker);
@@ -134,6 +134,9 @@ This was a one-time change to keep it clear and dynamic.
 
 # Structure Emoji
 ![](.emoji.png)
+
+# Size
+![](.demo-size.png)
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoaoeudes7%2FV-Emoji-Picker?ref=badge_large)

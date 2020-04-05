@@ -23,8 +23,8 @@ import CategoryItem from "./CategoryItem.vue";
   }
 })
 export default class Categories extends Vue {
-  @Prop({}) readonly categories!: Category[];
-  @Prop({}) readonly current!: string;
+  @Prop({}) categories!: Category[];
+  @Prop({}) current!: string;
 
   @Emit("select")
   onSelect(category: Category) {

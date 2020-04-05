@@ -9,6 +9,8 @@
               v-for="(emoji, index_e) in category"
               :key="`${category_name}-${index_e}`"
               :emoji="emoji"
+              :size="emojiSize"
+              :withBorder="emojiWithBorder"
               @click.native="onSelect(emoji)"
             />
           </div>
@@ -20,6 +22,8 @@
             v-for="(emoji, index) in dataFiltered"
             :key="index"
             :emoji="emoji"
+            :size="emojiSize"
+            :withBorder="emojiWithBorder"
             @click.native="onSelect(emoji)"
           />
         </div>
@@ -49,12 +53,14 @@ import CategoryLabel from "./CategoryLabel.vue";
   }
 })
 export default class EmojiList extends Vue {
-  @Prop({ required: true }) readonly data!: any;
-  @Prop({ required: true }) readonly emojisByRow!: number;
-  @Prop({}) readonly filter!: string;
-  @Prop({}) readonly continuousList!: boolean;
-  @Prop({}) readonly category!: string;
-  @Prop({}) readonly hasSearch!: boolean;
+  @Prop({ required: true }) data!: any;
+  @Prop({ required: true }) emojisByRow!: number;
+  @Prop({}) emojiWithBorder!: boolean;
+  @Prop({}) emojiSize!: number;
+  @Prop({}) filter!: string;
+  @Prop({}) continuousList!: boolean;
+  @Prop({}) category!: string;
+  @Prop({}) hasSearch!: boolean;
 
   searchByAlias(term: string, emoji: Emoji) {
     const isRelevant = (alias: string) => alias.toLowerCase().includes(term);
@@ -133,6 +139,8 @@ export default class EmojiList extends Vue {
 
 <style lang="scss" scoped>
 #Emojis {
+  font-family: Twemoji, NotomojiColor, Notomoji, EmojiOne Color, Symbola, Noto,
+    Segoe UI Emoji, OpenSansEmoji, monospace;
   display: block;
   width: 100%;
   max-width: 100%;
