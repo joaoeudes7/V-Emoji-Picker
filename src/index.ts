@@ -4,11 +4,35 @@ import _VEmojiPicker from './VEmojiPicker.vue';
 import { categoriesDefault } from './utils/categories';
 import { emojisDefault } from './utils/emojis';
 
+import locale from './locale';
+
+const defaultOptions = {
+  locale: 'pt-br',
+  i18n: {}
+}
+
 const VEmojiPicker: PluginObject<_VEmojiPicker> = {
-  install(Vue, options) {
+  install: (Vue, opts: any = defaultOptions) => {
+    locale.use(opts.locale);
+    locale.i18n(opts.i18n);
+
     Vue.component(_VEmojiPicker.name, _VEmojiPicker);
   }
 };
 
-export { VEmojiPicker, categoriesDefault, emojisDefault };
+// Automatic installation if Vue has been added to the global scope.
+// if (typeof window !== 'undefined' && window.Vue) {
+//   try {
+//     window.Vue.use(VEmojiPicker)
+//   } catch (error) {
+//     VEmojiPicker.install(window.Vue)
+//   }
+// }
+
+export {
+  VEmojiPicker,
+  categoriesDefault,
+  emojisDefault
+};
+
 export default _VEmojiPicker;
