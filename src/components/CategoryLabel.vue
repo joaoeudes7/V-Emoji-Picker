@@ -7,7 +7,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({})
 export default class CategoryLabel extends Vue {
-  @Prop({ required: true }) readonly name!: string;
+  @Prop({ required: true }) name!: string;
 }
 </script>
 
