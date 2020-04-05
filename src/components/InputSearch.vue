@@ -14,7 +14,7 @@ let listenInput: number;
 
 @Component({})
 export default class InputSearch extends Vue {
-  @Prop({ required: true }) readonly placeholder!: string;
+  @Prop({ required: true }) placeholder!: string;
 
   inputSearch = "";
 

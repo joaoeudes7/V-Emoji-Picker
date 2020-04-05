@@ -9,9 +9,9 @@ import { IEmoji } from "@/models/Emoji";
 
 @Component({})
 export default class EmojiItem extends Vue {
-  @Prop({}) readonly emoji!: IEmoji;
-  @Prop({}) readonly size!: number;
-  @Prop({}) readonly withBorder!: boolean;
+  @Prop({}) emoji!: IEmoji;
+  @Prop({}) size!: number;
+  @Prop({}) withBorder!: boolean;
 
   get styleSize() {
     return {

@@ -7,9 +7,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({})
 export default class CategoryItem extends Vue {
-  @Prop({ required: true }) readonly name!: string;
-  @Prop({ required: true }) readonly icon!: string;
-  @Prop({}) readonly styles!: object;
+  @Prop({ required: true }) name!: string;
+  @Prop({ required: true }) icon!: string;
+  @Prop({}) styles!: object;
 
   get styleSVG() {
     return {

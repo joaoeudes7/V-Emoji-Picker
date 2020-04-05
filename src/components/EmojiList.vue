@@ -53,14 +53,14 @@ import CategoryLabel from "./CategoryLabel.vue";
   }
 })
 export default class EmojiList extends Vue {
-  @Prop({ required: true }) readonly data!: any;
-  @Prop({ required: true }) readonly emojisByRow!: number;
-  @Prop({}) readonly emojiWithBorder!: boolean;
-  @Prop({}) readonly emojiSize!: number;
-  @Prop({}) readonly filter!: string;
-  @Prop({}) readonly continuousList!: boolean;
-  @Prop({}) readonly category!: string;
-  @Prop({}) readonly hasSearch!: boolean;
+  @Prop({ required: true }) data!: any;
+  @Prop({ required: true }) emojisByRow!: number;
+  @Prop({}) emojiWithBorder!: boolean;
+  @Prop({}) emojiSize!: number;
+  @Prop({}) filter!: string;
+  @Prop({}) continuousList!: boolean;
+  @Prop({}) category!: string;
+  @Prop({}) hasSearch!: boolean;
 
   searchByAlias(term: string, emoji: Emoji) {
     const isRelevant = (alias: string) => alias.toLowerCase().includes(term);
