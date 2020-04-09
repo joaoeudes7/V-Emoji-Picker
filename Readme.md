@@ -130,7 +130,7 @@ This was a one-time change to keep it clear and dynamic.
 
 - Prop `pack` removed (async auto import default emojis natives - text)
 - Prop `showCategory` changed to `showCategories`
-- Event content `event.emoji` changed to `emoji.data`
+- Event content `event.emoji` changed to `event.data`
 
 # Structure Emoji
 ![](.emoji.png)
