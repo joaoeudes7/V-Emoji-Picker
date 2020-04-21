@@ -54,7 +54,8 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: true }) showCategories!: boolean;
   @Prop({ default: "Search" }) labelSearch!: string;
   @Prop({ default: "Peoples" }) initialCategory!: string;
-  @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
+  @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
+  @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
 
   mapEmojis: MapEmojis = {};
   currentCategory = this.initialCategory;
@@ -90,26 +91,26 @@ export default class VEmojiPicker extends Vue {
   async mapperEmojisCategory(emojis: IEmoji[]) {
     this.$set(this.mapEmojis, "Frequently", []);
 
-    emojis.forEach((emoji: IEmoji) => {
-      const _category = emoji.category;
+    emojis
+      .filter(emoji => !this.exceptEmojis.includes(emoji))
+      .forEach(emoji => {
+        const _category = emoji.category;
 
-      if (!this.mapEmojis[_category]) {
-        this.$set(this.mapEmojis, _category, [emoji]);
-      } else {
+        if (!this.mapEmojis[_category]) {
+          this.$set(this.mapEmojis, _category, []);
+        }
+
         this.mapEmojis[_category].push(emoji);
-      }
-    });
+      });
   }
 
   async restoreFrequentlyEmojis() {
     const jsonMapIndexEmojis = localStorage.getItem("frequentlyEmojis");
 
-    if (jsonMapIndexEmojis) {
-      const mapIndexEmojis = JSON.parse(jsonMapIndexEmojis) as [];
-      const emojis = mapIndexEmojis.map(index => this.customEmojis[index]);
+    const mapIndexEmojis = JSON.parse(jsonMapIndexEmojis!!) || [];
+    const emojis = mapIndexEmojis.map(index => this.customEmojis[index]);
 
-      this.mapEmojis["Frequently"] = emojis;
-    }
+    this.mapEmojis["Frequently"] = emojis;
   }
 
   async saveFrequentlyEmojis(emojis: IEmoji[]) {
@@ -125,7 +126,9 @@ export default class VEmojiPicker extends Vue {
   get categoriesFiltered() {
     const { exceptCategories, customCategories } = this;
 
-    return customCategories.filter(c => !exceptCategories.includes(c.name));
+    return customCategories.filter(
+      category => !exceptCategories.includes(category)
+    );
   }
 
   @Emit("select")
@@ -140,9 +143,14 @@ export default class VEmojiPicker extends Vue {
     return category;
   }
 
-  @Watch("category")
-  watchCategory(newValue: string, old: string) {
-    this.currentCategory = newValue;
+  @Watch("customEmojis")
+  onChangeCustomEmojis(newEmojis: IEmoji[]) {
+    console.log(newEmojis == null);
+
+    if (newEmojis && newEmojis.length) {
+      this.mapEmojis = {};
+      this.mapperEmojisCategory(newEmojis);
+    }
   }
 }
 </script>
