@@ -10,14 +10,20 @@ This simple package using Emojis Natives
 
 ---
 ## Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Props](#props)
-- [Events](#events)
-- [Updates v2](#updates-version-2)
-- [Migrate v2](#migrate-to-version-2)
-- [Using SVG](#using-SVG)
-- [Structure emoji](#structure-emoji)
+ - [V-Emoji-Picker](#v-emoji-picker)
+ - [Contents](#contents)
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [Props](#props)
+ - [Events](#events)
+ - [Using custom Emojis](#using-custom-emojis)
+ - [Using custom Categories](#using-custom-categories)
+ - [Using SVG](#using-svg)
+ - [Updates version 2](#updates-version-2)
+ - [Migrate to version 2](#migrate-to-version-2)
+ - [Structure Emoji](#structure-emoji)
+ - [Size](#size)
+ - [License](#license)
 ----
 
 # Installation
@@ -69,15 +75,21 @@ new Vue({
 ## Props
 ```ts
 {
-  @Prop({ default: () => [] as IEmoji[] }) customEmojis!: IEmoji[];
-  @Prop({ default: () => [] as ICategory[] }) customCategories!: ICategory[];
+
+  @Prop({ default: () => [] }) customEmojis!: IEmoji[];
+  @Prop({ default: () => [] }) customCategories!: ICategory[];
+  @Prop({ default: 15 }) limitFrequently!: number;
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
+  @Prop({ default: 32 }) emojiSize!: number;
+  @Prop({ default: true }) emojiWithBorder!: boolean;
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
-  @Prop({ default: "Pesquisar..." }) labelSearch!: string;
-  @Prop({ default: "Peoples" }) initalCategory!: string;
-  @Prop({ default: () => [] as string[] }) exceptCategories!: string[];
+  @Prop({ default: "Peoples" }) initialCategory!: string;
+  @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
+  @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
+  @Prop({}) lang!: string;
+  @Prop({}) i18n!: Object;
 }
 ```
 
@@ -116,6 +128,40 @@ set in Prop `customCategories`
 
 # Using SVG
 Doc coming soon...
+
+# i18n
+set in Prop `i18n` a object with structure of you custom categories:
+
+```html
+  <VEmojiPicker :i18n="i18n" />
+```
+
+```js
+const i18n = {
+  search: 'Pesquisar...',
+  categories: {
+    Activity: "Atividades",
+    Flags: "Bandeiras",
+    Foods: "Comida",
+    Frequently: "Frequentes",
+    Objects: "Objetos",
+    Nature: "Natureza",
+    Peoples: "Pessoas",
+    Symbols: "Símbolos",
+    Places: "Locais"
+  }
+}
+```
+
+or
+
+set the prop of you language (Available: pt-BR, en-UK)
+
+```html
+  <VEmojiPicker :lang="pt-BR" />
+```
+
+obs: Default language is en-UK, defined in `index.ts`
 
 # Updates version 2
 - Prop `customEmojis`
