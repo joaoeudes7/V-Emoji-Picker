@@ -9,6 +9,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "rm -rf lib && rollup -c",
+    "build:app": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "prepublishOnly": "yarn build"
