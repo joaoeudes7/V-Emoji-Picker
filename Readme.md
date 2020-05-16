@@ -88,7 +88,6 @@ new Vue({
   @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
-  @Prop({}) lang!: string;
   @Prop({}) i18n!: Object;
 }
 ```
@@ -130,7 +129,7 @@ set in Prop `customCategories`
 Doc coming soon...
 
 # i18n
-set in Prop `i18n` a object with structure of you custom categories:
+Set in Prop `i18n` a object with structure of you custom translation:
 
 ```html
   <VEmojiPicker :i18n="i18n" />
@@ -153,15 +152,9 @@ const i18n = {
 }
 ```
 
-or
+or import from `locale/lang/${youLang}`
 
-set the prop of you language (Available: pt-BR, en-UK)
-
-```html
-  <VEmojiPicker :lang="pt-BR" />
-```
-
-obs: Default language is en-UK, defined in `index.ts`
+Obs: Default language is en-UK
 
 # Updates version 2
 - Prop `customEmojis`
