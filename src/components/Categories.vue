@@ -6,7 +6,7 @@
       :key="index"
       @click="onSelect(category)"
     >
-      <CategoryItem :name="category.name" :icon="category.icon" />
+      <CategoryItem :label="category.label" :icon="category.icon" />
     </div>
   </div>
 </template>
@@ -42,12 +42,12 @@ export default class Categories extends Vue {
   border-bottom: 1px solid #e4e4e4;
   background: #f0f0f0;
   color: white;
+  overflow-x: auto;
 }
 
 .category {
   flex: 1;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
   text-align: center;
   cursor: pointer;
 

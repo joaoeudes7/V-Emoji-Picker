@@ -1,14 +1,15 @@
 <template>
   <div>
     <div>
-      <VEmojiPicker :customEmojis="emojis" />
+      <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible" />
     </div>
     <button @click="changeEmojis">Change</button>
+    <button @click="changeVisibleEmojis">Toogle View</button>
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { VEmojiPicker, emojisDefault } from "./index";
 
@@ -18,8 +19,14 @@ Vue.use(VEmojiPicker);
 export default class AppTestUi extends Vue {
   private emojis = emojisDefault;
 
+  private visible = true;
+
   changeEmojis() {
     this.emojis = emojisDefault.slice(0, 8);
+  }
+
+  changeVisibleEmojis() {
+    this.visible = !this.visible;
   }
 }
 </script>
