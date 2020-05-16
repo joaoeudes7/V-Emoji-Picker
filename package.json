@@ -1,6 +1,6 @@
 {
   "name": "v-emoji-picker",
-  "version": "2.1.9",
+  "version": "2.2.0",
   "author": {
     "name": "João Eudes Lima",
     "email": "joaoeudes7@gmail.com",
@@ -14,7 +14,7 @@
     "test:unit": "vue-cli-service test:unit",
     "prepublishOnly": "yarn build"
   },
-  "main": "./lib/v-emoji-picker.unpkg.js",
+  "main": "./lib/v-emoji-picker.cjs.js",
   "module": "./lib/v-emoji-picker.esm.js",
   "unpkg": "./lib/v-emoji-picker.unpkg.js",
   "browser": {

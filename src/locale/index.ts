@@ -1,6 +1,6 @@
 import langDefault from './lang/enUK';
 
-let lang = {};
+let lang = langDefault;
 
 export const i18n = (translations: Object) => {
   lang = { ...langDefault, ...translations }
