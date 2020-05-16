@@ -1,5 +1,5 @@
 <template>
-  <span class="svg" :style="styleSVG" :title="name" v-html="icon" />
+  <span class="svg" :style="styleSVG" :title="label" v-html="icon" />
 </template>
 
 <script lang="ts">
@@ -7,7 +7,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({})
 export default class CategoryItem extends Vue {
-  @Prop({ required: true }) name!: string;
+  @Prop({ required: true }) label!: string;
   @Prop({ required: true }) icon!: string;
   @Prop({}) styles!: object;
 

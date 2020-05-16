@@ -33,14 +33,7 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Prop,
-  Vue,
-  Watch,
-  Provide,
-  Emit
-} from "vue-property-decorator";
+import { Component, Emit, Prop, Vue, Watch } from "vue-property-decorator";
 import { Emoji } from "@/models/Emoji";
 
 import EmojiItem from "./EmojiItem.vue";
@@ -121,17 +114,17 @@ export default class EmojiList extends Vue {
   }
 
   @Watch("data")
-  onDataChanged(newValue: any, old: any) {
+  onDataChanged() {
     this.containerEmoji.scrollTop = 0;
   }
 
   @Watch("category")
-  onCategoryChanged(newValue: any, old: any) {
+  onCategoryChanged(newValue: any) {
     if (this.continuousList) {
       const categoryEl = (this.$refs[newValue] as any)[0].$el;
-      const scrollTop = categoryEl.offsetTop - this.calcScrollTop();
 
-      this.containerEmoji.scrollTop = scrollTop;
+      this.containerEmoji.scrollTop =
+        categoryEl.offsetTop - this.calcScrollTop();
     }
   }
 }
