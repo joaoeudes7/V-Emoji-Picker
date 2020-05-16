@@ -6,8 +6,8 @@ export const i18n = (translations: Object) => {
 
 export const use = (initials: string) => {
   if (initials.trim().length) {
-    const it = require(`./lang/${initials}`)['default']
-    i18n(it)
+    const nLang = require(`./lang/${initials}`).default
+    i18n(nLang)
   }
 }
 

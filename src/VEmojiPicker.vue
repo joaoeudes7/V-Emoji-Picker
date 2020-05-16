@@ -22,11 +22,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch, Emit } from "vue-property-decorator";
+import { Component, Emit, Prop, Vue, Watch } from "vue-property-decorator";
 
-import { IEmoji, Emoji } from "./models/Emoji";
-import { ICategory, Category } from "./models/Category";
+import { Emoji, IEmoji } from "./models/Emoji";
+import { ICategory } from "./models/Category";
 import { MapEmojis } from "./models/MapEmojis";
+
+import { emojisDefault } from "./utils/emojis";
+import { categoriesDefault } from "./utils/categories";
 
 import Categories from "./components/Categories.vue";
 import EmojiList from "./components/EmojiList.vue";
@@ -42,8 +45,8 @@ import locale from "./locale";
   }
 })
 export default class VEmojiPicker extends Vue {
-  @Prop({ default: () => [] }) customEmojis!: IEmoji[];
-  @Prop({ default: () => [] }) customCategories!: ICategory[];
+  @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
+  @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
   @Prop({ default: 15 }) limitFrequently!: number;
   @Prop({ default: 5 }) emojisByRow!: number;
   @Prop({ default: false }) continuousList!: boolean;
@@ -58,34 +61,18 @@ export default class VEmojiPicker extends Vue {
   @Prop({}) i18n!: Object;
 
   mapEmojis: MapEmojis = {};
-  mapCategories: ICategory[] = [];
 
   currentCategory = this.initialCategory;
   filterEmoji = "";
 
   created() {
-    // Initial params
-    let emojisToUse: IEmoji[] = [];
-
-    if (!this.customEmojis.length) {
-      emojisToUse = require("./utils/emojis").emojisDefault;
-    } else {
-      emojisToUse = this.customEmojis;
-    }
-
-    if (!this.customCategories.length) {
-      this.mapCategories = require("./utils/categories").categoriesDefault;
-    } else {
-      this.mapCategories = this.customCategories;
-    }
-
-    const categoriesNames = this.mapCategories.map(c => c.name);
+    const categoriesNames = this.customCategories.map(c => c.name);
     if (!categoriesNames.includes(this.initialCategory)) {
       this.initialCategory = categoriesNames[0];
     }
 
     // Create map
-    this.mapperEmojisCategory(emojisToUse);
+    this.mapperEmojisCategory(this.customEmojis);
     this.restoreFrequentlyEmojis();
 
     // Configure i18n
@@ -158,7 +145,7 @@ export default class VEmojiPicker extends Vue {
   }
 
   get categoriesFiltered() {
-    return this.mapCategories.filter(
+    return this.customCategories.filter(
       category => !this.exceptCategories.includes(category)
     );
   }
