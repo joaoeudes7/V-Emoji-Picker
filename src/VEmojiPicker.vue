@@ -6,7 +6,7 @@
       :current="currentCategory"
       @select="changeCategory"
     />
-    <InputSearch v-if="showSearch" @update="onSearch" :placeholder="labelSearch" />
+    <InputSearch v-if="showSearch" @update="onSearch" />
     <EmojiList
       :data="mapEmojis"
       :category="currentCategory"
@@ -57,7 +57,6 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
-  @Prop({}) lang!: string;
   @Prop({}) i18n!: Object;
 
   mapEmojis: MapEmojis = {};
@@ -76,10 +75,6 @@ export default class VEmojiPicker extends Vue {
     this.restoreFrequentlyEmojis();
 
     // Configure i18n
-    if (this.lang) {
-      locale.use(this.lang);
-    }
-
     if (this.i18n) {
       locale.i18n(this.i18n);
     }

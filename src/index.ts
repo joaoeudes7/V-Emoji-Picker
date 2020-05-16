@@ -7,14 +7,11 @@ import { emojisDefault } from './utils/emojis';
 import locale from './locale';
 
 const defaultOptions = {
-  locale: 'en-UK',
   i18n: {}
 }
 
 const VEmojiPicker: PluginObject<_VEmojiPicker> = {
   install: (Vue, opts: any = defaultOptions) => {
-
-    locale.use(opts.locale);
     locale.i18n(opts.i18n);
 
     Vue.component(_VEmojiPicker.name, _VEmojiPicker);

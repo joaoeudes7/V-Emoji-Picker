@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { st } from "@/locale";
+import { t } from "@/locale";
 
 const timemout = 500;
 let listenInput: number;
@@ -25,7 +25,7 @@ export default class InputSearch extends Vue {
   }
 
   get placeholder() {
-    return st("search");
+    return t("search");
   }
 }
 </script>

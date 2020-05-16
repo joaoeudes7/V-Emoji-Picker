@@ -1,18 +1,13 @@
+import langDefault from './lang/enUK';
+
 let lang = {};
 
 export const i18n = (translations: Object) => {
-  lang = { ...lang, ...translations }
-}
-
-export const use = (initials: string) => {
-  if (initials.trim().length) {
-    const nLang = require(`./lang/${initials}`).default
-    i18n(nLang)
-  }
+  lang = { ...langDefault, ...translations }
 }
 
 // Sample parse translation
-export const st = (term: string) => {
+export const t = (term: string) => {
   const properties = term.split(".")
   let text = lang
 
@@ -23,4 +18,4 @@ export const st = (term: string) => {
   return text
 }
 
-export default { use, i18n, t: st }
+export default { i18n, t }

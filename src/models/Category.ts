@@ -1,4 +1,4 @@
-import { st } from '@/locale';
+import { t } from '@/locale';
 
 export interface ICategory {
   name: string;
@@ -12,6 +12,6 @@ export class Category implements ICategory {
   ) { }
 
   get label() {
-    return st(`categories.${this.name}`)
+    return t(`categories.${this.name}`)
   }
 }
