@@ -8,7 +8,7 @@ import locale from './locale';
 
 const defaultOptions = {
   i18n: {}
-}
+};
 
 const VEmojiPicker: PluginObject<_VEmojiPicker> = {
   install: (Vue, opts: any = defaultOptions) => {
@@ -16,7 +16,7 @@ const VEmojiPicker: PluginObject<_VEmojiPicker> = {
 
     Vue.component(_VEmojiPicker.name, _VEmojiPicker);
   }
-}
+};
 
 // Automatic installation if Vue has been added to the global scope.
 // if (typeof window !== 'undefined' && window.Vue) {
