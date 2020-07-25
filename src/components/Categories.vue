@@ -39,9 +39,8 @@ export default class Categories extends Vue {
   width: 100%;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid #e4e4e4;
-  background: #f0f0f0;
-  color: white;
+  border-bottom: 1px solid var(--ep-color-border);
+  background: var(--ep-color-bg);
   overflow-x: auto;
 }
 
@@ -52,7 +51,7 @@ export default class Categories extends Vue {
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #009688;
+    border-bottom: 3px solid var(--ep-color-active);
     filter: saturate(3);
     padding-bottom: 2px;
   }

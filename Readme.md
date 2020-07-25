@@ -75,7 +75,6 @@ new Vue({
 ## Props
 ```ts
 {
-
   @Prop({ default: () => [] }) customEmojis!: IEmoji[];
   @Prop({ default: () => [] }) customCategories!: ICategory[];
   @Prop({ default: 15 }) limitFrequently!: number;
@@ -85,6 +84,7 @@ new Vue({
   @Prop({ default: true }) emojiWithBorder!: boolean;
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
+  @Prop({ default: false }) dark!: boolean;
   @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];

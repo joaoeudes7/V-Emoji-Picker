@@ -137,25 +137,14 @@ export default class EmojiList extends Vue {
   display: block;
   width: 100%;
   max-width: 100%;
+  color: var(--ep-color-text);
+
 
   // Custom Scroll
   ::-webkit-scrollbar {
     border-radius: 4px;
     width: 4px;
-    background: #7c7c7c5b;
-  }
-
-  ::-webkit-scrollbar-track {
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: #00000038;
-
-    &:hover {
-      background: #00000062;
-    }
+    overflow: hidden;
   }
 }
 
