@@ -12,6 +12,6 @@ export class Category implements ICategory {
   ) { }
 
   get label() {
-    return t(`categories.${this.name}`)
+    return t(`categories.${this.name}`);
   }
 }

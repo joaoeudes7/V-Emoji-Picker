@@ -11,4 +11,4 @@ export default {
     Symbols: "Symbols",
     Places: "Places"
   }
-}
+};
