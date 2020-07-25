@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible" />
+      <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible" :dark="true" />
     </div>
     <button @click="changeEmojis">Change</button>
     <button @click="changeVisibleEmojis">Toogle View</button>
