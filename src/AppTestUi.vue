@@ -11,11 +11,17 @@
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
 
-import { VEmojiPicker, emojisDefault } from "./index";
+import VEmojiPicker, { emojisDefault } from "./index";
+// import { VEmojiPicker, emojisDefault } from "./index";
 
 Vue.use(VEmojiPicker);
 
-@Component({})
+@Component({
+  name: "AppTestUI",
+  components: {
+    // VEmojiPicker
+  }
+})
 export default class AppTestUi extends Vue {
   private emojis = emojisDefault;
 

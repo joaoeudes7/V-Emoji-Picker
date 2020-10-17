@@ -10,7 +10,8 @@ const defaultOptions = {
   i18n: {}
 };
 
-const VEmojiPicker: PluginObject<_VEmojiPicker> = {
+const plugin: PluginObject<_VEmojiPicker> = {
+  VEmojiPicker: _VEmojiPicker,
   install: (Vue, opts: any = defaultOptions) => {
     locale.i18n(opts.i18n);
 
@@ -28,9 +29,9 @@ const VEmojiPicker: PluginObject<_VEmojiPicker> = {
 // }
 
 export {
-  VEmojiPicker,
+  _VEmojiPicker as VEmojiPicker,
   categoriesDefault,
   emojisDefault
 };
 
-export default _VEmojiPicker;
+export default plugin;
