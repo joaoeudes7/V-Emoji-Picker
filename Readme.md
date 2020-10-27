@@ -39,7 +39,7 @@ yarn add v-emoji-picker
 </template>
 
 <script>
-import VEmojiPicker from 'v-emoji-picker';
+import { VEmojiPicker } from 'v-emoji-picker';
 
 export default {
   name: 'Demo',
