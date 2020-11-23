@@ -19,8 +19,6 @@ This simple package using Emojis Natives
  - [Using custom Emojis](#using-custom-emojis)
  - [Using custom Categories](#using-custom-categories)
  - [Using SVG](#using-svg)
- - [Updates version 2](#updates-version-2)
- - [Migrate to version 2](#migrate-to-version-2)
  - [Structure Emoji](#structure-emoji)
  - [Size](#size)
  - [License](#license)
