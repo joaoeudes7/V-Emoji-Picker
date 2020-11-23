@@ -156,21 +156,6 @@ or import from `locale/lang/${youLang}`
 
 Obs: Default language is en-UK
 
-# Updates version 2
-- Prop `customEmojis`
-- Prop `customCategories`
-- Prop `exceptCategories`
-- Folder /data removed
-- Interface Emoji updated
-- Support to Emojis SVG/Img/Natives (text)
-
-# Migrate to version 2
-This was a one-time change to keep it clear and dynamic.
-
-- Prop `pack` removed (async auto import default emojis natives - text)
-- Prop `showCategory` changed to `showCategories`
-- Event content `event.emoji` changed to `event.data`
-
 # Structure Emoji
 ![](.emoji.png)
 
