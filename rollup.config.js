@@ -1,17 +1,18 @@
-import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
+import css from 'rollup-plugin-css-porter';
+import filesize from 'rollup-plugin-filesize';
+import sass from 'rollup-plugin-sass';
 import typescript from 'rollup-plugin-typescript2';
 import vue from 'rollup-plugin-vue';
-import css from 'rollup-plugin-css-porter';
-import sass from 'rollup-plugin-sass';
-import filesize from 'rollup-plugin-filesize';
+import pkg from './package.json';
 
 // Default configs
 const name = 'VEmojiPicker';
 const exports = 'named';
 const sourcemap = false;
 const globals = {
-  'vue-property-decorator': 'vuePropertyDecorator'
+  'vue-property-decorator': 'vuePropertyDecorator',
+  'vue-class-component': 'vueClassComponent'
 };
 
 export default {
@@ -57,6 +58,7 @@ export default {
     typescript({
       typescript: require('typescript'),
       module: 'esnext',
+      check: false,
       tsconfig: "tsconfig.json",
       rollupCommonJSResolveHack: true,
       tsconfigOverride: { exclude: ["node_modules", "src/main.ts", "tests"] }
