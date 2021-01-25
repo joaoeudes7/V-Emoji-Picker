@@ -1,21 +1,19 @@
 import { PluginObject } from 'vue';
-import _VEmojiPicker from './VEmojiPicker.vue';
-
+import locale from './locale';
 import { categoriesDefault } from './utils/categories';
 import { emojisDefault } from './utils/emojis';
-
-import locale from './locale';
+import VEmojiPicker from './VEmojiPicker.vue';
 
 const defaultOptions = {
   i18n: {}
 };
 
-const plugin: PluginObject<_VEmojiPicker> = {
-  VEmojiPicker: _VEmojiPicker,
+const plugin: PluginObject<typeof VEmojiPicker> = {
+  VEmojiPicker,
   install: (Vue, opts: any = defaultOptions) => {
     locale.i18n(opts.i18n);
 
-    Vue.component(_VEmojiPicker.name, _VEmojiPicker);
+    Vue.component("VEmojiPicker", VEmojiPicker);
   }
 };
 
@@ -29,7 +27,7 @@ const plugin: PluginObject<_VEmojiPicker> = {
 // }
 
 export {
-  _VEmojiPicker as VEmojiPicker,
+  VEmojiPicker,
   categoriesDefault,
   emojisDefault
 };
