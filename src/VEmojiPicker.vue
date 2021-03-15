@@ -41,8 +41,8 @@ import locale from "./locale";
   components: {
     Categories,
     EmojiList,
-    InputSearch
-  }
+    InputSearch,
+  },
 })
 export default class VEmojiPicker extends Vue {
   @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
@@ -57,7 +57,7 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: false }) dark!: boolean;
   @Prop({ default: "Peoples" }) initialCategory!: string;
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
-  @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
+  @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: string[];
   @Prop({}) i18n!: Object;
 
   mapEmojis: MapEmojis = {};
@@ -111,8 +111,10 @@ export default class VEmojiPicker extends Vue {
     this.$set(this.mapEmojis, "Frequently", []);
 
     emojis
-      .filter(emoji => !this.exceptEmojis.includes(emoji))
-      .forEach(emoji => {
+      .filter(({data: emoji}) => {
+        return !(this.exceptEmojis.findIndex((el) => emoji === el) > -1);
+      })
+      .forEach((emoji) => {
         const _category = emoji.category;
 
         if (!this.mapEmojis[_category]) {
