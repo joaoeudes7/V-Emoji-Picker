@@ -46,6 +46,7 @@ import locale from "./locale";
 })
 export default class VEmojiPicker extends Vue {
   @Prop({ default: () => emojisDefault }) customEmojis!: IEmoji[];
+  @Prop({ default: () => [] }) customFrequently!: IEmoji[];
   @Prop({ default: () => categoriesDefault }) customCategories!: ICategory[];
   @Prop({ default: 15 }) limitFrequently!: number;
   @Prop({ default: 5 }) emojisByRow!: number;
@@ -65,8 +66,9 @@ export default class VEmojiPicker extends Vue {
   currentCategory = this.initialCategory;
   filterEmoji = "";
 
-  created() {
-    const categoriesNames = this.customCategories.map(c => c.name);
+  async created() {
+    const categoriesNames = this.customCategories.map(it => it.name);
+
     if (!categoriesNames.includes(this.initialCategory)) {
       this.initialCategory = categoriesNames[0];
     }
@@ -90,7 +92,7 @@ export default class VEmojiPicker extends Vue {
   }
 
   async changeCategory(category: ICategory) {
-    const hasEmojis = this.mapEmojis[category.name].length;
+    const hasEmojis = this.mapEmojis[category.name] != null;
     this.currentCategory = category.name;
 
     if (hasEmojis) {
@@ -187,6 +189,7 @@ export default class VEmojiPicker extends Vue {
   border: 1px solid var(--ep-color-border);
   overflow: hidden;
   width: 325px;
+  height: 350px;
   user-select: none;
 
   @media screen and (max-width: 325px) {

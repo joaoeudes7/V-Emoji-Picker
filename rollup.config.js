@@ -12,7 +12,8 @@ const exports = 'named';
 const sourcemap = false;
 const globals = {
   'vue-property-decorator': 'vuePropertyDecorator',
-  'vue-class-component': 'vueClassComponent'
+  'vue-class-component': 'vueClassComponent',
+  'tslib': 'tslib'
 };
 
 export default {

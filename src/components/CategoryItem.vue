@@ -9,13 +9,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class CategoryItem extends Vue {
   @Prop({ required: true }) label!: string;
   @Prop({ required: true }) icon!: string;
-  @Prop({}) styles!: object;
-
-  get styleSVG() {
-    return {
-      ...this.styles
-    };
-  }
+  @Prop({}) styleSVG!: object;
 }
 </script>
 

@@ -23,9 +23,9 @@ import { VEmojiPicker, emojisDefault } from "./index";
   }
 })
 export default class AppTestUi extends Vue {
-  private emojis = emojisDefault;
+  emojis = emojisDefault;
 
-  private visible = true;
+  visible = true;
 
   changeEmojis() {
     this.emojis = emojisDefault.slice(0, 8);

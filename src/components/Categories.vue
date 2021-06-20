@@ -41,7 +41,6 @@ export default class Categories extends Vue {
   align-items: center;
   border-bottom: 1px solid var(--ep-color-border);
   background: var(--ep-color-bg);
-  overflow-x: auto;
 }
 
 .category {
