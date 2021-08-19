@@ -4,10 +4,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Prop, Vue } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
 import { IEmoji } from "@/models/Emoji";
 
-@Component({})
+@Options({})
 export default class EmojiItem extends Vue {
   @Prop({}) emoji!: IEmoji;
   @Prop({}) size!: number;

@@ -22,7 +22,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue, Watch } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
+import { Emit, Prop, Vue, Watch } from "vue-property-decorator";
+import { ref,reactive } from 'vue';
 
 import { Emoji, IEmoji } from "./models/Emoji";
 import { ICategory } from "./models/Category";
@@ -37,7 +39,7 @@ import InputSearch from "./components/InputSearch.vue";
 
 import locale from "./locale";
 
-@Component({
+@Options({
   components: {
     Categories,
     EmojiList,
@@ -108,7 +110,7 @@ export default class VEmojiPicker extends Vue {
   }
 
   async mapperEmojisCategory(emojis: IEmoji[]) {
-    this.$set(this.mapEmojis, "Frequently", []);
+    this.mapEmojis.Frequently = reactive([]);
 
     emojis
       .filter(emoji => !this.exceptEmojis.includes(emoji))
@@ -116,7 +118,7 @@ export default class VEmojiPicker extends Vue {
         const _category = emoji.category;
 
         if (!this.mapEmojis[_category]) {
-          this.$set(this.mapEmojis, _category, []);
+          this.mapEmojis[_category] = reactive([]);
         }
 
         this.mapEmojis[_category].push(emoji);

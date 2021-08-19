@@ -7,13 +7,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Prop, Vue, Watch } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
 import { t } from "@/locale";
 
 const timemout = 500;
 let listenInput: number;
 
-@Component({})
+@Options({})
 export default class InputSearch extends Vue {
   inputSearch = "";
 

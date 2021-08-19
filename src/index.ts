@@ -1,21 +1,17 @@
-import { PluginObject } from 'vue';
 import locale from './locale';
 import { categoriesDefault } from './utils/categories';
 import { emojisDefault } from './utils/emojis';
 import VEmojiPicker from './VEmojiPicker.vue';
+import { App } from 'vue';
 
 const defaultOptions = {
   i18n: {}
 };
 
-const plugin: PluginObject<typeof VEmojiPicker> = {
-  VEmojiPicker,
-  install: (Vue, opts: any = defaultOptions) => {
-    locale.i18n(opts.i18n);
-
-    Vue.component("VEmojiPicker", VEmojiPicker);
-  }
-};
+const install = function(app:App, opts: any = defaultOptions) {
+  locale.i18n(opts.i18n);
+  app.component("VEmojiPicker", VEmojiPicker);
+}
 
 // Automatic installation if Vue has been added to the global scope.
 // if (typeof window !== 'undefined' && window.Vue) {
@@ -32,4 +28,4 @@ export {
   emojisDefault
 };
 
-export default plugin;
+export default install;

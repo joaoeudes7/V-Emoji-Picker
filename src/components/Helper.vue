@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-
-@Component({})
+import { Prop, Vue } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
+@Options({})
 export default class Helper extends Vue {
 };
 </script>

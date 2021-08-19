@@ -9,32 +9,32 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-
-// import VEmojiPicker, { emojisDefault } from "./../lib/v-emoji-picker.cjs";
+import { Vue } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
 import { VEmojiPicker, emojisDefault } from "./index";
+import { defineComponent } from 'vue';
 
-// Vue.use(VEmojiPicker);
-
-@Component({
+export default defineComponent({
   name: "AppTestUI",
   components: {
     VEmojiPicker
-  }
-})
-export default class AppTestUi extends Vue {
-  private emojis = emojisDefault;
-
-  private visible = true;
-
-  changeEmojis() {
-    this.emojis = emojisDefault.slice(0, 8);
-  }
-
-  changeVisibleEmojis() {
-    this.visible = !this.visible;
-  }
-}
+  },
+  data() {
+    return {
+      visible:false,
+      emojis: emojisDefault
+    };
+  },
+  methods:{
+    changeEmojis() {
+       this.emojis.splice(0, 8);
+       console.log(this.emojis);
+    },
+    changeVisibleEmojis() {
+      this.visible = !this.visible;
+    }
+  },
+});
 </script>
 
 <style lang='scss' scoped>

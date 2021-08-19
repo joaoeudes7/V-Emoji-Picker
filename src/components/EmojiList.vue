@@ -33,13 +33,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue, Watch } from "vue-property-decorator";
+import { Emit, Prop, Vue, Watch } from "vue-property-decorator";
 import { Emoji } from "@/models/Emoji";
-
+import { Options } from 'vue-class-component';
 import EmojiItem from "./EmojiItem.vue";
 import CategoryLabel from "./CategoryLabel.vue";
 
-@Component({
+@Options({
   components: {
     EmojiItem,
     CategoryLabel

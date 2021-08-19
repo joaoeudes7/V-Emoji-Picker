@@ -12,12 +12,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Emit } from "vue-property-decorator";
+import { Prop, Vue, Emit } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
 import { Category } from "@/models/Category";
 
 import CategoryItem from "./CategoryItem.vue";
 
-@Component({
+@Options({
   components: {
     CategoryItem
   }
