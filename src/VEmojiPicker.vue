@@ -1,5 +1,5 @@
 <template>
-  <div id="EmojiPicker" :class="['emoji-picker', {dark}]">
+  <div id="EmojiPicker" :class="['emoji-picker', {dark}]" :style="{ width: computedStyle.width, height: computedStyle.height }">
     <Categories
       v-if="showCategories"
       :categories="categoriesFiltered"
@@ -17,6 +17,8 @@
       :continuousList="continuousList"
       :hasSearch="showSearch"
       @select="onSelectEmoji"
+      :layout="layout"
+      :style="{ width: computedStyle.width, height: computedStyle.listHeight }"
     />
   </div>
 </template>
@@ -61,6 +63,9 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
   @Prop({}) i18n!: Object;
+  @Prop({ required:false, default: 'flex' }) layout?: 'flex' | 'grid' = 'flex';
+  @Prop({ default: '325px'}) width!: String | Number;
+  @Prop({default: '440px'}) height!: String | Number;
 
   mapEmojis: MapEmojis = {};
 
@@ -148,6 +153,16 @@ export default class VEmojiPicker extends Vue {
     );
   }
 
+  get computedStyle() {
+    let width = this.width instanceof Number ? `${this.width}px` : this.width;
+    let height = this.height instanceof Number ? `${this.height}px` : this.height;
+    let listHeight = `calc(100% - ${this.showCategories ? '32px' : '0px'} - ${this.showSearch ? '2.5em' : '0px'})`;
+    console.log(listHeight);
+    return {
+      height, width, listHeight
+    };
+  }
+
   @Emit("select")
   async onSelectEmoji(emoji: IEmoji) {
     await this.updateFrequently(emoji);
@@ -179,16 +194,16 @@ export default class VEmojiPicker extends Vue {
   --ep-color-active: #009688;
 
   display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-  flex-direction: column;
-  align-items: center;
   background-color: var(--ep-color-bg);
   border-radius: 4px;
   border: 1px solid var(--ep-color-border);
   overflow: hidden;
-  width: 325px;
   user-select: none;
 
   @media screen and (max-width: 325px) {

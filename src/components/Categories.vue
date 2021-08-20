@@ -5,8 +5,9 @@
       :class="['category', { active: category.name === current }]"
       :key="index"
       @click="onSelect(category)"
+      :title="category.label"
+      v-html="category.icon"
     >
-      <CategoryItem :label="category.label" :icon="category.icon" />
     </div>
   </div>
 </template>
@@ -47,14 +48,24 @@ export default class Categories extends Vue {
 
 .category {
   flex: 1;
-  padding: 5px;
+  height: 32px;
+  line-height: 32px;
   text-align: center;
   cursor: pointer;
-
-  &.active {
-    border-bottom: 3px solid var(--ep-color-active);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--ep-color-active);
     filter: saturate(3);
-    padding-bottom: 2px;
+    width: 100%;
+
   }
 
   & > img {
@@ -62,8 +73,8 @@ export default class Categories extends Vue {
     height: 22px;
   }
 
-  &:hover {
-    filter: saturate(3);
+  &:not(.active):hover {
+    filter: brightness(1.2);
   }
 }
 </style>

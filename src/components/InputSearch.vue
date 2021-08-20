@@ -43,15 +43,21 @@ export default class InputSearch extends Vue {
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  margin: 5px 0;
-  padding: 0 5%;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   input {
     width: 100%;
-    font-size: 14px;
-    padding: 6px 8px;
+    font-size: 1em;
+    height: 1.875em;
+    line-height: 1.875em;
+    padding: 0 0.5em;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 0.5em;
     background: var(--ep-color-sbg);
     color: var(--ep-color-text);
     border: 1px solid var(--ep-color-border);

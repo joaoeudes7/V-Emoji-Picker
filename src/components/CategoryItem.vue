@@ -1,5 +1,5 @@
 <template>
-  <span class="svg" :style="styleSVG" :title="label" v-html="icon" />
+  <span class="svg" :title="label" v-html="icon" />
 </template>
 
 <script lang="ts">
@@ -9,13 +9,6 @@ import { Options } from 'vue-class-component';
 export default class CategoryItem extends Vue {
   @Prop({ required: true }) label!: string;
   @Prop({ required: true }) icon!: string;
-  @Prop({}) styles!: object;
-
-  get styleSVG() {
-    return {
-      ...this.styles
-    };
-  }
 }
 </script>
 

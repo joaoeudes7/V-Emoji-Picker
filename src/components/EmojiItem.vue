@@ -1,6 +1,6 @@
 
 <template>
-  <span :class="['emoji', { 'border': withBorder } ]" :style="styleSize" v-html="emoji.data" />
+  <span :class="['emoji', { 'border': withBorder } ]" :content="emoji?.data" />
 </template>
 
 <script lang="ts">
@@ -11,38 +11,37 @@ import { IEmoji } from "@/models/Emoji";
 @Options({})
 export default class EmojiItem extends Vue {
   @Prop({}) emoji!: IEmoji;
-  @Prop({}) size!: number;
   @Prop({}) withBorder!: boolean;
-
-  get styleSize() {
-    return {
-      fontSize: `${this.size - 5}px`,
-      lineHeight: `${this.size}px`,
-      height: `${this.size}px`,
-      width: `${this.size}px`
-    };
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .emoji {
+  $padding:2px;
   display: inline-block;
-  text-align: center;
-  padding: 3px;
   box-sizing: content-box;
   overflow: hidden;
   transition: transform 0.2s;
-
   cursor: pointer;
-
+  font-size: var(--emojiSize);
+  padding: $padding;
+  min-width: calc(var(--emojiSize) + #{$padding * 2} + 6px);
+  text-align: center;
+  &::before {
+    content:attr(content);
+    display: inline-block;
+    transform: translate(-0%, -3%);
+  }
   &:hover {
     transform: scale(1.05);
+  }
+  &:last-child {
+    margin-right: auto;
   }
 }
 
 .border:hover {
-  background: #00000010;
+  background: #00000030;
   border-radius: 8px;
 }
 </style>
