@@ -11,7 +11,7 @@ const defaultOptions = {
 const install = function(app:App, opts: any = defaultOptions) {
   locale.i18n(opts.i18n);
   app.component("VEmojiPicker", VEmojiPicker);
-}
+};
 
 // Automatic installation if Vue has been added to the global scope.
 // if (typeof window !== 'undefined' && window.Vue) {

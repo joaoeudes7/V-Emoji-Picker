@@ -1,18 +1,6 @@
-<template>
-  <div id="Categories">
-    <div
-      v-for="(category, index) in categories"
-      :class="['category', { active: category.name === current }]"
-      :key="index"
-      @click="onSelect(category)"
-      :title="category.label"
-      v-html="category.icon"
-    >
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
+import { h as createElement } from 'vue';
+import { RendererElement, RendererNode, VNode } from "@vue/runtime-core";
 import { Prop, Vue, Emit } from "vue-property-decorator";
 import { Options } from 'vue-class-component';
 import { Category } from "@/models/Category";
@@ -31,6 +19,13 @@ export default class Categories extends Vue {
   @Emit("select")
   onSelect(category: Category) {
     return category;
+  }
+
+  render():VNode {
+    return createElement('div', { id: 'Categories' }, this.categories.map((category, index) => (
+      createElement('div', { title: category.label, key: index, class:['category', { active: category.name === this.current }],
+       onClick: () => this.onSelect(category), innerHTML:category.icon })
+    )));
   }
 }
 </script>
