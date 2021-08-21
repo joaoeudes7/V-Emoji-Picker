@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div style="width:max-content">
+    <div style="width:max-content;max-width:100%">
       <textarea name="" id="" :value="message"/>
       <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible"
-        :limitFrequently="3" :emojisByRow="6" @select="onEmojiSelected" />
+        :limitFrequently="3" :emojisByRow="6" @select="onEmojiSelected" width="100%" :layout="layout"/>
     </div>
     <button @click="changeEmojis">Change</button>
     <button @click="changeVisibleEmojis">Toogle View</button>
-    <div content="😁"></div>
+    <button @click="changeLayout">switch layout</button>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default defineComponent({
     VEmojiPicker
   },
   setup() {
+    console.log(emojisDefault.length);
     let visible = ref(true);
     let emojis = reactive(emojisDefault);
     function changeEmojis() {
@@ -36,9 +37,18 @@ export default defineComponent({
       message.value += emoji.data;
     }
 
+    let layout = ref('flex');
+    function changeLayout() {
+      if(layout.value == 'flex') {
+        layout.value = 'grid';
+      } else {
+        layout.value = 'flex';
+      }
+    }
+
     return {
-      visible, emojis, message,
-      changeEmojis, changeVisibleEmojis, onEmojiSelected
+      visible, emojis, message, layout,
+      changeEmojis, changeVisibleEmojis, onEmojiSelected, changeLayout
     };
 
   }

@@ -139,7 +139,6 @@ export default class EmojiList extends Vue {
   onCategoryChanged(newValue: any) {
     if (this.continuousList) {
       const categoryEl = (this.$refs[newValue] as any).$el;
-      debugger
       this.containerEmoji.scrollTop =
         categoryEl.offsetTop;
     }

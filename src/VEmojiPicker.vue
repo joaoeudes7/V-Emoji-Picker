@@ -157,7 +157,6 @@ export default class VEmojiPicker extends Vue {
     let width = this.width instanceof Number ? `${this.width}px` : this.width;
     let height = this.height instanceof Number ? `${this.height}px` : this.height;
     let listHeight = `calc(100% - ${this.showCategories ? '32px' : '0px'} - ${this.showSearch ? '2.5em' : '0px'})`;
-    console.log(listHeight);
     return {
       height, width, listHeight
     };
