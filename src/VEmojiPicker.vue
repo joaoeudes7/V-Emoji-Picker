@@ -26,7 +26,7 @@
 <script lang="ts">
 import { Options } from 'vue-class-component';
 import { Emit, Prop, Vue, Watch } from "vue-property-decorator";
-import { ref,reactive } from 'vue';
+import { reactive } from 'vue';
 
 import { Emoji, IEmoji } from "./models/Emoji";
 import { ICategory } from "./models/Category";
@@ -64,8 +64,8 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
   @Prop({}) i18n!: Object;
   @Prop({ required:false, default: 'flex' }) layout?: 'flex' | 'grid' = 'flex';
-  @Prop({ default: '325px'}) width!: String | Number;
-  @Prop({default: '440px'}) height!: String | Number;
+  @Prop({ default: '325px'}) width!: string | number;
+  @Prop({default: '440px'}) height!: string | number;
 
   mapEmojis: MapEmojis = {};
 

@@ -39,8 +39,6 @@ export default class InputSearch extends Vue {
 }
 
 .container-search {
-  display: block;
-  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   height: 2.5em;
