@@ -38,36 +38,34 @@ yarn add v-emoji-picker
 
 <script>
 import { VEmojiPicker } from 'v-emoji-picker';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'Demo',
   components: {
     VEmojiPicker
   },
-  data: () => ({}),
-  methods: {
-    selectEmoji(emoji) {
-      console.log(emoji)
-    }
-  }
-}
+    setup() {
+        function selectEmoji(emoji) {
+            console.log(emoji);
+        }
+        return { selectEmoji }
+    },
+})
 </script>
 ```
 
 or Global
 
 ```js
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
 
 import VEmojiPicker from 'v-emoji-picker';
 
-Vue.config.productionTip = false;
-Vue.use(VEmojiPicker);
-
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+const app = createApp(App)
+app.component('VEmojiPicker', VEmojiPicker);
+app.mount("#app");
 ```
 
 ## Props
@@ -87,6 +85,9 @@ new Vue({
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
   @Prop({}) i18n!: Object;
+  @Prop({}) layout?: 'flex' | 'grid';
+  @Prop({}) width?: String | number;
+  @Prop({}) height?: String | number;
 }
 ```
 
