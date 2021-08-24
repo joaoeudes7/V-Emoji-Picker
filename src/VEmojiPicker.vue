@@ -1,5 +1,5 @@
 <template>
-  <div id="EmojiPicker" :class="['emoji-picker', {dark}]" :style="{ width: computedStyle.width, height: computedStyle.height }">
+  <div id="EmojiPicker" :class="['emoji-picker', {dark}]">
     <Categories
       v-if="showCategories"
       :categories="categoriesFiltered"
@@ -18,7 +18,7 @@
       :hasSearch="showSearch"
       @select="onSelectEmoji"
       :layout="layout"
-      :style="{ width: computedStyle.width, height: computedStyle.listHeight }"
+      :style="emojiListStyle"
     />
   </div>
 </template>
@@ -64,8 +64,6 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
   @Prop({}) i18n!: Object;
   @Prop({ required:false, default: 'flex' }) layout?: 'flex' | 'grid' = 'flex';
-  @Prop({ default: '325px'}) width!: string | number;
-  @Prop({default: '440px'}) height!: string | number;
 
   mapEmojis: MapEmojis = {};
 
@@ -153,12 +151,9 @@ export default class VEmojiPicker extends Vue {
     );
   }
 
-  get computedStyle() {
-    let width =  Object.prototype.toString.call(this.width) === '[object Number]' ? `${this.width}px` : this.width;
-    let height = Object.prototype.toString.call(this.height) === '[object Number]' ? `${this.height}px` : this.height;
-    let listHeight = `calc(100% - ${this.showCategories ? '32px' : '0px'} - ${this.showSearch ? '2.5em' : '0px'})`;
+  get emojiListStyle() {
     return {
-      height, width, listHeight
+      height: `calc(100% - ${this.showCategories ? '32px' : '0px'} - ${this.showSearch ? '2.5em' : '0px'})`
     };
   }
 

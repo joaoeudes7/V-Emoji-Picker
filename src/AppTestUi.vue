@@ -3,7 +3,7 @@
     <div style="width:max-content;max-width:100%">
       <textarea name="" id="" :value="message"/>
       <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible"
-        :limitFrequently="3" :emojisByRow="6" @select="onEmojiSelected" width="100%" :layout="layout"/>
+        :limitFrequently="3" :emojisByRow="6" @select="onEmojiSelected" style="height:400px" :layout="layout"/>
     </div>
     <button @click="changeEmojis">Change</button>
     <button @click="changeVisibleEmojis">Toogle View</button>
