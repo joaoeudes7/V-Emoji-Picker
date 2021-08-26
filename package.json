@@ -27,24 +27,25 @@
     "Readme.md"
   ],
   "dependencies": {
-    "vue-class-component": "^7.2.6",
-    "vue-property-decorator": "^9.1.2"
+    "vue-class-component": "^8.0.0-rc.1",
+    "vue-property-decorator": "^10.0.0-rc.3"
   },
   "peerDependencies": {
-    "vue": "^2.6.11"
+    "vue": "^3.2.4"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.1.0",
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
-    "@vue/cli-plugin-eslint": "^4.5.11",
-    "@vue/cli-plugin-typescript": "^4.5.11",
-    "@vue/cli-plugin-unit-mocha": "^4.5.11",
-    "@vue/cli-service": "^4.5.11",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "@vue/cli-plugin-eslint": "^5.0.0-beta.3",
+    "@vue/cli-plugin-typescript": "^5.0.0-beta.3",
+    "@vue/cli-plugin-unit-mocha": "^5.0.0-beta.3",
+    "@vue/cli-service": "^5.0.0-beta.3",
+    "@vue/compiler-sfc": "^3.2.4",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^1.1.2",
+    "@vue/test-utils": "^2.0.0-rc.12",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "eslint": "^7.18.0",
@@ -55,14 +56,14 @@
     "rollup-plugin-filesize": "^9.1.0",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^5.1.9",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "terser": "^5.5.1",
-    "typescript": "^4.1.3",
-    "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12"
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5",
+    "vue": "^3.2.4"
   },
   "browserslist": [
     "> 1%",

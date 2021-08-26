@@ -1,41 +1,66 @@
 <template>
   <div>
-    <div>
-      <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible" :dark="true" />
+    <div style="width:max-content;max-width:100%">
+      <textarea name="" id="" :value="message"/>
+      <VEmojiPicker :customEmojis="emojis" :continuousList="true" v-if="visible"
+        :limitFrequently="3" :emojisByRow="6" @select="onEmojiSelected" style="height:400px" :layout="layout"/>
     </div>
     <button @click="changeEmojis">Change</button>
     <button @click="changeVisibleEmojis">Toogle View</button>
+    <button @click="changeLayout">switch layout</button>
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
-
-// import VEmojiPicker, { emojisDefault } from "./../lib/v-emoji-picker.cjs";
 import { VEmojiPicker, emojisDefault } from "./index";
+import { defineComponent, ref, reactive } from 'vue';
+import { IEmoji } from "./models/Emoji";
 
-// Vue.use(VEmojiPicker);
-
-@Component({
+export default defineComponent({
   name: "AppTestUI",
   components: {
     VEmojiPicker
-  }
-})
-export default class AppTestUi extends Vue {
-  private emojis = emojisDefault;
+  },
+  setup() {
+    console.log(emojisDefault.length);
+    let visible = ref(true);
+    let emojis = reactive(emojisDefault);
+    function changeEmojis() {
+      emojis.splice(0, 8);
+    }
+    function changeVisibleEmojis() {
+      visible.value = !visible.value;
+    }
 
-  private visible = true;
+    let message = ref('');
+    function onEmojiSelected(emoji:IEmoji) {
+      message.value += emoji.data;
+    }
 
-  changeEmojis() {
-    this.emojis = emojisDefault.slice(0, 8);
-  }
+    let layout = ref('flex');
+    function changeLayout() {
+      if(layout.value == 'flex') {
+        layout.value = 'grid';
+      } else {
+        layout.value = 'flex';
+      }
+    }
 
-  changeVisibleEmojis() {
-    this.visible = !this.visible;
+    return {
+      visible, emojis, message, layout,
+      changeEmojis, changeVisibleEmojis, onEmojiSelected, changeLayout
+    };
+
   }
-}
+});
 </script>
 
 <style lang='scss' scoped>
+  textarea {
+    display: block;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
 </style>

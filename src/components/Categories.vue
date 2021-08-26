@@ -1,23 +1,13 @@
-<template>
-  <div id="Categories">
-    <div
-      v-for="(category, index) in categories"
-      :class="['category', { active: category.name === current }]"
-      :key="index"
-      @click="onSelect(category)"
-    >
-      <CategoryItem :label="category.label" :icon="category.icon" />
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
-import { Component, Prop, Vue, Emit } from "vue-property-decorator";
+import { h as createElement } from 'vue';
+import { RendererElement, RendererNode, VNode } from "@vue/runtime-core";
+import { Prop, Vue, Emit } from "vue-property-decorator";
+import { Options } from 'vue-class-component';
 import { Category } from "@/models/Category";
 
 import CategoryItem from "./CategoryItem.vue";
 
-@Component({
+@Options({
   components: {
     CategoryItem
   }
@@ -29,6 +19,13 @@ export default class Categories extends Vue {
   @Emit("select")
   onSelect(category: Category) {
     return category;
+  }
+
+  render():VNode {
+    return createElement('div', { id: 'Categories' }, this.categories.map((category, index) => (
+      createElement('div', { title: category.label, key: index, class:['category', { active: category.name === this.current }],
+       onClick: () => this.onSelect(category), innerHTML:category.icon })
+    )));
   }
 }
 </script>
@@ -46,14 +43,24 @@ export default class Categories extends Vue {
 
 .category {
   flex: 1;
-  padding: 5px;
+  height: 32px;
+  line-height: 32px;
   text-align: center;
   cursor: pointer;
-
-  &.active {
-    border-bottom: 3px solid var(--ep-color-active);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--ep-color-active);
     filter: saturate(3);
-    padding-bottom: 2px;
+    width: 100%;
+
   }
 
   & > img {
@@ -61,8 +68,8 @@ export default class Categories extends Vue {
     height: 22px;
   }
 
-  &:hover {
-    filter: saturate(3);
+  &:not(.active):hover {
+    filter: brightness(1.2);
   }
 }
 </style>

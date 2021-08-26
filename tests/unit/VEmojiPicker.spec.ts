@@ -1,23 +1,24 @@
 import 'mocha';
 import { expect, assert } from 'chai';
-import { shallowMount, Wrapper } from '@vue/test-utils';
+import { shallowMount, VueWrapper } from '@vue/test-utils';
 
 import VEmojiPicker from '@/VEmojiPicker.vue';
 
-let wrapper: Wrapper<VEmojiPicker>;
+let wrapper: VueWrapper<VEmojiPicker>;
 
 beforeEach(() => {
   wrapper = shallowMount(VEmojiPicker);
 });
 
 afterEach(() => {
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 describe('VEmojiPicker', () => {
-  it('Is Instance', () => {
-    assert.isTrue(wrapper.isVueInstance());
-  });
+  // isVueInstance was removed from test-unit api
+  // it('Is Instance', () => {
+  //   assert.isTrue(wrapper.isVueInstance());
+  // });
 
   it('Is Visible', () => {
     assert.isTrue(wrapper.isVisible());
