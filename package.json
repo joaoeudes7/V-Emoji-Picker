@@ -1,10 +1,10 @@
 {
-  "name": "v-emoji-picker",
-  "version": "2.3.3",
+  "name": "vue-emoji-picker-custom",
+  "version": "1.0.0",
   "author": {
-    "name": "João Eudes Lima",
-    "email": "joaoeudes7@gmail.com",
-    "url": "https://github.com/joaoeudes7"
+    "name": "Mostafa sardary",
+    "email": "sardary.mostafa@gmail.com",
+    "url": "https://github.com/msardary/Vue-Emoji-Picker-Custom"
   },
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -69,7 +69,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "homepage": "https://github.com/joaoeudes7/V-Emoji-Picker#readme",
+  "homepage": "https://github.com/msardary/Vue-Emoji-Picker-Custom#readme",
   "keywords": [
     "javascript",
     "vue",
@@ -77,5 +77,5 @@
     "unicode"
   ],
   "license": "MIT",
-  "repository": "https://github.com/joaoeudes7/V-Emoji-Picker"
+  "repository": "https://github.com/msardary/Vue-Emoji-Picker-Custom"
 }

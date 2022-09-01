@@ -1,6 +1,18 @@
-
 <template>
-  <span :class="['emoji', { 'border': withBorder } ]" :style="styleSize" v-html="emoji.data" />
+  <div>
+    <span
+      v-if="emoji.data.indexOf('png') < 0"
+      :class="['emoji', { border: withBorder }]"
+      :style="styleSize"
+      v-html="emoji.data"
+    />
+    <img
+      v-if="emoji.data.indexOf('png') >= 0"
+      :class="['emoji', { border: withBorder }]"
+      :style="styleSize"
+      :src="emoji.data"
+    />
+  </div>
 </template>
 
 <script lang="ts">

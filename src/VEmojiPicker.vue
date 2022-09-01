@@ -55,7 +55,7 @@ export default class VEmojiPicker extends Vue {
   @Prop({ default: true }) showSearch!: boolean;
   @Prop({ default: true }) showCategories!: boolean;
   @Prop({ default: false }) dark!: boolean;
-  @Prop({ default: "Peoples" }) initialCategory!: string;
+  @Prop({ default: "3D" }) initialCategory!: string;
   @Prop({ default: () => [] as ICategory[] }) exceptCategories!: ICategory[];
   @Prop({ default: () => [] as Emoji[] }) exceptEmojis!: IEmoji[];
   @Prop({}) i18n!: Object;
